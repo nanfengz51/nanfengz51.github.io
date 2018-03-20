@@ -1833,7 +1833,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9cff4d;
+  background: #c47aff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3175,6 +3175,20 @@ h6 {
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #f79533;
+}
+#top {
+  display: block;
+  text-align: center;
+  margin: -100px 50px 40px 50px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  background-color: #fff;
+  padding: 106px 36px 10px 36px;
+}
+@media (max-width: 767px) {
+  #top {
+    margin: -93px 15px 50px 15px;
+    padding: 96px 10px 0px 10px;
+  }
 }
 .hider_title {
   font-family: "Microsoft Yahei";
