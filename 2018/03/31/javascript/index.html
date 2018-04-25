@@ -1,0 +1,922 @@
+<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-Hans"><head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="javascript,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;#x4E00;&amp;#x3001; js &amp;#x7B80;&amp;#x4ECB;1&amp;#x3001; js &amp;#x662F;&amp;#x4EC0;&amp;#x4E48;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript">
+<meta property="og:url" content="xdady.github.io/2018/03/31/javascript/index.html">
+<meta property="og:site_name" content="&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;">
+<meta property="og:description" content="&amp;#x4E00;&amp;#x3001; js &amp;#x7B80;&amp;#x4ECB;1&amp;#x3001; js &amp;#x662F;&amp;#x4EC0;&amp;#x4E48;">
+<meta property="og:updated_time" content="2018-04-15T15:49:49.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript">
+<meta name="twitter:description" content="&amp;#x4E00;&amp;#x3001; js &amp;#x7B80;&amp;#x4ECB;1&amp;#x3001; js &amp;#x662F;&amp;#x4EC0;&amp;#x4E48;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="xdady.github.io/2018/03/31/javascript/">
+
+
+
+
+
+  <title>javascript | &#x6D6E;&#x4E16;&#x5E7B;&#x60F3;</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/xdady" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            &#x9996;&#x9875;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            &#x5173;&#x4E8E;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            &#x6807;&#x7B7E;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            &#x5206;&#x7C7B;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            &#x5F52;&#x6863;
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="xdady.github.io/2018/03/31/javascript/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="&#x8D75;&#x5BA2;">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/myphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javascript</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x53D1;&#x8868;&#x4E8E;</span>
+              
+              <time title="&#x521B;&#x5EFA;&#x4E8E;" itemprop="dateCreated datePublished" datetime="2018-03-31T14:30:39+08:00">
+                2018-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x5206;&#x7C7B;&#x4E8E;</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb&#x524D;&#x7AEF;/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb&#x524D;&#x7AEF;</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">&#x5B57;&#x6570;&#x7EDF;&#x8BA1;:</span>
+                
+                <span title="&#x5B57;&#x6570;&#x7EDF;&#x8BA1;">
+                  4,101
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">&#x9605;&#x8BFB;&#x65F6;&#x957F; &#x2248;</span>
+                
+                <span title="&#x9605;&#x8BFB;&#x65F6;&#x957F;">
+                  20
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="&#x4E00;&#x3001;-js-&#x7B80;&#x4ECB;"><a href="#&#x4E00;&#x3001;-js-&#x7B80;&#x4ECB;" class="headerlink" title="&#x4E00;&#x3001; js &#x7B80;&#x4ECB;"></a>&#x4E00;&#x3001; js &#x7B80;&#x4ECB;</h2><h3 id="1&#x3001;-js-&#x662F;&#x4EC0;&#x4E48;"><a href="#1&#x3001;-js-&#x662F;&#x4EC0;&#x4E48;" class="headerlink" title="1&#x3001; js &#x662F;&#x4EC0;&#x4E48;"></a>1&#x3001; js &#x662F;&#x4EC0;&#x4E48;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">js&#x662F;&#x53EF;&#x4EE5;&#x5D4C;&#x5165;&#x5230;html&#x4E2D;&#xFF0C;&#x662F; &#x57FA;&#x4E8E;&#x5BF9;&#x8C61; &#x548C; &#x4E8B;&#x4EF6;&#x9A71;&#x52A8; &#x7684; &#x811A;&#x672C;&#x8BED;&#x8A00;</div><div class="line">&#x7279;&#x70B9;&#xFF1A;</div><div class="line">	(1)&#x4EA4;&#x4E92;&#x6027;</div><div class="line">	(2)&#x5B89;&#x5168;&#x6027;&#xFF1A;js&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#x672C;&#x5730;&#x78C1;&#x76D8;</div><div class="line">	(3)&#x8DE8;&#x5E73;&#x53F0;&#xFF1A;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x90FD;&#x5177;&#x5907;js&#x89E3;&#x6790;&#x5668;</div></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h3 id="2&#x3001;js-&#x80FD;&#x505A;&#x4EC0;&#x4E48;"><a href="#2&#x3001;js-&#x80FD;&#x505A;&#x4EC0;&#x4E48;" class="headerlink" title="2&#x3001;js &#x80FD;&#x505A;&#x4EC0;&#x4E48;"></a>2&#x3001;js &#x80FD;&#x505A;&#x4EC0;&#x4E48;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(1)js&#x80FD;&#x52A8;&#x6001;&#x7684;&#x4FEE;&#x6539;(&#x589E;&#x5220;)html&#x548C;css&#x7684;&#x4EE3;&#x7801;</div><div class="line">(2)&#x80FD;&#x52A8;&#x6001;&#x7684;&#x6821;&#x9A8C;&#x6570;&#x636E;</div></pre></td></tr></tbody></table></figure>
+<h3 id="3&#x3001;js-&#x5386;&#x53F2;&#x53CA;&#x7EC4;&#x6210;"><a href="#3&#x3001;js-&#x5386;&#x53F2;&#x53CA;&#x7EC4;&#x6210;" class="headerlink" title="3&#x3001;js &#x5386;&#x53F2;&#x53CA;&#x7EC4;&#x6210;"></a>3&#x3001;js &#x5386;&#x53F2;&#x53CA;&#x7EC4;&#x6210;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ECMAScript	BOM(&#x6D4F;&#x89C8;&#x5668;&#x5BF9;&#x8C61;&#x6A21;&#x578B;)  DOM(&#x6587;&#x6863;&#x5BF9;&#x8C61;&#x6A21;&#x578B;)</div></pre></td></tr></tbody></table></figure>
+<h3 id="4&#x3001;-js-&#x5F15;&#x5165;&#x65B9;&#x5F0F;"><a href="#4&#x3001;-js-&#x5F15;&#x5165;&#x65B9;&#x5F0F;" class="headerlink" title="4&#x3001; js &#x5F15;&#x5165;&#x65B9;&#x5F0F;"></a>4&#x3001; js &#x5F15;&#x5165;&#x65B9;&#x5F0F;</h3><h4 id="&#xFF08;1&#xFF09;&#x5185;&#x5D4C;&#x811A;&#x672C;"><a href="#&#xFF08;1&#xFF09;&#x5185;&#x5D4C;&#x811A;&#x672C;" class="headerlink" title="&#xFF08;1&#xFF09;&#x5185;&#x5D4C;&#x811A;&#x672C;"></a>&#xFF08;1&#xFF09;&#x5185;&#x5D4C;&#x811A;&#x672C;</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&apos;xxx&apos;)&quot;</span> /&gt;</span> 	</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h4 id="&#xFF08;2&#xFF09;&#x5185;&#x90E8;&#x811A;&#x672C;"><a href="#&#xFF08;2&#xFF09;&#x5185;&#x90E8;&#x811A;&#x672C;" class="headerlink" title="&#xFF08;2&#xFF09;&#x5185;&#x90E8;&#x811A;&#x672C;"></a>&#xFF08;2&#xFF09;&#x5185;&#x90E8;&#x811A;&#x672C;</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="undefined"></span></div><div class="line">	alert(&quot;xxx&quot;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;button&quot;</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h4 id="&#xFF08;3&#xFF09;&#x5916;&#x90E8;&#x811A;&#x672C;"><a href="#&#xFF08;3&#xFF09;&#x5916;&#x90E8;&#x811A;&#x672C;" class="headerlink" title="&#xFF08;3&#xFF09;&#x5916;&#x90E8;&#x811A;&#x672C;"></a>&#xFF08;3&#xFF09;&#x5916;&#x90E8;&#x811A;&#x672C;</h4><p><code>demo1.js</code></p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(<span class="string">&quot;xxxx&quot;</span>);</div></pre></td></tr></tbody></table></figure>
+<p><code>demo1.html</code></p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;button&quot;</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;demo1.js&quot;</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="js&#x4EE3;&#x7801;&#x653E;&#x5728;&#x54EA;&#xFF1F;"><a href="#js&#x4EE3;&#x7801;&#x653E;&#x5728;&#x54EA;&#xFF1F;" class="headerlink" title="js&#x4EE3;&#x7801;&#x653E;&#x5728;&#x54EA;&#xFF1F;"></a>js&#x4EE3;&#x7801;&#x653E;&#x5728;&#x54EA;&#xFF1F;</h3><p><strong>&#x653E;&#x5728;&#x54EA;&#x90FD;&#x884C; &#x4F46;&#x662F;&#x5728;&#x4E0D;&#x5F71;&#x54CD;html&#x529F;&#x80FD;&#x7684;&#x524D;&#x63D0;&#x4E0B; &#x8D8A;&#x665A;&#x52A0;&#x8F7D;&#x8D8A;&#x597D;</strong></p>
+<h2 id="&#x4E8C;&#x3001;js-&#x57FA;&#x672C;&#x8BED;&#x6CD5;"><a href="#&#x4E8C;&#x3001;js-&#x57FA;&#x672C;&#x8BED;&#x6CD5;" class="headerlink" title="&#x4E8C;&#x3001;js &#x57FA;&#x672C;&#x8BED;&#x6CD5;"></a>&#x4E8C;&#x3001;js &#x57FA;&#x672C;&#x8BED;&#x6CD5;</h2><h3 id="1&#x3001;&#x53D8;&#x91CF;"><a href="#1&#x3001;&#x53D8;&#x91CF;" class="headerlink" title="1&#x3001;&#x53D8;&#x91CF;"></a>1&#x3001;&#x53D8;&#x91CF;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(1)</div><div class="line">var x = 5;</div><div class="line">x = &apos;javascript&apos;;</div><div class="line">var y = &quot;hello&quot;;</div><div class="line">var b = true;</div><div class="line">(2)</div><div class="line">x = 5;</div></pre></td></tr></tbody></table></figure>
+<h3 id="2&#x3001;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#2&#x3001;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="2&#x3001;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>2&#x3001;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(1)number:&#x6570;&#x5B57;&#x7C7B;&#x578B;</div><div class="line">(2)string&#xFF1A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;</div><div class="line">(3)boolean:&#x5E03;&#x5C14;&#x7C7B;&#x578B;</div><div class="line">(4)null:&#x7A7A;&#x7C7B;&#x578B;</div><div class="line">(5)underfind:&#x672A;&#x5B9A;&#x4E49;</div><div class="line"></div><div class="line">&#x6CE8;&#x610F;&#xFF1A;number&#x3001;boolean&#x3001;string&#x662F;&#x4F2A;&#x5BF9;&#x8C61;</div><div class="line"></div><div class="line">&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF1A;</div><div class="line">	number\boolean&#x8F6C;&#x6210;string</div><div class="line">		toString();</div><div class="line">	string\boolean&#x8F6C;&#x6210;number</div><div class="line">		parseInt()</div><div class="line">		parseFloat()</div><div class="line">		boolean&#x4E0D;&#x80FD;&#x8F6C;</div><div class="line">		string&#x53EF;&#x4EE5;&#x5C06;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6210;number &#x5982;&#x679C;&#x201C;123a3sd5&#x201D; &#x8F6C;&#x6210;123</div><div class="line">	&#x5F3A;&#x5236;&#x8F6C;&#x6362;</div><div class="line">		Boolean() 	&#x5F3A;&#x8F6C;&#x6210;&#x5E03;&#x5C14;</div><div class="line">			&#x6570;&#x5B57;&#x5F3A;&#x8F6C;&#x6210;&#x5E03;&#x5C14;  &#x975E;&#x96F6;&#x5C31;&#x662F;true   &#x96F6;&#x5C31;&#x662F;false</div><div class="line">			&#x5B57;&#x7B26;&#x4E32;&#x5F3A;&#x8F6C;&#x6210;&#x5E03;&#x5C14;  &#x975E;&#x201C;&#x201D;(&#x7A7A;&#x5B57;&#x7B26;&#x4E32;)&#x5C31;&#x662F;true   &#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x201C;&#x201D;&#x5C31;&#x662F;false</div><div class="line">		Number()	&#x5F3A;&#x8F6C;&#x6210;&#x6570;&#x5B57;</div><div class="line">			&#x5E03;&#x5C14;&#x8F6C;&#x6570;&#x5B57; true&#x8F6C;&#x6210;1  false&#x8F6C;&#x6210;0</div><div class="line">			&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6570;&#x5B57; &#x4E0D;&#x80FD;&#x5F3A;&#x8F6C;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">5</span>;</div><div class="line"><span class="comment">//x = &apos;javascript&apos;;</span></div><div class="line"><span class="keyword">var</span> y = <span class="string">&quot;hello&quot;</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> n = <span class="literal">null</span>;</div><div class="line">alert(<span class="keyword">typeof</span> b.toString());</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> s = <span class="string">&quot;123x44xx&quot;</span>;</div><div class="line">alert(<span class="built_in">parseInt</span>(s)); </div><div class="line"></div><div class="line"><span class="keyword">var</span> c = <span class="number">123</span>;</div><div class="line">c = <span class="number">-1</span>;</div><div class="line">c = <span class="string">&quot;  &quot;</span>;</div><div class="line">alert(<span class="built_in">Boolean</span>(c)); </div><div class="line"></div><div class="line"></div><div class="line">b = <span class="literal">false</span>;</div><div class="line"><span class="keyword">var</span> d = <span class="string">&quot;123ss&quot;</span>;</div><div class="line">alert(<span class="built_in">Number</span>(d));</div></pre></td></tr></tbody></table></figure>
+<h3 id="3&#x3001;&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#3&#x3001;&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="3&#x3001;&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>3&#x3001;&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">java:	Object obj = new Object();</div><div class="line">js:		var obj = new Object();</div><div class="line">		var num = new Number();</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">alert(<span class="keyword">typeof</span> obj);</div></pre></td></tr></tbody></table></figure>
+<h3 id="4&#x3001;&#x8FD0;&#x7B97;&#x7B26;"><a href="#4&#x3001;&#x8FD0;&#x7B97;&#x7B26;" class="headerlink" title="4&#x3001;&#x8FD0;&#x7B97;&#x7B26;"></a>4&#x3001;&#x8FD0;&#x7B97;&#x7B26;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(1)&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;</div><div class="line">	var x = 5;</div><div class="line">(2)&#x7B97;&#x6570;&#x8FD0;&#x7B97;&#x7B26;</div><div class="line">	+ - * / %</div><div class="line">	+: &#x9047;&#x5230;&#x5B57;&#x7B26;&#x4E32;&#x53D8;&#x6210;&#x8FDE;&#x63A5;</div><div class="line">	-&#xFF1A;&#x5148;&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6210;&#x6570;&#x5B57;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;</div><div class="line">	*: &#x5148;&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6210;&#x6570;&#x5B57;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;</div><div class="line">	/: &#x5148;&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6210;&#x6570;&#x5B57;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;</div><div class="line">(3)&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</div><div class="line">	&amp;&amp;	||</div><div class="line">(4)&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;</div><div class="line">	&lt;	&gt;	&gt;=	&lt;=	!=	==</div><div class="line">	===:&#x5168;&#x7B49;&#xFF1A;&#x7C7B;&#x578B;&#x4E0E;&#x503C;&#x90FD;&#x8981;&#x76F8;&#x7B49;</div><div class="line">(5)&#x4E09;&#x5143;&#x8FD0;&#x7B97;&#x7B26;</div><div class="line">	3&lt;2?&quot;&#x5927;&#x4E8E;&quot;:&quot;&#x5C0F;&#x4E8E;&quot;</div><div class="line">(6)void&#x8FD0;&#x7B97;&#x7B26;</div><div class="line">	&lt;a href=&quot;javascript:void(0);&quot;&gt;xxxxxx&lt;/a&gt;</div><div class="line">(7)&#x7C7B;&#x578B;&#x8FD0;&#x7B97;&#x7B26;</div><div class="line">	typeof:&#x5224;&#x65AD;&#x6570;&#x636E;&#x7C7B;&#x578B; &#x8FD4;&#x56DE;&#x6211;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</div><div class="line">	instanceof&#xFF1A;&#x5224;&#x65AD;&#x6570;&#x636E;&#x7C7B;&#x578B; &#x662F;&#x5426;&#x662F;&#x67D0;&#x79CD;&#x7C7B;&#x578B;</div><div class="line">	var obj = new Object();</div><div class="line">	alert(typeof obj);//object</div><div class="line">	alert(obj instanceof Object);//true</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="string">&quot;5&quot;</span>;</div><div class="line"><span class="keyword">var</span> y = <span class="string">&quot;123&quot;</span>;</div><div class="line">alert(x+y);</div><div class="line">alert(x*y);</div><div class="line">alert(<span class="number">1213</span>/<span class="number">100</span>*<span class="number">100</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="string">&quot;10&quot;</span>;</div><div class="line">alert(a===b); </div><div class="line"></div><div class="line">alert(<span class="number">3</span>&lt;<span class="number">2</span>?<span class="string">&quot;&#x5927;&#x4E8E;&quot;</span>:<span class="string">&quot;&#x5C0F;&#x4E8E;&quot;</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">alert(<span class="keyword">typeof</span> obj);</div><div class="line">alert(obj <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</div></pre></td></tr></tbody></table></figure>
+<h3 id="5&#x3001;&#x903B;&#x8F91;&#x8BED;&#x53E5;"><a href="#5&#x3001;&#x903B;&#x8F91;&#x8BED;&#x53E5;" class="headerlink" title="5&#x3001;&#x903B;&#x8F91;&#x8BED;&#x53E5;"></a>5&#x3001;&#x903B;&#x8F91;&#x8BED;&#x53E5;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(1)if-else</div><div class="line">	//&#x6761;&#x4EF6;:</div><div class="line">	//&#x6570;&#x5B57;&#x975E;0 &#x5B57;&#x7B26;&#x4E32;&#x975E;&#x7A7A;====true</div><div class="line">		if(9){</div><div class="line">			alert(&quot;true--&quot;);</div><div class="line">		}else{</div><div class="line">			alert(&quot;false--&quot;);</div><div class="line">		}</div><div class="line">(2)switch</div><div class="line">	var x = &quot;java&quot;;</div><div class="line">	switch(x){</div><div class="line">		case &quot;css&quot;:</div><div class="line">			alert(&quot;css&quot;);</div><div class="line">			break;</div><div class="line">		case &quot;js&quot;:</div><div class="line">			alert(&quot;js&quot;);</div><div class="line">			break;</div><div class="line">		case &quot;java&quot;:</div><div class="line">			alert(&quot;java&quot;);</div><div class="line">			break;</div><div class="line">		default:</div><div class="line">			alert(&quot;def&quot;);</div><div class="line">	}</div><div class="line"></div><div class="line">(3)for</div><div class="line">	 for(var i = 0;i&lt;5;i++){</div><div class="line">		alert(i);</div><div class="line">	 }</div><div class="line">(4)for in</div><div class="line">	var arr = [1,3,5,7,&quot;js&quot;];</div><div class="line">	 for(index in arr){//index&#x4EE3;&#x8868;&#x89D2;&#x6807;</div><div class="line">		//alert(index);</div><div class="line">		alert(arr[index]);</div><div class="line">	 }</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&#x6761;&#x4EF6;:</span></div><div class="line">	<span class="comment">//&#x6570;&#x5B57;&#x975E;0 &#x5B57;&#x7B26;&#x4E32;&#x975E;&#x7A7A;====true</span></div><div class="line"><span class="keyword">if</span>(<span class="number">9</span>){</div><div class="line">	alert(<span class="string">&quot;true--&quot;</span>);</div><div class="line">}<span class="keyword">else</span>{</div><div class="line">	alert(<span class="string">&quot;false--&quot;</span>);</div><div class="line">} </div><div class="line"></div><div class="line"><span class="keyword">var</span> x = <span class="string">&quot;java&quot;</span>;</div><div class="line"><span class="keyword">switch</span>(x){</div><div class="line">	<span class="keyword">case</span> <span class="string">&quot;css&quot;</span>:</div><div class="line">		alert(<span class="string">&quot;css&quot;</span>);</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	<span class="keyword">case</span> <span class="string">&quot;js&quot;</span>:</div><div class="line">		alert(<span class="string">&quot;js&quot;</span>);</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	<span class="keyword">case</span> <span class="string">&quot;java&quot;</span>:</div><div class="line">		alert(<span class="string">&quot;java&quot;</span>);</div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	<span class="keyword">default</span>:</div><div class="line">		alert(<span class="string">&quot;def&quot;</span>);</div><div class="line">}</div><div class="line"> </div><div class="line"> </div><div class="line"> </div><div class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;<span class="number">5</span>;i++){</div><div class="line"> 	alert(i);</div><div class="line"> } </div><div class="line"> </div><div class="line"> </div><div class="line"> <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="string">&quot;js&quot;</span>];</div><div class="line"> <span class="keyword">for</span>(index <span class="keyword">in</span> arr){<span class="comment">//index&#x4EE3;&#x8868;&#x89D2;&#x6807;</span></div><div class="line"> 	<span class="comment">//alert(index);</span></div><div class="line"> 	alert(arr[index]);</div><div class="line"> }</div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x4E09;&#x3001;js-&#x5185;&#x7F6E;&#x5BF9;&#x8C61;"><a href="#&#x4E09;&#x3001;js-&#x5185;&#x7F6E;&#x5BF9;&#x8C61;" class="headerlink" title="&#x4E09;&#x3001;js &#x5185;&#x7F6E;&#x5BF9;&#x8C61;"></a>&#x4E09;&#x3001;js &#x5185;&#x7F6E;&#x5BF9;&#x8C61;</h2><h3 id="&#xFF08;1&#xFF09;Number"><a href="#&#xFF08;1&#xFF09;Number" class="headerlink" title="&#xFF08;1&#xFF09;Number"></a>&#xFF08;1&#xFF09;Number</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#xFF1A;</div><div class="line">	var myNum=new Number(value);</div><div class="line">	var myNum=Number(value);</div><div class="line">&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF1A;</div><div class="line">	toString():&#x8F6C;&#x6210;&#x5B57;&#x7B26;&#x4E32;</div><div class="line">	valueOf()&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Number &#x5BF9;&#x8C61;&#x7684;&#x57FA;&#x672C;&#x6570;&#x5B57;&#x503C;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">5</span>);</div><div class="line"><span class="comment">//alert(typeof num);//object</span></div><div class="line"><span class="comment">//alert(typeof num.toString());//string</span></div><div class="line"><span class="comment">//alert(typeof num.valueOf());//number</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="&#xFF08;2&#xFF09;Boolean"><a href="#&#xFF08;2&#xFF09;Boolean" class="headerlink" title="&#xFF08;2&#xFF09;Boolean"></a>&#xFF08;2&#xFF09;Boolean</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#xFF1A;</div><div class="line">	var bool = new Boolean(value);	</div><div class="line">	var bool = Boolean(value);</div><div class="line">&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF1A;</div><div class="line">	toString():&#x8F6C;&#x6210;&#x5B57;&#x7B26;&#x4E32;</div><div class="line">	valueOf()&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Boolean &#x5BF9;&#x8C61;&#x7684;&#x57FA;&#x672C;&#x503C;(boolean)</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#xFF08;3&#xFF09;String"><a href="#&#xFF08;3&#xFF09;String" class="headerlink" title="&#xFF08;3&#xFF09;String"></a>&#xFF08;3&#xFF09;String</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#xFF1A;</div><div class="line">	var str = new String(s);</div><div class="line">	var str = String(s);</div><div class="line">&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF1A;</div><div class="line">	length:&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;</div><div class="line">	charAt():&#x8FD4;&#x56DE;&#x7D22;&#x5F15;&#x5B57;&#x7B26;</div><div class="line">	charCodeAt:&#x8FD4;&#x56DE;&#x7D22;&#x5F15;&#x5B57;&#x7B26;unicode</div><div class="line">	indexOf():&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x7684;&#x7D22;&#x5F15;</div><div class="line">	lastIndexOf();&#x9006;&#x5411;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x7684;&#x7D22;&#x5F15;</div><div class="line">	split();&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x6309;&#x7167;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x5207;&#x5272;&#x6210;&#x6570;&#x7EC4;</div><div class="line">	substr():&#x4ECE;&#x8D77;&#x59CB;&#x7D22;&#x5F15;&#x53F7;&#x63D0;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x6307;&#x5B9A;&#x6570;&#x76EE;&#x7684;&#x5B57;&#x7B26;</div><div class="line">	substring():&#x63D0;&#x53D6;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x4E24;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x7D22;&#x5F15;&#x53F7;&#x4E4B;&#x95F4;&#x7684;&#x5B57;&#x7B26;</div><div class="line">	toUpperCase();&#x8F6C;&#x5927;&#x5199;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&quot;a-b-cdc-FG&quot;</span>);</div><div class="line">alert(str.length);<span class="comment">//10</span></div><div class="line">alert(str.charAt(<span class="number">4</span>));<span class="comment">//c</span></div><div class="line">alert(str.charCodeAt(<span class="number">4</span>));<span class="comment">//99</span></div><div class="line">alert(str.indexOf(<span class="string">&quot;c&quot;</span>));<span class="comment">//4</span></div><div class="line">alert(str.lastIndexOf(<span class="string">&quot;c&quot;</span>));<span class="comment">//6</span></div><div class="line"><span class="keyword">var</span> arr = str.split(<span class="string">&quot;-&quot;</span>);</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++){</div><div class="line">	alert(arr[i]);</div><div class="line">} </div><div class="line">alert(str.substr(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">//b-c</span></div><div class="line">alert(str.substring(<span class="number">2</span>,<span class="number">3</span>));<span class="comment">//b</span></div><div class="line">alert(str.toUpperCase());</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#xFF08;4&#xFF09;Array"><a href="#&#xFF08;4&#xFF09;Array" class="headerlink" title="&#xFF08;4&#xFF09;Array"></a>&#xFF08;4&#xFF09;Array</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#xFF1A;</div><div class="line">	var arr = new Array();//&#x7A7A;&#x6570;&#x7EC4;</div><div class="line">	var arr = new Array(size);//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x636E;</div><div class="line">	var arr = new Array(element0, element1, ..., elementn);//&#x521B;&#x5EFA;&#x6570;&#x7EC4;&#x76F4;&#x63A5;&#x5B9E;&#x4F8B;&#x5316;&#x5143;&#x7D20;</div><div class="line">	var arr = [];//&#x7A7A;&#x6570;&#x7EC4;</div><div class="line">	var arr = [1,2,5,&quot;java&quot;];//&#x521B;&#x5EFA;&#x6570;&#x7EC4;&#x76F4;&#x63A5;&#x5B9E;&#x4F8B;&#x5316;&#x5143;&#x7D20;</div><div class="line">&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF1A;</div><div class="line">	length:&#x6570;&#x7EC4;&#x957F;&#x5EA6;</div><div class="line">	join()&#xFF1A;&#x628A;&#x6570;&#x7EC4;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x653E;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5143;&#x7D20;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7684;&#x5206;&#x9694;&#x7B26;&#x8FDB;&#x884C;&#x5206;&#x9694;&#x4E00;&#x4E2A;</div><div class="line">	pop():&#x5220;&#x9664;&#x5E76;&#x8FD4;&#x56DE;&#x6700;&#x540E;&#x5143;&#x7D20;</div><div class="line">	push()&#xFF1A;&#x5411;&#x6570;&#x7EC4;&#x7684;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6216;&#x66F4;&#x591A;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x957F;&#x5EA6;</div><div class="line">	reverse();&#x53CD;&#x8F6C;&#x6570;&#x7EC4;</div><div class="line">	sort();&#x6392;&#x5E8F;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="string">&quot;z&quot;</span>,<span class="number">1</span>,<span class="string">&quot;java&quot;</span>,<span class="string">&apos;js&apos;</span>,<span class="literal">true</span>,<span class="number">4</span>];</div><div class="line">alert(arr.length);<span class="comment">//7</span></div><div class="line">alert(arr.join(<span class="string">&quot;-&quot;</span>));<span class="comment">//3-7-1-java-js-true-4</span></div><div class="line">alert(arr.pop());<span class="comment">//4</span></div><div class="line">alert(arr);<span class="comment">//3,7,1,&quot;java&quot;,&apos;js&apos;,true</span></div><div class="line">alert(arr.push(<span class="string">&quot;R&quot;</span>));</div><div class="line">alert(arr);</div><div class="line">alert(arr.reverse());</div><div class="line">alert(arr.sort());<span class="comment">//&#x6309;&#x7167;&#x5B57;&#x7B26;&#x4E32;&#x5B57;&#x5178;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="&#xFF08;5&#xFF09;Date"><a href="#&#xFF08;5&#xFF09;Date" class="headerlink" title="&#xFF08;5&#xFF09;Date"></a>&#xFF08;5&#xFF09;Date</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#xFF1A;	</div><div class="line">	var myDate = new Date();</div><div class="line">	var myDate = new Date(&#x6BEB;&#x79D2;&#x503C;);//&#x4EE3;&#x8868;&#x4ECE;1970-1-1&#x5230;&#x73B0;&#x5728;&#x7684;&#x4E00;&#x4E2A;&#x6BEB;&#x79D2;&#x503C;</div><div class="line">&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;</div><div class="line">	getFullYear():&#x5E74;</div><div class="line">	getMonth():&#x6708; 0-11</div><div class="line">	getDate():&#x65E5; 1-31</div><div class="line">	getDay()&#xFF1A;&#x661F;&#x671F; 0-6</div><div class="line">	getTime():&#x8FD4;&#x56DE;1970&#x5E74;1&#x6708;1&#x65E5;&#x5348;&#x591C;&#x5230;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#xFF08;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#x7684;&#x6BEB;&#x79D2;&#x6570;</div><div class="line">	toLocalString();&#x83B7;&#x5F97;&#x672C;&#x5730;&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">alert(date.toString());<span class="comment">//Wed Sep 23 2015 10:01:19 GMT+0800</span></div><div class="line">alert(date.toLocaleString());<span class="comment">//2015/9/23 &#x4E0A;&#x5348;10:01:44</span></div><div class="line">alert(<span class="string">&quot;year:&quot;</span>+date.getFullYear());<span class="comment">//2015</span></div><div class="line">alert(<span class="string">&quot;month:&quot;</span>+date.getMonth());<span class="comment">//8</span></div><div class="line">alert(<span class="string">&quot;date:&quot;</span>+date.getDate());<span class="comment">//23</span></div><div class="line">alert(<span class="string">&quot;day:&quot;</span>+date.getDay());<span class="comment">//3 </span></div><div class="line"><span class="keyword">var</span> time1 = date.getTime();</div><div class="line"><span class="keyword">var</span> time2 = <span class="number">3</span>*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>;</div><div class="line">alert(<span class="keyword">new</span> <span class="built_in">Date</span>(time1+time2).toLocaleString());<span class="comment">//2015/9/24 &#x4E0A;&#x5348;10:05:32</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="&#xFF08;6&#xFF09;Math"><a href="#&#xFF08;6&#xFF09;Math" class="headerlink" title="&#xFF08;6&#xFF09;Math"></a>&#xFF08;6&#xFF09;Math</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#xFF1A;	</div><div class="line">	Math &#x5BF9;&#x8C61;&#x5E76;&#x4E0D;&#x50CF; Date &#x548C; String &#x90A3;&#x6837;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#xFF0C;&#x56E0;&#x6B64;&#x6CA1;&#x6709;&#x6784;&#x9020;&#x51FD;&#x6570; Math()&#xFF0C;&#x50CF; Math.sin() &#x8FD9;&#x6837;&#x7684;&#x51FD;&#x6570;&#x53EA;&#x662F;&#x51FD;&#x6570;&#xFF0C;</div><div class="line">	&#x4E0D;&#x662F;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x60A8;&#x65E0;&#x9700;&#x521B;&#x5EFA;&#x5B83;&#xFF0C;&#x901A;&#x8FC7;&#x628A; Math &#x4F5C;&#x4E3A;&#x5BF9;&#x8C61;&#x4F7F;&#x7528;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5176;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x3002;</div><div class="line">&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;</div><div class="line">	PI&#xFF1A;&#x5706;&#x5468;&#x7387;</div><div class="line">	abs():&#x7EDD;&#x5BF9;&#x503C;</div><div class="line">	ceil():&#x5BF9;&#x6570;&#x8FDB;&#x884C;&#x4E0A;&#x820D;&#x5165;</div><div class="line">	floor():&#x5BF9;&#x6570;&#x8FDB;&#x884C;&#x4E0B;&#x820D;&#x5165;</div><div class="line">	pow(x,y)&#xFF1A;&#x8FD4;&#x56DE; x &#x7684; y &#x6B21;&#x5E42;</div><div class="line">	random():0-1&#x4E4B;&#x95F4;&#x7684;&#x968F;&#x673A;&#x6570;</div><div class="line">	round():&#x56DB;&#x820D;&#x4E94;&#x5165;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">&quot;-897&quot;</span>;</div><div class="line">alert(<span class="built_in">Math</span>.abs(a));	 </div><div class="line"><span class="keyword">var</span> x = <span class="number">12.34</span>;</div><div class="line"><span class="keyword">var</span> y = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> z = <span class="number">4</span>; </div><div class="line">alert(<span class="built_in">Math</span>.ceil(x));<span class="comment">//13</span></div><div class="line">alert(<span class="built_in">Math</span>.floor(x));<span class="comment">//12</span></div><div class="line">alert(<span class="built_in">Math</span>.round(x));<span class="comment">//12 */</span></div><div class="line">alert(<span class="built_in">Math</span>.pow(y, z));<span class="comment">//16</span></div><div class="line">alert(<span class="built_in">Math</span>.random());</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#xFF08;7&#xFF09;RegExp"><a href="#&#xFF08;7&#xFF09;RegExp" class="headerlink" title="&#xFF08;7&#xFF09;RegExp"></a>&#xFF08;7&#xFF09;RegExp</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&#x521B;&#x5EFA;&#x65B9;&#x5F0F;&#xFF1A;	</div><div class="line">	var reg = new RegExp(pattern);</div><div class="line">	var reg = /^&#x6B63;&#x5219;&#x89C4;&#x5219;$/;</div><div class="line">&#x89C4;&#x5219;&#x7684;&#x5199;&#x6CD5;&#xFF1A;</div><div class="line">	[0-9]  </div><div class="line">	[A-Z] &#x5927;&#x5199;&#x5B57;&#x6BCD;</div><div class="line">	[a-z] &#x5C0F;&#x5199;&#x5B57;&#x6BCD;</div><div class="line">	[A-z] &#x662F;&#x5B57;&#x6BCD;&#x5C31;&#x7B26;&#x5408;</div><div class="line">	\d &#x4EE3;&#x8868;&#x6570;&#x5B57;</div><div class="line">	\D	&#x975E;&#x6570;&#x5B57;</div><div class="line">	\w	&#x67E5;&#x627E;&#x5355;&#x8BCD;&#x5B57;&#x7B26;</div><div class="line">	\W	&#x67E5;&#x627E;&#x975E;&#x5355;&#x8BCD;&#x5B57;&#x7B26;</div><div class="line">	\s	&#x67E5;&#x627E;&#x7A7A;&#x767D;&#x5B57;&#x7B26;</div><div class="line">	\S	&#x67E5;&#x627E;&#x975E;&#x7A7A;&#x767D;&#x5B57;&#x7B26;</div><div class="line">	n+	&#x51FA;&#x73B0;&#x81F3;&#x5C11;&#x4E00;&#x6B21;</div><div class="line">	n*	&#x51FA;&#x73B0;0&#x6B21;&#x6216;&#x591A;&#x6B21;</div><div class="line">	n?	&#x51FA;&#x73B0;0&#x6B21;&#x6216;1&#x6B21;</div><div class="line">	{5} &#x51FA;&#x73B0;5</div><div class="line">	{2,8} 2&#x5230;8&#x6B21;</div><div class="line">&#x65B9;&#x6CD5;&#xFF1A;	</div><div class="line">	test(str):&#x68C0;&#x7D22;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x3002;&#x8FD4;&#x56DE; true &#x6216; false</div><div class="line">&#x9700;&#x6C42;&#xFF1A;</div><div class="line">	&#x6821;&#x9A8C;&#x90AE;&#x7BB1;&#xFF1A;</div><div class="line">	var email = haohao_827@163.com</div><div class="line">	var reg = /^[A-z]+[A-z0-9_-]*\@[A-z0-9]+\.[A-z]+$/;</div><div class="line">	reg.test(email);</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> email = <span class="string">&quot;haohao_827@163.com&quot;</span>;</div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[A-z]+[A-z0-9_-]*\@[A-z0-9]+\.[A-z]+$/</span>;</div><div class="line">alert(reg.test(email));</div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x56DB;&#x3001;js-&#x7684;&#x51FD;&#x6570;"><a href="#&#x56DB;&#x3001;js-&#x7684;&#x51FD;&#x6570;" class="headerlink" title="&#x56DB;&#x3001;js &#x7684;&#x51FD;&#x6570;"></a>&#x56DB;&#x3001;js &#x7684;&#x51FD;&#x6570;</h2><h3 id="1&#x3001;js-&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x5F0F;"><a href="#1&#x3001;js-&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x5F0F;" class="headerlink" title="1&#x3001;js &#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x5F0F;"></a>1&#x3001;js &#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x5F0F;</h3><h4 id="&#xFF08;1&#xFF09;&#x666E;&#x901A;&#x65B9;&#x5F0F;"><a href="#&#xFF08;1&#xFF09;&#x666E;&#x901A;&#x65B9;&#x5F0F;" class="headerlink" title="&#xFF08;1&#xFF09;&#x666E;&#x901A;&#x65B9;&#x5F0F;"></a>&#xFF08;1&#xFF09;&#x666E;&#x901A;&#x65B9;&#x5F0F;</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#x8BED;&#x6CD5;&#xFF1A;function &#x51FD;&#x6570;&#x540D;(&#x53C2;&#x6570;&#x5217;&#x8868;){&#x51FD;&#x6570;&#x4F53;}</div><div class="line">&#x793A;&#x4F8B;&#xFF1A;</div><div class="line">		function method(){</div><div class="line">			alert(&quot;xxx&quot;);</div><div class="line">		}</div><div class="line">		method();</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</div><div class="line">    </div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">method</span>(<span class="params"></span>)</span>{</div><div class="line">		alert(<span class="string">&quot;xxx&quot;</span>);</div><div class="line">	}</div><div class="line">	method();  </div><div class="line"></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></tbody></table></figure>
+<h4 id="&#xFF08;2&#xFF09;&#x533F;&#x540D;&#x51FD;&#x6570;"><a href="#&#xFF08;2&#xFF09;&#x533F;&#x540D;&#x51FD;&#x6570;" class="headerlink" title="&#xFF08;2&#xFF09;&#x533F;&#x540D;&#x51FD;&#x6570;"></a>&#xFF08;2&#xFF09;&#x533F;&#x540D;&#x51FD;&#x6570;</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#x8BED;&#x6CD5;&#xFF1A;function(&#x53C2;&#x6570;&#x5217;&#x8868;){&#x51FD;&#x6570;&#x4F53;}</div><div class="line">&#x793A;&#x4F8B;&#xFF1A;</div><div class="line">	var method = function(){</div><div class="line">		alert(&quot;yyy&quot;);</div><div class="line">	};</div><div class="line">	method();</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</div><div class="line"></div><div class="line">	<span class="comment">//&#x573A;&#x666F;&#x4E00;</span></div><div class="line">	<span class="keyword">var</span> method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">		alert(<span class="string">&quot;yyy&quot;</span>);</div><div class="line">	};</div><div class="line">	method(); </div><div class="line">	<span class="comment">//&#x573A;&#x666F;&#x4E8C;&#xFF0C;&#x533F;&#x540D;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x6B64;&#x60C5;&#x666F;&#x8F83;&#x4E3A;&#x5E38;&#x89C1;&#xFF0C;&#x591A;&#x7528;&#x4E8E;&#x5B9A;&#x65F6;&#x5668;</span></div><div class="line">	fun(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{},<span class="number">5</span>);</div><div class="line">	</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></tbody></table></figure>
+<h4 id="&#xFF08;3&#xFF09;&#x5BF9;&#x8C61;&#x51FD;&#x6570;"><a href="#&#xFF08;3&#xFF09;&#x5BF9;&#x8C61;&#x51FD;&#x6570;" class="headerlink" title="&#xFF08;3&#xFF09;&#x5BF9;&#x8C61;&#x51FD;&#x6570;"></a>&#xFF08;3&#xFF09;&#x5BF9;&#x8C61;&#x51FD;&#x6570;</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#x8BED;&#x6CD5;&#xFF1A;new Function(&#x53C2;&#x6570;1,&#x53C2;&#x6570;2,...,&#x51FD;&#x6570;&#x4F53;);</div><div class="line">&#x6CE8;&#x610F;&#xFF1A;&#x53C2;&#x6570;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x3001;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x662F;&#x51FD;&#x6570;&#x4F53;&#x4E14;&#x51FD;&#x6570;&#x4F53;&#x9700;&#x8981;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;</div><div class="line">&#x793A;&#x4F8B;&#xFF1A;</div><div class="line">	var fn = new Function(&quot;a&quot;,&quot;b&quot;,&quot;alert(a+b)&quot;);</div><div class="line">	fn(2,5);</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</div><div class="line">    </div><div class="line">	<span class="keyword">var</span> fn = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;alert(a+b)&quot;</span>);</div><div class="line">	fn(<span class="number">2</span>,<span class="number">5</span>);</div><div class="line"></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></tbody></table></figure>
+<h3 id="2&#x3001;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;"><a href="#2&#x3001;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;" class="headerlink" title="2&#x3001;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;"></a>2&#x3001;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(1)&#x5F62;&#x53C2;&#x6CA1;&#x6709;var&#x53BB;&#x4FEE;&#x9970;</div><div class="line">(2)&#x5F62;&#x53C2;&#x548C;&#x5B9E;&#x53C2;&#x4E2A;&#x6570;&#x4E0D;&#x4E00;&#x5B9A;&#x76F8;&#x7B49;</div><div class="line">(3)arguments&#x5BF9;&#x8C61; &#x662F;&#x4E2A;&#x6570;&#x7EC4; &#x4F1A;&#x5C06;&#x4F20;&#x9012;&#x7684;&#x5B9E;&#x53C2;&#x8FDB;&#x884C;&#x5C01;&#x88C5;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</div><div class="line">    </div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a,b,c</span>)</span>{</div><div class="line">		<span class="keyword">var</span> sum = a+b+c;</div><div class="line">		alert(sum);</div><div class="line">		<span class="comment">//arguments&#x662F;&#x4E2A;&#x6570;&#x7EC4; &#x4F1A;&#x5C06;&#x4F20;&#x9012;&#x7684;&#x5B9E;&#x53C2;&#x8FDB;&#x884C;&#x5C01;&#x88C5;</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="built_in">arguments</span>.length;i++){</div><div class="line">			alert(<span class="built_in">arguments</span>[i]);</div><div class="line">		}</div><div class="line">	}</div><div class="line">	fn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">8</span>);  <span class="comment">//&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;&#x4F9D;&#x6B21;&#x5F39;&#x51FA; 7   1 2 4 8</span></div><div class="line"></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="3&#x3001;&#x8FD4;&#x56DE;&#x503C;"><a href="#3&#x3001;&#x8FD4;&#x56DE;&#x503C;" class="headerlink" title="3&#x3001;&#x8FD4;&#x56DE;&#x503C;"></a>3&#x3001;&#x8FD4;&#x56DE;&#x503C;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(1)&#x5728;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x5FC5;&#x8868;&#x660E;&#x662F;&#x5426;&#x5177;&#x6709;&#x8FD4;&#x56DE;&#x503C;</div><div class="line">(2)&#x8FD4;&#x56DE;&#x503C;&#x4EC5;&#x4EC5;&#x901A;&#x8FC7;return&#x5173;&#x952E;&#x5B57;&#x5C31;&#x53EF;&#x4EE5;&#x4E86; return&#x540E;&#x7684;&#x4EE3;&#x7801;&#x4E0D;&#x6267;&#x884C;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</div><div class="line">    </div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a,b</span>)</span>{</div><div class="line">		<span class="keyword">return</span> a+b;</div><div class="line">	}</div><div class="line">	alert(fn(<span class="number">2</span>,<span class="number">3</span>)); </div><div class="line"></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></tbody></table></figure>
+<h3 id="4&#x3001;js-&#x7684;&#x5168;&#x5C40;&#x51FD;&#x6570;"><a href="#4&#x3001;js-&#x7684;&#x5168;&#x5C40;&#x51FD;&#x6570;" class="headerlink" title="4&#x3001;js &#x7684;&#x5168;&#x5C40;&#x51FD;&#x6570;"></a>4&#x3001;js &#x7684;&#x5168;&#x5C40;&#x51FD;&#x6570;</h3><h4 id="&#xFF08;1&#xFF09;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;"><a href="#&#xFF08;1&#xFF09;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;" class="headerlink" title="&#xFF08;1&#xFF09;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;"></a>&#xFF08;1&#xFF09;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">encodeURI()   decodeURI()</div><div class="line">encodeURIComponet()	  decodeURIComponent()</div><div class="line">escape()	unescape()</div><div class="line">&#x4E09;&#x8005;&#x533A;&#x522B;&#xFF1A;</div><div class="line">	&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x7684;&#x7B26;&#x53F7;&#x8303;&#x56F4;&#x4E0D;&#x540C;&#xFF0C;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#x5E38;&#x4F7F;&#x7528;&#x7B2C;&#x4E00;&#x79CD;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> url = <span class="string">&quot;http://www.baidu.com?name=&#x5F20;&amp;password=123&quot;</span>;</div><div class="line">	</div><div class="line">	alert(<span class="built_in">encodeURI</span>(url));</div><div class="line">	<span class="comment">//http://www.baidu.com?name=%E5%BC%A0&amp;password=123</span></div><div class="line">	alert(<span class="built_in">encodeURIComponent</span>(url));</div><div class="line">	<span class="comment">//http%3A%2F%2Fwww.baidu.com%3Fname%3Dzhang%26password%3D123</span></div><div class="line">	alert(<span class="built_in">escape</span>(url));</div><div class="line">	<span class="comment">//http%3A//www.baidu.com%3Fname%3Dzhang%26password%3D123</span></div><div class="line"></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h4 id="&#xFF08;2&#xFF09;&#x5F3A;&#x5236;&#x8F6C;&#x6362;"><a href="#&#xFF08;2&#xFF09;&#x5F3A;&#x5236;&#x8F6C;&#x6362;" class="headerlink" title="&#xFF08;2&#xFF09;&#x5F3A;&#x5236;&#x8F6C;&#x6362;"></a>&#xFF08;2&#xFF09;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Number()</div><div class="line">String()</div><div class="line">Boolean()</div></pre></td></tr></tbody></table></figure>
+<h4 id="&#xFF08;3&#xFF09;&#x8F6C;&#x6210;&#x6570;&#x5B57;"><a href="#&#xFF08;3&#xFF09;&#x8F6C;&#x6210;&#x6570;&#x5B57;" class="headerlink" title="&#xFF08;3&#xFF09;&#x8F6C;&#x6210;&#x6570;&#x5B57;"></a>&#xFF08;3&#xFF09;&#x8F6C;&#x6210;&#x6570;&#x5B57;</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">parseInt()</div><div class="line">parseFloat()</div></pre></td></tr></tbody></table></figure>
+<h4 id="&#xFF08;4&#xFF09;eval-&#x65B9;&#x6CD5;"><a href="#&#xFF08;4&#xFF09;eval-&#x65B9;&#x6CD5;" class="headerlink" title="&#xFF08;4&#xFF09;eval() &#x65B9;&#x6CD5;"></a>&#xFF08;4&#xFF09;eval() &#x65B9;&#x6CD5;</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x5F53;&#x4F5C;&#x811A;&#x672C;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x8FD0;&#x884C;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> str = <span class="string">&quot;var a=2;var b=3;alert(a+b)&quot;</span>;</div><div class="line">	<span class="built_in">eval</span>(str);</div><div class="line"></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x4E94;&#x3001;js-&#x7684;&#x4E8B;&#x4EF6;"><a href="#&#x4E94;&#x3001;js-&#x7684;&#x4E8B;&#x4EF6;" class="headerlink" title="&#x4E94;&#x3001;js &#x7684;&#x4E8B;&#x4EF6;"></a>&#x4E94;&#x3001;js &#x7684;&#x4E8B;&#x4EF6;</h2><p>&#x4E8B;&#x4EF6;&#x3001;&#x4E8B;&#x4EF6;&#x6E90;&#x3001;&#x54CD;&#x5E94;&#x884C;&#x4E3A;</p>
+<h3 id="1&#x3001;js-&#x7684;&#x5E38;&#x7528;&#x4E8B;&#x4EF6;"><a href="#1&#x3001;js-&#x7684;&#x5E38;&#x7528;&#x4E8B;&#x4EF6;" class="headerlink" title="1&#x3001;js &#x7684;&#x5E38;&#x7528;&#x4E8B;&#x4EF6;"></a>1&#x3001;js &#x7684;&#x5E38;&#x7528;&#x4E8B;&#x4EF6;</h3><h4 id="onclick-&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;"><a href="#onclick-&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;" class="headerlink" title="onclick:&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;"></a>onclick:&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;</h4><h4 id="onchange-&#x57DF;&#x5185;&#x5BB9;&#x88AB;&#x6539;&#x53D8;&#x7684;&#x4E8B;&#x4EF6;"><a href="#onchange-&#x57DF;&#x5185;&#x5BB9;&#x88AB;&#x6539;&#x53D8;&#x7684;&#x4E8B;&#x4EF6;" class="headerlink" title="onchange:&#x57DF;&#x5185;&#x5BB9;&#x88AB;&#x6539;&#x53D8;&#x7684;&#x4E8B;&#x4EF6;"></a>onchange:&#x57DF;&#x5185;&#x5BB9;&#x88AB;&#x6539;&#x53D8;&#x7684;&#x4E8B;&#x4EF6;</h4><p>&#x9700;&#x6C42;&#xFF1A;&#x5B9E;&#x73B0;&#x4E8C;&#x7EA7;&#x8054;&#x52A8;</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;city&quot;</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;bj&quot;</span>&gt;</span>&#x5317;&#x4EAC;<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;tj&quot;</span>&gt;</span>&#x5929;&#x6D25;<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;sh&quot;</span>&gt;</span>&#x4E0A;&#x6D77;<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;area&quot;</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">option</span>&gt;</span>&#x6D77;&#x6DC0;<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">option</span>&gt;</span>&#x671D;&#x9633;<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">option</span>&gt;</span>&#x4E1C;&#x57CE;<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> select = <span class="built_in">document</span>.getElementById(<span class="string">&quot;city&quot;</span>);</div><div class="line">	select.onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">		<span class="keyword">var</span> optionVal = select.value;</div><div class="line">		<span class="keyword">switch</span>(optionVal){</div><div class="line">			<span class="keyword">case</span> <span class="string">&apos;bj&apos;</span>:</div><div class="line">				<span class="keyword">var</span> area = <span class="built_in">document</span>.getElementById(<span class="string">&quot;area&quot;</span>);</div><div class="line">				area.innerHTML = <span class="string">&quot;&lt;option&gt;&#x6D77;&#x6DC0;&lt;/option&gt;&lt;option&gt;&#x671D;&#x9633;&lt;/option&gt;&lt;option&gt;&#x4E1C;&#x57CE;&lt;/option&gt;&quot;</span>;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="string">&apos;tj&apos;</span>:</div><div class="line">				<span class="keyword">var</span> area = <span class="built_in">document</span>.getElementById(<span class="string">&quot;area&quot;</span>);</div><div class="line">				area.innerHTML = <span class="string">&quot;&lt;option&gt;&#x5357;&#x5F00;&lt;/option&gt;&lt;option&gt;&#x897F;&#x9752;&lt;/option&gt;&lt;option&gt;&#x6CB3;&#x897F;&lt;/option&gt;&quot;</span>;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="string">&apos;sh&apos;</span>:</div><div class="line">				<span class="keyword">var</span> area = <span class="built_in">document</span>.getElementById(<span class="string">&quot;area&quot;</span>);</div><div class="line">				area.innerHTML = <span class="string">&quot;&lt;option&gt;&#x6D66;&#x4E1C;&lt;/option&gt;&lt;option&gt;&#x6768;&#x6D66;&lt;/option&gt;&quot;</span>;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">default</span>:</div><div class="line">				alert(<span class="string">&quot;error&quot;</span>);</div><div class="line">		}</div><div class="line">	};</div><div class="line">	</div><div class="line">	</div><div class="line">	</div><div class="line">	</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line">	</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h4 id="onfoucus-&#x83B7;&#x5F97;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;-amp-amp-onblur-&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;"><a href="#onfoucus-&#x83B7;&#x5F97;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;-amp-amp-onblur-&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;" class="headerlink" title="onfoucus:&#x83B7;&#x5F97;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6; &amp;&amp; onblur:&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;"></a>onfoucus:&#x83B7;&#x5F97;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6; &amp;&amp; onblur:&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;</h4><p>&#x9700;&#x6C42;&#xFF1A;    &#x5F53;&#x8F93;&#x5165;&#x6846;&#x83B7;&#x5F97;&#x7126;&#x70B9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63D0;&#x793A;&#x8F93;&#x5165;&#x7684;&#x5185;&#x5BB9;&#x683C;&#x5F0F;</p>
+<p>&#x200B;        &#x5F53;&#x8F93;&#x5165;&#x6846;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63D0;&#x793A;&#x8F93;&#x5165;&#x6709;&#x8BEF;</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	</div><div class="line">	<span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;txt&quot;</span>&gt;</span>name<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;txt&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;action&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> txt = <span class="built_in">document</span>.getElementById(<span class="string">&quot;txt&quot;</span>);</div><div class="line">	txt.onfocus = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">		<span class="comment">//&#x53CB;&#x597D;&#x63D0;&#x793A;</span></div><div class="line">		<span class="keyword">var</span> span = <span class="built_in">document</span>.getElementById(<span class="string">&quot;action&quot;</span>);</div><div class="line">		span.innerHTML = <span class="string">&quot;&#x7528;&#x6237;&#x540D;&#x683C;&#x5F0F;&#x6700;&#x5C0F;8&#x4F4D;&quot;</span>;</div><div class="line">		span.style.color = <span class="string">&quot;green&quot;</span>;</div><div class="line">	};</div><div class="line">	txt.onblur = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">		<span class="comment">//&#x9519;&#x8BEF;&#x63D0;&#x793A;</span></div><div class="line">		<span class="keyword">var</span> span = <span class="built_in">document</span>.getElementById(<span class="string">&quot;action&quot;</span>);</div><div class="line">		span.innerHTML = <span class="string">&quot;&#x5BF9;&#x4E0D;&#x8D77; &#x683C;&#x5F0F;&#x4E0D;&#x6B63;&#x786E;&quot;</span>;</div><div class="line">		span.style.color = <span class="string">&quot;red&quot;</span>;</div><div class="line">	};</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h4 id="onmouseover-&#x9F20;&#x6807;&#x60AC;&#x6D6E;&#x7684;&#x4E8B;&#x4EF6;-amp-amp-onmouseout-&#x9F20;&#x6807;&#x79BB;&#x5F00;&#x7684;&#x4E8B;&#x4EF6;"><a href="#onmouseover-&#x9F20;&#x6807;&#x60AC;&#x6D6E;&#x7684;&#x4E8B;&#x4EF6;-amp-amp-onmouseout-&#x9F20;&#x6807;&#x79BB;&#x5F00;&#x7684;&#x4E8B;&#x4EF6;" class="headerlink" title="onmouseover:&#x9F20;&#x6807;&#x60AC;&#x6D6E;&#x7684;&#x4E8B;&#x4EF6; &amp;&amp; onmouseout:&#x9F20;&#x6807;&#x79BB;&#x5F00;&#x7684;&#x4E8B;&#x4EF6;"></a>onmouseover:&#x9F20;&#x6807;&#x60AC;&#x6D6E;&#x7684;&#x4E8B;&#x4EF6; &amp;&amp; onmouseout:&#x9F20;&#x6807;&#x79BB;&#x5F00;&#x7684;&#x4E8B;&#x4EF6;</h4><p>&#x9700;&#x6C42;&#xFF1A;div&#x5143;&#x7D20; &#x9F20;&#x6807;&#x79FB;&#x5165;&#x53D8;&#x4E3A;&#x7EFF;&#x8272; &#x79FB;&#x51FA;&#x6062;&#x590D;&#x539F;&#x8272;</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="undefined"></span></div><div class="line"></div><div class="line">	#d1{background-color: red;width:200px;height: 200px;}</div><div class="line">	</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;d1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">&quot;d1&quot;</span>);</div><div class="line">	div.onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">		<span class="keyword">this</span>.style.backgroundColor = <span class="string">&quot;green&quot;</span>;</div><div class="line">	};</div><div class="line">	div.onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">		<span class="keyword">this</span>.style.backgroundColor = <span class="string">&quot;red&quot;</span>;</div><div class="line">	};</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h4 id="onload-&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x7684;&#x4E8B;&#x4EF6;"><a href="#onload-&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x7684;&#x4E8B;&#x4EF6;" class="headerlink" title="onload:&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x7684;&#x4E8B;&#x4EF6;"></a>onload:&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x7684;&#x4E8B;&#x4EF6;</h4><p>&#x7B49;&#x5230;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x5728;&#x6267;&#x884C;onload&#x4E8B;&#x4EF6;&#x6240;&#x6307;&#x5411;&#x7684;&#x51FD;&#x6570;</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">	<span class="keyword">var</span> span = <span class="built_in">document</span>.getElementById(<span class="string">&quot;span&quot;</span>);</div><div class="line">	span.innerHTML = <span class="string">&quot;hello js&quot;</span>;</div><div class="line">}; </div><div class="line">    <span class="comment">//&#x5982;&#x679C;js&#x4EE3;&#x7801;&#x5199;&#x5728;&lt;/body&gt;&#x4E0B;&#x9762;&#xFF0C;&#x5219;&#x4E0D;&#x7528;&#x5199;&#xFF1A;window.onload = function(){};&#x76F4;&#x63A5;&#x5199;js&#x4EE3;&#x7801;&#x5373;&#x53EF;</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;span&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="2&#x3001;&#x4E8B;&#x4EF6;&#x7684;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><a href="#2&#x3001;&#x4E8B;&#x4EF6;&#x7684;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;" class="headerlink" title="2&#x3001;&#x4E8B;&#x4EF6;&#x7684;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"></a>2&#x3001;&#x4E8B;&#x4EF6;&#x7684;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</h3><h4 id="1-&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x90FD;&#x5185;&#x5D4C;&#x5230;html&#x6807;&#x7B7E;&#x4E2D;"><a href="#1-&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x90FD;&#x5185;&#x5D4C;&#x5230;html&#x6807;&#x7B7E;&#x4E2D;" class="headerlink" title="(1)&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x90FD;&#x5185;&#x5D4C;&#x5230;html&#x6807;&#x7B7E;&#x4E2D;"></a>(1)&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x90FD;&#x5185;&#x5D4C;&#x5230;html&#x6807;&#x7B7E;&#x4E2D;</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;button&quot;</span>  <span class="attr">onclick</span>=<span class="string">&quot;alert(&apos;xxx&apos;)&quot;</span>/&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h4 id="2-&#x5C06;&#x4E8B;&#x4EF6;&#x5185;&#x5D4C;&#x5230;html&#x4E2D;&#x800C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x7528;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5C01;&#x88C5;"><a href="#2-&#x5C06;&#x4E8B;&#x4EF6;&#x5185;&#x5D4C;&#x5230;html&#x4E2D;&#x800C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x7528;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5C01;&#x88C5;" class="headerlink" title="(2)&#x5C06;&#x4E8B;&#x4EF6;&#x5185;&#x5D4C;&#x5230;html&#x4E2D;&#x800C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x7528;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5C01;&#x88C5;"></a>(2)&#x5C06;&#x4E8B;&#x4EF6;&#x5185;&#x5D4C;&#x5230;html&#x4E2D;&#x800C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x7528;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5C01;&#x88C5;</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;fn()&quot;</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">    </div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{</div><div class="line">		alert(<span class="string">&quot;yyy&quot;</span>);</div><div class="line">	}</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h4 id="3-&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;-&#x4E0E;html&#x6807;&#x7B7E;&#x5B8C;&#x5168;&#x5206;&#x79BB;"><a href="#3-&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;-&#x4E0E;html&#x6807;&#x7B7E;&#x5B8C;&#x5168;&#x5206;&#x79BB;" class="headerlink" title="(3)&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A; &#x4E0E;html&#x6807;&#x7B7E;&#x5B8C;&#x5168;&#x5206;&#x79BB;"></a>(3)&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A; &#x4E0E;html&#x6807;&#x7B7E;&#x5B8C;&#x5168;&#x5206;&#x79BB;</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;button&quot;</span>/&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">&quot;btn&quot;</span>);</div><div class="line">	btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">		alert(<span class="string">&quot;zzz&quot;</span>);</div><div class="line">	};</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h4 id="this-&#x5173;&#x952E;&#x5B57;"><a href="#this-&#x5173;&#x952E;&#x5B57;" class="headerlink" title="this &#x5173;&#x952E;&#x5B57;"></a>this &#x5173;&#x952E;&#x5B57;</h4><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">name</span>=<span class="string">&quot;mybtn&quot;</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;button123&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;fn(this)&quot;</span>/&gt;</span></div><div class="line">	<span class="comment">&lt;!--this&#x7ECF;&#x8FC7;&#x4E8B;&#x4EF6;&#x7684;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#x7684;&#x662F;html&#x6807;&#x7B7E;&#x5BF9;&#x8C61;--&gt;</span></div><div class="line">    </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">obj</span>)</span>{</div><div class="line">		alert(obj.name);  <span class="comment">//obj&#x5305;&#x542B;&#x4E86;&#x4E0A;&#x9762;input&#x6807;&#x7B7E;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;</span></div><div class="line">	}</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="3&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;"><a href="#3&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;" class="headerlink" title="3&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;"></a>3&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;</div><div class="line">	IE&#xFF1A;window.event.returnValue = false;</div><div class="line">	W3c: &#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;.preventDefault();</div><div class="line">	//&#x8001;&#x7248;&#x672C;&#x7684;IE&#x4E0D;&#x9075;&#x5FAA;W3c&#x6807;&#x51C6;&#xFF0C;&#x65B0;&#x7248;&#x672C;IE&#x9075;&#x5FAA;W3c&#x6807;&#x51C6;</div><div class="line">&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;</div><div class="line">	&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x8FD4;&#x56DE;false&#x4E5F;&#x53EF;&#x4EE5;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</div><div class="line">	&#x793A;&#x4F8B;&#xFF1A;</div><div class="line">		&lt;a href=&quot;demo11.html&quot; onclick=&quot;return false&quot;&gt;&#x70B9;&#x51FB;&#x6211;&#x5427;&lt;/a&gt;</div></pre></td></tr></tbody></table></figure>
+<p>&#x65B9;&#x5F0F;&#x4E00;</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;demo11.html&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;fn(event)&quot;</span>&gt;</span>&#x70B9;&#x51FB;&#x6211;&#x5427;<span class="tag">&lt;/<span class="name">a</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">e</span>)</span>{</div><div class="line">		<span class="comment">//ie&#xFF1A;window.event.returnValue = false;</span></div><div class="line">		<span class="comment">//W3c&#xFF1A;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;.preventDefault();</span></div><div class="line">		<span class="comment">//W3c&#x6807;&#x51C6;</span></div><div class="line">		<span class="keyword">if</span>(e&amp;&amp;e.preventDefault){</div><div class="line">			alert(<span class="string">&quot;w3c&quot;</span>);</div><div class="line">			e.preventDefault();</div><div class="line">		<span class="comment">//IE&#x6807;&#x7B7E;</span></div><div class="line">		}<span class="keyword">else</span>{</div><div class="line">			alert(<span class="string">&quot;ie&quot;</span>);</div><div class="line">			<span class="built_in">window</span>.event.returnValue = <span class="literal">false</span>;</div><div class="line">		}</div><div class="line">	}</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<p>&#x65B9;&#x5F0F;&#x4E8C;</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;demo11.html&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;return false&quot;</span>&gt;</span>&#x70B9;&#x51FB;&#x6211;&#x5427;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="4&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x4F20;&#x64AD;"><a href="#4&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x4F20;&#x64AD;" class="headerlink" title="4&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x4F20;&#x64AD;"></a>4&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x4F20;&#x64AD;</h3><p>&#x63CF;&#x8FF0;&#xFF1A;&#x4F8B;&#x5982;&#x4E00;&#x4E2A;div&#x5305;&#x542B;&#x4E00;&#x4E2A;div&#xFF0C;&#x70B9;&#x51FB;&#x5185;&#x90E8;&#x7684;div&#xFF0C;&#x89E6;&#x53D1; &#x5185;&#x90E8;div &#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4E5F;&#x4F1A;&#x89E6;&#x53D1;&#x5916;&#x90E8;div&#x7ED1;&#x5B9A;&#x7684;&#x4E8B;&#x4EF6;&#xFF1B;&#x901A;&#x8FC7;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x4F20;&#x64AD;&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x907F;&#x514D;&#x8FD9;&#x4E00;&#x73B0;&#x8C61;&#x3002;</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">IE&#xFF1A;window.event.cancelBubble = true;</div><div class="line">W3c: &#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;.stopPropagation();</div><div class="line"></div><div class="line">if(e&amp;&amp;e.stopPropagation){</div><div class="line">	alert(&quot;w3c&quot;);</div><div class="line">	e.stopPropagation();</div><div class="line">//IE&#x6807;&#x7B7E;</div><div class="line">}else{</div><div class="line">	alert(&quot;ie&quot;);</div><div class="line">	window.event.cancelBubble = true;</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">onclick</span>=<span class="string">&quot;fn1()&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width:100px;height:100px;background-color: green;padding: 50px;&quot;</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">onclick</span>=<span class="string">&quot;fn2(event)&quot;</span>  <span class="attr">style</span>=<span class="string">&quot;width:100px;height:100px;background-color: red;&quot;</span>&gt;</span>xxxx<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>{</div><div class="line">	alert(<span class="string">&quot;fn1&quot;</span>);</div><div class="line">}</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">e</span>)</span>{</div><div class="line">	alert(<span class="string">&quot;fn2&quot;</span>);</div><div class="line">	<span class="comment">//&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x4F20;&#x64AD;</span></div><div class="line">	<span class="keyword">if</span>(e&amp;&amp;e.stopPropagation){</div><div class="line">			alert(<span class="string">&quot;w3c&quot;</span>);</div><div class="line">			e.stopPropagation();</div><div class="line">		<span class="comment">//IE&#x6807;&#x7B7E;</span></div><div class="line">		}<span class="keyword">else</span>{</div><div class="line">			alert(<span class="string">&quot;ie&quot;</span>);</div><div class="line">			<span class="built_in">window</span>.event.cancelBubble = <span class="literal">true</span>;</div><div class="line">	}</div><div class="line">	</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x516D;&#x3001;js-&#x7684;-bom"><a href="#&#x516D;&#x3001;js-&#x7684;-bom" class="headerlink" title="&#x516D;&#x3001;js &#x7684; bom"></a>&#x516D;&#x3001;js &#x7684; bom</h2><h3 id="&#xFF08;1&#xFF09;windows-&#x5BF9;&#x8C61;"><a href="#&#xFF08;1&#xFF09;windows-&#x5BF9;&#x8C61;" class="headerlink" title="&#xFF08;1&#xFF09;windows &#x5BF9;&#x8C61;"></a>&#xFF08;1&#xFF09;windows &#x5BF9;&#x8C61;</h3><h4 id="&#x5F39;&#x6846;&#x7684;&#x65B9;&#x6CD5;"><a href="#&#x5F39;&#x6846;&#x7684;&#x65B9;&#x6CD5;" class="headerlink" title="&#x5F39;&#x6846;&#x7684;&#x65B9;&#x6CD5;"></a>&#x5F39;&#x6846;&#x7684;&#x65B9;&#x6CD5;</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#x63D0;&#x793A;&#x6846;&#xFF1A;alert(&quot;&#x63D0;&#x793A;&#x4FE1;&#x606F;&quot;);</div><div class="line">&#x786E;&#x8BA4;&#x6846;&#xFF1A;confirm(&quot;&#x786E;&#x8BA4;&#x4FE1;&#x606F;&quot;);</div><div class="line">	&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF1A;&#x5982;&#x679C;&#x70B9;&#x51FB;&#x786E;&#x8BA4;&#x8FD4;&#x56DE;true  &#x5982;&#x679C;&#x70B9;&#x51FB;&#x53D6;&#x6D88; &#x8FD4;&#x56DE;false</div><div class="line">	var res = confirm(&quot;&#x60A8;&#x786E;&#x8BA4;&#x8981;&#x5220;&#x9664;&#x5417;&#xFF1F;&quot;);</div><div class="line">	alert(res);</div><div class="line">&#x8F93;&#x5165;&#x6846;&#xFF1A;prompt(&quot;&#x63D0;&#x793A;&#x4FE1;&#x606F;&quot;);</div><div class="line">	&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF1A;&#x5982;&#x679C;&#x70B9;&#x51FB;&#x786E;&#x8BA4;&#x8FD4;&#x56DE;&#x8F93;&#x5165;&#x6846;&#x7684;&#x6587;&#x672C; &#x70B9;&#x51FB;&#x53D6;&#x6D88;&#x8FD4;&#x56DE;null</div><div class="line">	var res =  prompt(&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF1F;&quot;);</div><div class="line">	alert(res);</div></pre></td></tr></tbody></table></figure>
+<h4 id="open&#x65B9;&#x6CD5;"><a href="#open&#x65B9;&#x6CD5;" class="headerlink" title="open&#x65B9;&#x6CD5;"></a>open&#x65B9;&#x6CD5;</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.open(&quot;url&#x5730;&#x5740;&quot;);	</div><div class="line">&#x4F8B;&#xFF1A;open(&quot;../jsCore/demo10.html&quot;);</div></pre></td></tr></tbody></table></figure>
+<h4 id="&#x5B9A;&#x65F6;&#x5668;"><a href="#&#x5B9A;&#x65F6;&#x5668;" class="headerlink" title="&#x5B9A;&#x65F6;&#x5668;"></a>&#x5B9A;&#x65F6;&#x5668;</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">setTimeout(&#x51FD;&#x6570;,&#x6BEB;&#x79D2;&#x503C;);  // &#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x540E;&#x8FD0;&#x884C;</div><div class="line">clearTimeout(&#x5B9A;&#x65F6;&#x5668;&#x7684;&#x540D;&#x79F0;); // &#x6E05;&#x9664;&#x5B9A;&#x65F6;&#x5668;</div><div class="line">setInterval(&#x51FD;&#x6570;,&#x6BEB;&#x79D2;&#x503C;); // &#x6BCF;&#x95F4;&#x9694;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x4E00;&#x6B21;</div><div class="line">clearInterval(&#x5B9A;&#x65F6;&#x5668;&#x7684;&#x540D;&#x79F0;); // &#x6E05;&#x9664;&#x5B9A;&#x65F6;&#x5668;</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line">	<span class="comment">/* setTimeout(</span></div><div class="line">		function(){</div><div class="line">			alert(&quot;xx&quot;);</div><div class="line">		},</div><div class="line">		3000</div><div class="line">	); */</div><div class="line">	</div><div class="line">	<span class="keyword">var</span> timer;</div><div class="line">	<span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{ <span class="comment">//&#x81EA;&#x5DF1;&#x505A;&#x7684;&#x9012;&#x5F52;</span></div><div class="line">		alert(<span class="string">&quot;x&quot;</span>);</div><div class="line">		timer = setTimeout(fn,<span class="number">2000</span>);</div><div class="line">	};</div><div class="line">	<span class="keyword">var</span> closer = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">		clearTimeout(timer);</div><div class="line">	};</div><div class="line">	fn();</div><div class="line">	</div><div class="line">	</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;closer()&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line">	<span class="keyword">var</span> timer = setInterval(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">			alert(<span class="string">&quot;nihao&quot;</span>);</div><div class="line">		},</div><div class="line">		<span class="number">2000</span></div><div class="line">	);</div><div class="line">	<span class="keyword">var</span> closer = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">		clearInterval(timer);</div><div class="line">	};</div><div class="line">	</div><div class="line">	</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;closer()&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<p>&#x9700;&#x6C42;&#xFF1A;&#x6CE8;&#x518C;&#x540E;5&#x79D2;&#x949F;&#x8DF3;&#x8F6C;&#x9996;&#x9875;</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> time = <span class="number">5</span>;</div><div class="line">	<span class="keyword">var</span> timer;</div><div class="line">	timer = setInterval(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</div><div class="line">			<span class="keyword">var</span> second = <span class="built_in">document</span>.getElementById(<span class="string">&quot;second&quot;</span>);</div><div class="line">			<span class="keyword">if</span>(time&gt;=<span class="number">1</span>){</div><div class="line">				second.innerHTML = time;</div><div class="line">				time--;</div><div class="line">			}<span class="keyword">else</span>{</div><div class="line">				clearInterval(timer);</div><div class="line">				location.href=<span class="string">&quot;../jsCore/demo10.html&quot;</span>;</div><div class="line">			}</div><div class="line">		},</div><div class="line">		<span class="number">1000</span></div><div class="line">	);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	&#x606D;&#x559C;&#x60A8;&#x6CE8;&#x518C;&#x6210;&#x529F;&#xFF0C;<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;second&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color: red;&quot;</span>&gt;</span>5<span class="tag">&lt;/<span class="name">span</span>&gt;</span>&#x79D2;&#x540E;&#x8DF3;&#x8F6C;&#x5230;&#x9996;&#x9875;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x8DF3;&#x8F6C;&#x8BF7;<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;../jsCore/demo10.html&quot;</span>&gt;</span>&#x70B9;&#x51FB;&#x8FD9;&#x91CC;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="&#xFF08;2&#xFF09;location"><a href="#&#xFF08;2&#xFF09;location" class="headerlink" title="&#xFF08;2&#xFF09;location"></a>&#xFF08;2&#xFF09;location</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href=&quot;url&#x5730;&#x5740;&quot;;</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#xFF08;3&#xFF09;history"><a href="#&#xFF08;3&#xFF09;history" class="headerlink" title="&#xFF08;3&#xFF09;history"></a>&#xFF08;3&#xFF09;history</h3><p><code>demo5.html</code></p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;demo6.html&quot;</span>&gt;</span>&#x540E;&#x4E00;&#x9875;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<p><code>deom6.html</code></p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;demo7.html&quot;</span>&gt;</span>&#x540E;&#x4E00;&#x9875;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#x4E0A;&#x4E00;&#x9875;&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;history.go(-1)&quot;</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#x4E0B;&#x4E00;&#x9875;&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;history.go(1)&quot;</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--&lt;input type=&quot;button&quot; value=&quot;&#x4E0A;&#x4E00;&#x9875;&quot; onclick=&quot;history.back()&quot;&gt;--&gt;</span></div><div class="line">    <span class="comment">&lt;!--&lt;input type=&quot;button&quot; value=&quot;&#x4E0B;&#x4E00;&#x9875;&quot; onclick=&quot;history.forward()&quot;&gt;--&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<p><code>demo7.html</code></p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	&#x7B2C;&#x4E03;&#x9875;</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x4E03;&#x3001;js-&#x7684;-dom"><a href="#&#x4E03;&#x3001;js-&#x7684;-dom" class="headerlink" title="&#x4E03;&#x3001;js &#x7684; dom"></a>&#x4E03;&#x3001;js &#x7684; dom</h2><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+      
+    </div>
+    
+    
+    
+
+    
+
+	
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------&#x672C;&#x6587;&#x7ED3;&#x675F;<i class="fa fa-paw"></i>&#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------</div>
+    
+</div>
+
+
+  
+    </div>
+	
+	
+	
+	
+	
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/25/htmlandcss/" rel="next" title="Html&#x3001;CSS">
+                <i class="fa fa-chevron-left"></i> Html&#x3001;CSS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/04/xmlfirst/" rel="prev" title="xml_dom4j">
+                xml_dom4j <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            &#x6587;&#x7AE0;&#x76EE;&#x5F55;
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            &#x7AD9;&#x70B9;&#x6982;&#x89C8;
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/myphoto.jpg" alt="&#x8D75;&#x5BA2;">
+            
+              <p class="site-author-name" itemprop="name">&#x8D75;&#x5BA2;</p>
+              <p class="site-description motion-element" itemprop="description">&#x6211;&#x4E0D;&#x662F;&#x8D24;&#x4EBA;&#x8C6A;&#x58EB;&#xFF0C;&#x6211;&#x53EA;&#x6709;&#x4E00;&#x8154;&#x70ED;&#x8840;&#x3002;</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">&#x65E5;&#x5FD7;</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">&#x5206;&#x7C7B;</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">&#x6807;&#x7B7E;</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xdady" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x4E00;&#x3001;-js-&#x7B80;&#x4ECB;"><span class="nav-number">1.</span> <span class="nav-text">&#x4E00;&#x3001; js &#x7B80;&#x4ECB;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1&#x3001;-js-&#x662F;&#x4EC0;&#x4E48;"><span class="nav-number">1.1.</span> <span class="nav-text">1&#x3001; js &#x662F;&#x4EC0;&#x4E48;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2&#x3001;js-&#x80FD;&#x505A;&#x4EC0;&#x4E48;"><span class="nav-number">1.2.</span> <span class="nav-text">2&#x3001;js &#x80FD;&#x505A;&#x4EC0;&#x4E48;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3&#x3001;js-&#x5386;&#x53F2;&#x53CA;&#x7EC4;&#x6210;"><span class="nav-number">1.3.</span> <span class="nav-text">3&#x3001;js &#x5386;&#x53F2;&#x53CA;&#x7EC4;&#x6210;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4&#x3001;-js-&#x5F15;&#x5165;&#x65B9;&#x5F0F;"><span class="nav-number">1.4.</span> <span class="nav-text">4&#x3001; js &#x5F15;&#x5165;&#x65B9;&#x5F0F;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#&#xFF08;1&#xFF09;&#x5185;&#x5D4C;&#x811A;&#x672C;"><span class="nav-number">1.4.1.</span> <span class="nav-text">&#xFF08;1&#xFF09;&#x5185;&#x5D4C;&#x811A;&#x672C;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#&#xFF08;2&#xFF09;&#x5185;&#x90E8;&#x811A;&#x672C;"><span class="nav-number">1.4.2.</span> <span class="nav-text">&#xFF08;2&#xFF09;&#x5185;&#x90E8;&#x811A;&#x672C;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#&#xFF08;3&#xFF09;&#x5916;&#x90E8;&#x811A;&#x672C;"><span class="nav-number">1.4.3.</span> <span class="nav-text">&#xFF08;3&#xFF09;&#x5916;&#x90E8;&#x811A;&#x672C;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js&#x4EE3;&#x7801;&#x653E;&#x5728;&#x54EA;&#xFF1F;"><span class="nav-number">1.5.</span> <span class="nav-text">js&#x4EE3;&#x7801;&#x653E;&#x5728;&#x54EA;&#xFF1F;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x4E8C;&#x3001;js-&#x57FA;&#x672C;&#x8BED;&#x6CD5;"><span class="nav-number">2.</span> <span class="nav-text">&#x4E8C;&#x3001;js &#x57FA;&#x672C;&#x8BED;&#x6CD5;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1&#x3001;&#x53D8;&#x91CF;"><span class="nav-number">2.1.</span> <span class="nav-text">1&#x3001;&#x53D8;&#x91CF;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2&#x3001;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;"><span class="nav-number">2.2.</span> <span class="nav-text">2&#x3001;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3&#x3001;&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;"><span class="nav-number">2.3.</span> <span class="nav-text">3&#x3001;&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4&#x3001;&#x8FD0;&#x7B97;&#x7B26;"><span class="nav-number">2.4.</span> <span class="nav-text">4&#x3001;&#x8FD0;&#x7B97;&#x7B26;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5&#x3001;&#x903B;&#x8F91;&#x8BED;&#x53E5;"><span class="nav-number">2.5.</span> <span class="nav-text">5&#x3001;&#x903B;&#x8F91;&#x8BED;&#x53E5;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x4E09;&#x3001;js-&#x5185;&#x7F6E;&#x5BF9;&#x8C61;"><span class="nav-number">3.</span> <span class="nav-text">&#x4E09;&#x3001;js &#x5185;&#x7F6E;&#x5BF9;&#x8C61;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#&#xFF08;1&#xFF09;Number"><span class="nav-number">3.1.</span> <span class="nav-text">&#xFF08;1&#xFF09;Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#xFF08;2&#xFF09;Boolean"><span class="nav-number">3.2.</span> <span class="nav-text">&#xFF08;2&#xFF09;Boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#xFF08;3&#xFF09;String"><span class="nav-number">3.3.</span> <span class="nav-text">&#xFF08;3&#xFF09;String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#xFF08;4&#xFF09;Array"><span class="nav-number">3.4.</span> <span class="nav-text">&#xFF08;4&#xFF09;Array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#xFF08;5&#xFF09;Date"><span class="nav-number">3.5.</span> <span class="nav-text">&#xFF08;5&#xFF09;Date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#xFF08;6&#xFF09;Math"><span class="nav-number">3.6.</span> <span class="nav-text">&#xFF08;6&#xFF09;Math</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#xFF08;7&#xFF09;RegExp"><span class="nav-number">3.7.</span> <span class="nav-text">&#xFF08;7&#xFF09;RegExp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x56DB;&#x3001;js-&#x7684;&#x51FD;&#x6570;"><span class="nav-number">4.</span> <span class="nav-text">&#x56DB;&#x3001;js &#x7684;&#x51FD;&#x6570;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1&#x3001;js-&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x5F0F;"><span class="nav-number">4.1.</span> <span class="nav-text">1&#x3001;js &#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x5F0F;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#&#xFF08;1&#xFF09;&#x666E;&#x901A;&#x65B9;&#x5F0F;"><span class="nav-number">4.1.1.</span> <span class="nav-text">&#xFF08;1&#xFF09;&#x666E;&#x901A;&#x65B9;&#x5F0F;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#&#xFF08;2&#xFF09;&#x533F;&#x540D;&#x51FD;&#x6570;"><span class="nav-number">4.1.2.</span> <span class="nav-text">&#xFF08;2&#xFF09;&#x533F;&#x540D;&#x51FD;&#x6570;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#&#xFF08;3&#xFF09;&#x5BF9;&#x8C61;&#x51FD;&#x6570;"><span class="nav-number">4.1.3.</span> <span class="nav-text">&#xFF08;3&#xFF09;&#x5BF9;&#x8C61;&#x51FD;&#x6570;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2&#x3001;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;"><span class="nav-number">4.2.</span> <span class="nav-text">2&#x3001;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3&#x3001;&#x8FD4;&#x56DE;&#x503C;"><span class="nav-number">4.3.</span> <span class="nav-text">3&#x3001;&#x8FD4;&#x56DE;&#x503C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4&#x3001;js-&#x7684;&#x5168;&#x5C40;&#x51FD;&#x6570;"><span class="nav-number">4.4.</span> <span class="nav-text">4&#x3001;js &#x7684;&#x5168;&#x5C40;&#x51FD;&#x6570;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#&#xFF08;1&#xFF09;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;"><span class="nav-number">4.4.1.</span> <span class="nav-text">&#xFF08;1&#xFF09;&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#&#xFF08;2&#xFF09;&#x5F3A;&#x5236;&#x8F6C;&#x6362;"><span class="nav-number">4.4.2.</span> <span class="nav-text">&#xFF08;2&#xFF09;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#&#xFF08;3&#xFF09;&#x8F6C;&#x6210;&#x6570;&#x5B57;"><span class="nav-number">4.4.3.</span> <span class="nav-text">&#xFF08;3&#xFF09;&#x8F6C;&#x6210;&#x6570;&#x5B57;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#&#xFF08;4&#xFF09;eval-&#x65B9;&#x6CD5;"><span class="nav-number">4.4.4.</span> <span class="nav-text">&#xFF08;4&#xFF09;eval() &#x65B9;&#x6CD5;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x4E94;&#x3001;js-&#x7684;&#x4E8B;&#x4EF6;"><span class="nav-number">5.</span> <span class="nav-text">&#x4E94;&#x3001;js &#x7684;&#x4E8B;&#x4EF6;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1&#x3001;js-&#x7684;&#x5E38;&#x7528;&#x4E8B;&#x4EF6;"><span class="nav-number">5.1.</span> <span class="nav-text">1&#x3001;js &#x7684;&#x5E38;&#x7528;&#x4E8B;&#x4EF6;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#onclick-&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;"><span class="nav-number">5.1.1.</span> <span class="nav-text">onclick:&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#onchange-&#x57DF;&#x5185;&#x5BB9;&#x88AB;&#x6539;&#x53D8;&#x7684;&#x4E8B;&#x4EF6;"><span class="nav-number">5.1.2.</span> <span class="nav-text">onchange:&#x57DF;&#x5185;&#x5BB9;&#x88AB;&#x6539;&#x53D8;&#x7684;&#x4E8B;&#x4EF6;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#onfoucus-&#x83B7;&#x5F97;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;-amp-amp-onblur-&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;"><span class="nav-number">5.1.3.</span> <span class="nav-text">onfoucus:&#x83B7;&#x5F97;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6; &amp;&amp; onblur:&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x4E8B;&#x4EF6;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#onmouseover-&#x9F20;&#x6807;&#x60AC;&#x6D6E;&#x7684;&#x4E8B;&#x4EF6;-amp-amp-onmouseout-&#x9F20;&#x6807;&#x79BB;&#x5F00;&#x7684;&#x4E8B;&#x4EF6;"><span class="nav-number">5.1.4.</span> <span class="nav-text">onmouseover:&#x9F20;&#x6807;&#x60AC;&#x6D6E;&#x7684;&#x4E8B;&#x4EF6; &amp;&amp; onmouseout:&#x9F20;&#x6807;&#x79BB;&#x5F00;&#x7684;&#x4E8B;&#x4EF6;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#onload-&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x7684;&#x4E8B;&#x4EF6;"><span class="nav-number">5.1.5.</span> <span class="nav-text">onload:&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;&#x7684;&#x4E8B;&#x4EF6;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2&#x3001;&#x4E8B;&#x4EF6;&#x7684;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><span class="nav-number">5.2.</span> <span class="nav-text">2&#x3001;&#x4E8B;&#x4EF6;&#x7684;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x90FD;&#x5185;&#x5D4C;&#x5230;html&#x6807;&#x7B7E;&#x4E2D;"><span class="nav-number">5.2.1.</span> <span class="nav-text">(1)&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x90FD;&#x5185;&#x5D4C;&#x5230;html&#x6807;&#x7B7E;&#x4E2D;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-&#x5C06;&#x4E8B;&#x4EF6;&#x5185;&#x5D4C;&#x5230;html&#x4E2D;&#x800C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x7528;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5C01;&#x88C5;"><span class="nav-number">5.2.2.</span> <span class="nav-text">(2)&#x5C06;&#x4E8B;&#x4EF6;&#x5185;&#x5D4C;&#x5230;html&#x4E2D;&#x800C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;&#x7528;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5C01;&#x88C5;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A;-&#x4E0E;html&#x6807;&#x7B7E;&#x5B8C;&#x5168;&#x5206;&#x79BB;"><span class="nav-number">5.2.3.</span> <span class="nav-text">(3)&#x5C06;&#x4E8B;&#x4EF6;&#x548C;&#x54CD;&#x5E94;&#x884C;&#x4E3A; &#x4E0E;html&#x6807;&#x7B7E;&#x5B8C;&#x5168;&#x5206;&#x79BB;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this-&#x5173;&#x952E;&#x5B57;"><span class="nav-number">5.2.4.</span> <span class="nav-text">this &#x5173;&#x952E;&#x5B57;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;"><span class="nav-number">5.3.</span> <span class="nav-text">3&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x4F20;&#x64AD;"><span class="nav-number">5.4.</span> <span class="nav-text">4&#x3001;&#x963B;&#x6B62;&#x4E8B;&#x4EF6;&#x7684;&#x4F20;&#x64AD;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x516D;&#x3001;js-&#x7684;-bom"><span class="nav-number">6.</span> <span class="nav-text">&#x516D;&#x3001;js &#x7684; bom</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#&#xFF08;1&#xFF09;windows-&#x5BF9;&#x8C61;"><span class="nav-number">6.1.</span> <span class="nav-text">&#xFF08;1&#xFF09;windows &#x5BF9;&#x8C61;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#&#x5F39;&#x6846;&#x7684;&#x65B9;&#x6CD5;"><span class="nav-number">6.1.1.</span> <span class="nav-text">&#x5F39;&#x6846;&#x7684;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#open&#x65B9;&#x6CD5;"><span class="nav-number">6.1.2.</span> <span class="nav-text">open&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#&#x5B9A;&#x65F6;&#x5668;"><span class="nav-number">6.1.3.</span> <span class="nav-text">&#x5B9A;&#x65F6;&#x5668;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#xFF08;2&#xFF09;location"><span class="nav-number">6.2.</span> <span class="nav-text">&#xFF08;2&#xFF09;location</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#xFF08;3&#xFF09;history"><span class="nav-number">6.3.</span> <span class="nav-text">&#xFF08;3&#xFF09;history</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x4E03;&#x3001;js-&#x7684;-dom"><span class="nav-number">7.</span> <span class="nav-text">&#x4E03;&#x3001;js &#x7684; dom</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&#xA9; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">&#x8D75;&#x5BA2;</span>
+
+  
+</div>
+
+
+  <div class="powered-by">&#x7531; <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> &#x5F3A;&#x529B;&#x9A71;&#x52A8;</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">&#x4E3B;&#x9898; &#x2014; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">&#x535A;&#x5BA2;&#x5168;&#x7AD9;&#x5171;53.9k&#x5B57;</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+  
+  <!--崩溃欺骗-->
+  <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script></body></html>

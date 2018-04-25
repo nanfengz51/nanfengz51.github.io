@@ -1,0 +1,862 @@
+<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-Hans"><head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="&#x53CD;&#x5C04;,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;#x5728;java&amp;#x4E2D;&amp;#xFF0C;&amp;#x53CD;&amp;#x5C04;&amp;#x662F;&amp;#x4E00;&amp;#x79CD;&amp;#x5341;&amp;#x5206;&amp;#x91CD;&amp;#x8981;&amp;#x7684;&amp;#x673A;&amp;#x5236;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#x53CD;&#x5C04;">
+<meta property="og:url" content="xdady.github.io/2017/04/03/reflect/index.html">
+<meta property="og:site_name" content="&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;">
+<meta property="og:description" content="&amp;#x5728;java&amp;#x4E2D;&amp;#xFF0C;&amp;#x53CD;&amp;#x5C04;&amp;#x662F;&amp;#x4E00;&amp;#x79CD;&amp;#x5341;&amp;#x5206;&amp;#x91CD;&amp;#x8981;&amp;#x7684;&amp;#x673A;&amp;#x5236;">
+<meta property="og:updated_time" content="2018-04-15T15:54:34.502Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&#x53CD;&#x5C04;">
+<meta name="twitter:description" content="&amp;#x5728;java&amp;#x4E2D;&amp;#xFF0C;&amp;#x53CD;&amp;#x5C04;&amp;#x662F;&amp;#x4E00;&amp;#x79CD;&amp;#x5341;&amp;#x5206;&amp;#x91CD;&amp;#x8981;&amp;#x7684;&amp;#x673A;&amp;#x5236;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="xdady.github.io/2017/04/03/reflect/">
+
+
+
+
+
+  <title>&#x53CD;&#x5C04; | &#x6D6E;&#x4E16;&#x5E7B;&#x60F3;</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/xdady" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            &#x9996;&#x9875;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            &#x5173;&#x4E8E;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            &#x6807;&#x7B7E;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            &#x5206;&#x7C7B;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            &#x5F52;&#x6863;
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="xdady.github.io/2017/04/03/reflect/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="&#x8D75;&#x5BA2;">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/myphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">&#x53CD;&#x5C04;</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x53D1;&#x8868;&#x4E8E;</span>
+              
+              <time title="&#x521B;&#x5EFA;&#x4E8E;" itemprop="dateCreated datePublished" datetime="2017-04-03T16:43:41+08:00">
+                2017-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x5206;&#x7C7B;&#x4E8E;</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java&#x57FA;&#x7840;/" itemprop="url" rel="index">
+                    <span itemprop="name">java&#x57FA;&#x7840;</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">&#x5B57;&#x6570;&#x7EDF;&#x8BA1;:</span>
+                
+                <span title="&#x5B57;&#x6570;&#x7EDF;&#x8BA1;">
+                  610
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">&#x9605;&#x8BFB;&#x65F6;&#x957F; &#x2248;</span>
+                
+                <span title="&#x9605;&#x8BFB;&#x65F6;&#x957F;">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x5728;java&#x4E2D;&#xFF0C;&#x53CD;&#x5C04;&#x662F;&#x4E00;&#x79CD;&#x5341;&#x5206;&#x91CD;&#x8981;&#x7684;&#x673A;&#x5236;</p>
+<a id="more"></a>
+<p><code>Person.java</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>{</div><div class="line">	</div><div class="line">	<span class="keyword">int</span> id;</div><div class="line">	String name;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(<span class="keyword">int</span> id,String name)</span></span>{</div><div class="line">		<span class="keyword">this</span>.id = id;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Person</span><span class="params">()</span></span>{</div><div class="line">		</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">(<span class="keyword">int</span> num)</span></span>{</div><div class="line">		System.out.println(name+<span class="string">&quot;&#x5403;&quot;</span>+num+<span class="string">&quot;&#x65A4;&#x996D;&quot;</span>);</div><div class="line">	}</div><div class="line">	</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">(<span class="keyword">int</span> num)</span></span>{</div><div class="line">		System.out.println(name+<span class="string">&quot;&#x660E;&#x5929;&#x7761;&quot;</span>+num+<span class="string">&quot;&#x5C0F;&#x65F6;&quot;</span>);</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>{</div><div class="line">		System.out.println(<span class="string">&quot;&#x957F;&#x5EA6;&#x662F;&#xFF1A;&quot;</span>+arr.length);</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>{</div><div class="line">		</div><div class="line">		<span class="keyword">return</span> <span class="string">&quot;&#x7F16;&#x53F7;&#xFF1A;&quot;</span>+<span class="keyword">this</span>.id+<span class="string">&quot;&#x59D3;&#x540D;&#xFF1A;&quot;</span>+<span class="keyword">this</span>.name;</div><div class="line">	}</div><div class="line">	</div><div class="line">	</div><div class="line"></div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x83B7;&#x53D6;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x5F0F;"><a href="#&#x83B7;&#x53D6;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x5F0F;" class="headerlink" title="&#x83B7;&#x53D6;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x5F0F;"></a>&#x83B7;&#x53D6;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x5F0F;</h2><h3 id="&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x83B7;&#x53D6;"><a href="#&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x83B7;&#x53D6;" class="headerlink" title="&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x83B7;&#x53D6;"></a>&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x83B7;&#x53D6;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Class clazz1 = <span class="keyword">new</span> Person(<span class="number">110</span>,<span class="string">&quot;&#x72D7;&#x5A03;&quot;</span>).getClass();</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x901A;&#x8FC7;&#x7C7B;&#x540D;&#x83B7;&#x53D6;"><a href="#&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x901A;&#x8FC7;&#x7C7B;&#x540D;&#x83B7;&#x53D6;" class="headerlink" title="&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x901A;&#x8FC7;&#x7C7B;&#x540D;&#x83B7;&#x53D6;"></a>&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x901A;&#x8FC7;&#x7C7B;&#x540D;&#x83B7;&#x53D6;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Class clazz2 = Person.class;</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x53EA;&#x8981;&#x901A;&#x8FC7;&#x7ED9;&#x5B9A;&#x7684;&#x7C7B;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x540D;&#x79F0;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;"><a href="#&#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x53EA;&#x8981;&#x901A;&#x8FC7;&#x7ED9;&#x5B9A;&#x7684;&#x7C7B;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x540D;&#x79F0;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;" class="headerlink" title="&#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x53EA;&#x8981;&#x901A;&#x8FC7;&#x7ED9;&#x5B9A;&#x7684;&#x7C7B;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x540D;&#x79F0;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;"></a>&#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x53EA;&#x8981;&#x901A;&#x8FC7;&#x7ED9;&#x5B9A;&#x7684;&#x7C7B;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x540D;&#x79F0;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Class clazz3 = Class.forName(<span class="string">&quot;cn.itcast.reflect.Person&quot;</span>);</div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x901A;&#x8FC7;Class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x6784;&#x9020;&#x65B9;&#x6CD5;"><a href="#&#x901A;&#x8FC7;Class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x6784;&#x9020;&#x65B9;&#x6CD5;" class="headerlink" title="&#x901A;&#x8FC7;Class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x6784;&#x9020;&#x65B9;&#x6CD5;"></a>&#x901A;&#x8FC7;Class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x6784;&#x9020;&#x65B9;&#x6CD5;</h2><h3 id="&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x6784;&#x9020;&#x65B9;&#x6CD5;"><a href="#&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x6784;&#x9020;&#x65B9;&#x6CD5;" class="headerlink" title="&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x6784;&#x9020;&#x65B9;&#x6CD5;"></a>&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x6784;&#x9020;&#x65B9;&#x6CD5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Constructor[] constructors = clazz.getConstructors();</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6784;&#x9020;&#x65B9;&#x6CD5;-&#x5305;&#x62EC;&#x79C1;&#x6709;&#x7684;&#x5728;&#x5185;"><a href="#&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6784;&#x9020;&#x65B9;&#x6CD5;-&#x5305;&#x62EC;&#x79C1;&#x6709;&#x7684;&#x5728;&#x5185;" class="headerlink" title="&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6784;&#x9020;&#x65B9;&#x6CD5; (&#x5305;&#x62EC;&#x79C1;&#x6709;&#x7684;&#x5728;&#x5185;)"></a>&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6784;&#x9020;&#x65B9;&#x6CD5; (&#x5305;&#x62EC;&#x79C1;&#x6709;&#x7684;&#x5728;&#x5185;)</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Constructor[] constructors= clazz.getDeclaredConstructors();</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;"><a href="#&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;" class="headerlink" title="&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;"></a>&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Constructor constructor= clazz.getConstructor(<span class="keyword">int</span>.class,String.class);</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#x521B;&#x5EFA;&#x5BF9;&#x8C61;"><a href="#&#x521B;&#x5EFA;&#x5BF9;&#x8C61;" class="headerlink" title="&#x521B;&#x5EFA;&#x5BF9;&#x8C61;"></a>&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Person p = (Person) constructor.newInstance(<span class="number">999</span>,<span class="string">&quot;&#x5C0F;&#x57CE;&quot;</span>);</div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x83B7;&#x53D6;&#x65B9;&#x6CD5;"><a href="#&#x83B7;&#x53D6;&#x65B9;&#x6CD5;" class="headerlink" title="&#x83B7;&#x53D6;&#x65B9;&#x6CD5;"></a>&#x83B7;&#x53D6;&#x65B9;&#x6CD5;</h2><h3 id="&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x65B9;&#x6CD5;"><a href="#&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x65B9;&#x6CD5;" class="headerlink" title="&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x65B9;&#x6CD5;"></a>&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x65B9;&#x6CD5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Method[] methods = clazz.getMethods();<span class="comment">//&#x5305;&#x542B;&#x6240;&#x6709;&#x516C;&#x5171;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5305;&#x542B;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="&#x83B7;&#x53D6;&#x6240;&#x6709;&#x65B9;&#x6CD5;"><a href="#&#x83B7;&#x53D6;&#x6240;&#x6709;&#x65B9;&#x6CD5;" class="headerlink" title="&#x83B7;&#x53D6;&#x6240;&#x6709;&#x65B9;&#x6CD5;"></a>&#x83B7;&#x53D6;&#x6240;&#x6709;&#x65B9;&#x6CD5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Method[] methods = clazz.getDeclaredMethods();<span class="comment">//&#x5305;&#x542B;&#x6240;&#x6709;&#x516C;&#x5171;&#x3001;&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x4E0D;&#x5305;&#x542B;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</span></div></pre></td></tr></tbody></table></figure>
+<h3 id="&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;"><a href="#&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;" class="headerlink" title="&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;"></a>&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Method method = clazz.getMethod(<span class="string">&quot;eat&quot;</span>, <span class="keyword">int</span>.class);</div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x6267;&#x884C;&#x65B9;&#x6CD5;"><a href="#&#x6267;&#x884C;&#x65B9;&#x6CD5;" class="headerlink" title="&#x6267;&#x884C;&#x65B9;&#x6CD5;"></a>&#x6267;&#x884C;&#x65B9;&#x6CD5;</h2><p>method.invoke(obj,args);</p>
+<p>&#x200B;    &#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x5BF9;&#x8C61;</p>
+<p>&#x200B;    &#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x65B9;&#x6CD5;&#x6240;&#x9700;&#x8981;&#x7684;&#x53C2;&#x6570;</p>
+<h3 id="&#x4E00;&#x822C;&#x60C5;&#x51B5;"><a href="#&#x4E00;&#x822C;&#x60C5;&#x51B5;" class="headerlink" title="&#x4E00;&#x822C;&#x60C5;&#x51B5;"></a>&#x4E00;&#x822C;&#x60C5;&#x51B5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">method.invoke(person, <span class="number">3</span>);</div></pre></td></tr></tbody></table></figure>
+<p>&#x5982;&#x679C;&#x662F;<strong>&#x9759;&#x6001;&#x65B9;&#x6CD5;</strong>&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;invoke&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;<code>null</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x5BF9;&#x8C61;</p>
+<h3 id="&#x6267;&#x884C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;"><a href="#&#x6267;&#x884C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;" class="headerlink" title="&#x6267;&#x884C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;"></a>&#x6267;&#x884C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&#x83B7;&#x53D6;&#x79C1;&#x6709;&#x65B9;&#x6CD5;</span></div><div class="line">Method method = clazz.getDeclaredMethod(<span class="string">&quot;sleep&quot;</span>, <span class="keyword">int</span>.class);</div><div class="line"><span class="comment">//&#x8BBE;&#x7F6E;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF0C;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;</span></div><div class="line">method.setAccessible(<span class="keyword">true</span>);</div><div class="line"><span class="comment">//&#x6267;&#x884C;</span></div><div class="line">method.invoke(person, <span class="number">6</span>);</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x4F5C;&#x53C2;&#x6570;"><a href="#&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x4F5C;&#x53C2;&#x6570;" class="headerlink" title="&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x4F5C;&#x53C2;&#x6570;"></a>&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x4F5C;&#x53C2;&#x6570;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Method method = clazz.getMethod(<span class="string">&quot;sum&quot;</span>, <span class="keyword">int</span>[].class);</div><div class="line">method.invoke(person,<span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">12</span>,<span class="number">5</span>,<span class="number">9</span>});</div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x83B7;&#x53D6;&#x6210;&#x5458;&#x53D8;&#x91CF;"><a href="#&#x83B7;&#x53D6;&#x6210;&#x5458;&#x53D8;&#x91CF;" class="headerlink" title="&#x83B7;&#x53D6;&#x6210;&#x5458;&#x53D8;&#x91CF;"></a>&#x83B7;&#x53D6;&#x6210;&#x5458;&#x53D8;&#x91CF;</h2><h3 id="&#x83B7;&#x53D6;&#x6240;&#x6709;&#x516C;&#x5171;&#x6210;&#x5458;&#x53D8;&#x91CF;"><a href="#&#x83B7;&#x53D6;&#x6240;&#x6709;&#x516C;&#x5171;&#x6210;&#x5458;&#x53D8;&#x91CF;" class="headerlink" title="&#x83B7;&#x53D6;&#x6240;&#x6709;&#x516C;&#x5171;&#x6210;&#x5458;&#x53D8;&#x91CF;"></a>&#x83B7;&#x53D6;&#x6240;&#x6709;&#x516C;&#x5171;&#x6210;&#x5458;&#x53D8;&#x91CF;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Field[] fields = clazz.getFields();</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#x83B7;&#x53D6;&#x6240;&#x6709;&#x6210;&#x5458;&#x53D8;&#x91CF;"><a href="#&#x83B7;&#x53D6;&#x6240;&#x6709;&#x6210;&#x5458;&#x53D8;&#x91CF;" class="headerlink" title="&#x83B7;&#x53D6;&#x6240;&#x6709;&#x6210;&#x5458;&#x53D8;&#x91CF;"></a>&#x83B7;&#x53D6;&#x6240;&#x6709;&#x6210;&#x5458;&#x53D8;&#x91CF;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Field[] fields = clazz.getDeclaredFields();</div></pre></td></tr></tbody></table></figure>
+<h3 id="&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6210;&#x5458;&#x53D8;&#x91CF;"><a href="#&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6210;&#x5458;&#x53D8;&#x91CF;" class="headerlink" title="&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6210;&#x5458;&#x53D8;&#x91CF;"></a>&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6210;&#x5458;&#x53D8;&#x91CF;</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Field[] field = clazz.getDeclaredField(<span class="string">&quot;id&quot;</span>);</div><div class="line"><span class="comment">//getField&#x53EA;&#x80FD;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x53EF;&#x8BBF;&#x95EE;&#x516C;&#x5171;&#x5B57;&#x6BB5;&#xFF0C;private&#x83B7;&#x53D6;&#x4E0D;&#x5230;</span></div><div class="line"><span class="comment">//getDeclaredField&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x516C;&#x5171;&#x5B57;&#x6BB5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x79C1;&#x6709;&#x5B57;&#x6BB5;</span></div></pre></td></tr></tbody></table></figure>
+<h2 id="&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x8D4B;&#x503C;"><a href="#&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x8D4B;&#x503C;" class="headerlink" title="&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x8D4B;&#x503C;"></a>&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x8D4B;&#x503C;</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*&#x82E5;&#x8BBF;&#x95EE;&#x79C1;&#x6709;&#x6210;&#x5458;&#x53D8;&#x91CF;</span></div><div class="line">field.setAccessible(true);//&#x8BBE;&#x7F6E;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF0C;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;*/</div><div class="line">field.set(person,<span class="number">110</span>);</div><div class="line">	<span class="comment">//&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8C03;&#x7528;&#x5BF9;&#x8C61;</span></div><div class="line">	<span class="comment">//&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x5C5E;&#x6027;&#x503C;</span></div></pre></td></tr></tbody></table></figure>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+      
+    </div>
+    
+    
+    
+
+    
+
+	
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------&#x672C;&#x6587;&#x7ED3;&#x675F;<i class="fa fa-paw"></i>&#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------</div>
+    
+</div>
+
+
+  
+    </div>
+	
+	
+	
+	
+	
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/&#x53CD;&#x5C04;/" rel="tag"><i class="fa fa-tag"></i> &#x53CD;&#x5C04;</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/02/Throwable/" rel="next" title="&#x5F02;&#x5E38;">
+                <i class="fa fa-chevron-left"></i> &#x5F02;&#x5E38;
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/15/test/" rel="prev" title="&#x6D4B;&#x8BD5;markdown&#x8BED;&#x6CD5;&#x517C;&#x5BB9;&#x6027;">
+                &#x6D4B;&#x8BD5;markdown&#x8BED;&#x6CD5;&#x517C;&#x5BB9;&#x6027; <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            &#x6587;&#x7AE0;&#x76EE;&#x5F55;
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            &#x7AD9;&#x70B9;&#x6982;&#x89C8;
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/myphoto.jpg" alt="&#x8D75;&#x5BA2;">
+            
+              <p class="site-author-name" itemprop="name">&#x8D75;&#x5BA2;</p>
+              <p class="site-description motion-element" itemprop="description">&#x6211;&#x4E0D;&#x662F;&#x8D24;&#x4EBA;&#x8C6A;&#x58EB;&#xFF0C;&#x6211;&#x53EA;&#x6709;&#x4E00;&#x8154;&#x70ED;&#x8840;&#x3002;</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">&#x65E5;&#x5FD7;</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">&#x5206;&#x7C7B;</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">&#x6807;&#x7B7E;</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xdady" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x5F0F;"><span class="nav-number">1.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x5F0F;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x83B7;&#x53D6;"><span class="nav-number">1.1.</span> <span class="nav-text">&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x83B7;&#x53D6;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x901A;&#x8FC7;&#x7C7B;&#x540D;&#x83B7;&#x53D6;"><span class="nav-number">1.2.</span> <span class="nav-text">&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x901A;&#x8FC7;&#x7C7B;&#x540D;&#x83B7;&#x53D6;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x53EA;&#x8981;&#x901A;&#x8FC7;&#x7ED9;&#x5B9A;&#x7684;&#x7C7B;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x540D;&#x79F0;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;"><span class="nav-number">1.3.</span> <span class="nav-text">&#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x53EA;&#x8981;&#x901A;&#x8FC7;&#x7ED9;&#x5B9A;&#x7684;&#x7C7B;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x540D;&#x79F0;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x901A;&#x8FC7;Class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x6784;&#x9020;&#x65B9;&#x6CD5;"><span class="nav-number">2.</span> <span class="nav-text">&#x901A;&#x8FC7;Class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x6784;&#x9020;&#x65B9;&#x6CD5;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x6784;&#x9020;&#x65B9;&#x6CD5;"><span class="nav-number">2.1.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x6784;&#x9020;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6784;&#x9020;&#x65B9;&#x6CD5;-&#x5305;&#x62EC;&#x79C1;&#x6709;&#x7684;&#x5728;&#x5185;"><span class="nav-number">2.2.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6784;&#x9020;&#x65B9;&#x6CD5; (&#x5305;&#x62EC;&#x79C1;&#x6709;&#x7684;&#x5728;&#x5185;)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;"><span class="nav-number">2.3.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x521B;&#x5EFA;&#x5BF9;&#x8C61;"><span class="nav-number">2.4.</span> <span class="nav-text">&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x65B9;&#x6CD5;"><span class="nav-number">3.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x65B9;&#x6CD5;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x65B9;&#x6CD5;"><span class="nav-number">3.1.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x516C;&#x5171;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x6240;&#x6709;&#x65B9;&#x6CD5;"><span class="nav-number">3.2.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x6240;&#x6709;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;"><span class="nav-number">3.3.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x6267;&#x884C;&#x65B9;&#x6CD5;"><span class="nav-number">4.</span> <span class="nav-text">&#x6267;&#x884C;&#x65B9;&#x6CD5;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x4E00;&#x822C;&#x60C5;&#x51B5;"><span class="nav-number">4.1.</span> <span class="nav-text">&#x4E00;&#x822C;&#x60C5;&#x51B5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x6267;&#x884C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;"><span class="nav-number">4.2.</span> <span class="nav-text">&#x6267;&#x884C;&#x79C1;&#x6709;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x4F5C;&#x53C2;&#x6570;"><span class="nav-number">4.3.</span> <span class="nav-text">&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x4F5C;&#x53C2;&#x6570;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x6210;&#x5458;&#x53D8;&#x91CF;"><span class="nav-number">5.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x6210;&#x5458;&#x53D8;&#x91CF;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x6240;&#x6709;&#x516C;&#x5171;&#x6210;&#x5458;&#x53D8;&#x91CF;"><span class="nav-number">5.1.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x6240;&#x6709;&#x516C;&#x5171;&#x6210;&#x5458;&#x53D8;&#x91CF;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x6240;&#x6709;&#x6210;&#x5458;&#x53D8;&#x91CF;"><span class="nav-number">5.2.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x6240;&#x6709;&#x6210;&#x5458;&#x53D8;&#x91CF;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6210;&#x5458;&#x53D8;&#x91CF;"><span class="nav-number">5.3.</span> <span class="nav-text">&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x6210;&#x5458;&#x53D8;&#x91CF;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x8D4B;&#x503C;"><span class="nav-number">6.</span> <span class="nav-text">&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x8D4B;&#x503C;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&#xA9; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">&#x8D75;&#x5BA2;</span>
+
+  
+</div>
+
+
+  <div class="powered-by">&#x7531; <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> &#x5F3A;&#x529B;&#x9A71;&#x52A8;</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">&#x4E3B;&#x9898; &#x2014; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">&#x535A;&#x5BA2;&#x5168;&#x7AD9;&#x5171;53.9k&#x5B57;</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+  
+  <!--崩溃欺骗-->
+  <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script></body></html>

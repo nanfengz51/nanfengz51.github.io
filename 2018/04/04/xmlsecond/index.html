@@ -1,0 +1,913 @@
+<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-Hans"><head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="xml,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E86;XML&amp;#x7684;&amp;#x89E3;&amp;#x6790;&amp;#x65B9;&amp;#x5F0F;&amp;#x3001;&amp;#x89E3;&amp;#x6790;&amp;#x5668;&amp;#xFF0C;&amp;#x4EE5;&amp;#x53CA;SAX&amp;#x89E3;&amp;#x6790;&amp;#x65B9;&amp;#x5F0F;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xml&#x89E3;&#x6790;&#x65B9;&#x5F0F;">
+<meta property="og:url" content="xdady.github.io/2018/04/04/xmlsecond/index.html">
+<meta property="og:site_name" content="&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;">
+<meta property="og:description" content="&amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E86;XML&amp;#x7684;&amp;#x89E3;&amp;#x6790;&amp;#x65B9;&amp;#x5F0F;&amp;#x3001;&amp;#x89E3;&amp;#x6790;&amp;#x5668;&amp;#xFF0C;&amp;#x4EE5;&amp;#x53CA;SAX&amp;#x89E3;&amp;#x6790;&amp;#x65B9;&amp;#x5F0F;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#">
+<meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804051011_903.png">
+<meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804051041_757.png">
+<meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804041801_814.png">
+<meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804041807_554.png">
+<meta property="og:updated_time" content="2018-04-05T05:37:12.903Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xml&#x89E3;&#x6790;&#x65B9;&#x5F0F;">
+<meta name="twitter:description" content="&amp;#x672C;&amp;#x6587;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E86;XML&amp;#x7684;&amp;#x89E3;&amp;#x6790;&amp;#x65B9;&amp;#x5F0F;&amp;#x3001;&amp;#x89E3;&amp;#x6790;&amp;#x5668;&amp;#xFF0C;&amp;#x4EE5;&amp;#x53CA;SAX&amp;#x89E3;&amp;#x6790;&amp;#x65B9;&amp;#x5F0F;&amp;#x7684;&amp;#x4F7F;&amp;#x7528;&amp;#">
+<meta name="twitter:image" content="http://p5zjpoxly.bkt.clouddn.com/201804051011_903.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="xdady.github.io/2018/04/04/xmlsecond/">
+
+
+
+
+
+  <title>xml&#x89E3;&#x6790;&#x65B9;&#x5F0F; | &#x6D6E;&#x4E16;&#x5E7B;&#x60F3;</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/xdady" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            &#x9996;&#x9875;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            &#x5173;&#x4E8E;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            &#x6807;&#x7B7E;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            &#x5206;&#x7C7B;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            &#x5F52;&#x6863;
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="xdady.github.io/2018/04/04/xmlsecond/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="&#x8D75;&#x5BA2;">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/myphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">xml&#x89E3;&#x6790;&#x65B9;&#x5F0F;</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x53D1;&#x8868;&#x4E8E;</span>
+              
+              <time title="&#x521B;&#x5EFA;&#x4E8E;" itemprop="dateCreated datePublished" datetime="2018-04-04T23:46:24+08:00">
+                2018-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x5206;&#x7C7B;&#x4E8E;</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb&#x57FA;&#x7840;/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb&#x57FA;&#x7840;</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">&#x5B57;&#x6570;&#x7EDF;&#x8BA1;:</span>
+                
+                <span title="&#x5B57;&#x6570;&#x7EDF;&#x8BA1;">
+                  2,912
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">&#x9605;&#x8BFB;&#x65F6;&#x957F; &#x2248;</span>
+                
+                <span title="&#x9605;&#x8BFB;&#x65F6;&#x957F;">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x672C;&#x6587;&#x4ECB;&#x7ECD;&#x4E86;XML&#x7684;&#x89E3;&#x6790;&#x65B9;&#x5F0F;&#x3001;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x4EE5;&#x53CA;SAX&#x89E3;&#x6790;&#x65B9;&#x5F0F;&#x7684;&#x4F7F;&#x7528;&#x6848;&#x4F8B;&#xFF0C;Jaxp&#x89E3;&#x6790;&#x5668;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x3002;</p>
+<a id="more"></a>
+<p>&#x63A8;&#x8350;&#x9605;&#x8BFB;&#xFF1A;</p>
+<p>&#x200B;        day11&#x2013;xml&amp;&#x53CD;&#x5C04;.pdf </p>
+<p>&#x200B;        &#x5305;&#x542B;DTD&#x7EA6;&#x675F;&#x3001;Schema&#x7EA6;&#x675F;&#x7684;&#x8BE6;&#x7EC6;&#x8BB2;&#x89E3;</p>
+<h2 id="&#x89E3;&#x6790;&#x65B9;&#x5F0F;"><a href="#&#x89E3;&#x6790;&#x65B9;&#x5F0F;" class="headerlink" title="&#x89E3;&#x6790;&#x65B9;&#x5F0F;"></a>&#x89E3;&#x6790;&#x65B9;&#x5F0F;</h2><p>&#x5F00;&#x53D1;&#x4E2D;&#x6BD4;&#x8F83;&#x5E38;&#x89C1;&#x7684;&#x89E3;&#x6790;&#x65B9;&#x5F0F;&#x6709;&#x4E09;&#x79CD;,&#x5982;&#x4E0B;:</p>
+<ul>
+<li><p>DOM:&#x8981;&#x6C42;&#x89E3;&#x6790;&#x5668;&#x628A;&#x6574;&#x4E2A;XML&#x6587;&#x6863;&#x88C5;&#x8F7D;&#x5230;&#x5185;&#x5B58;,&#x5E76;&#x89E3;&#x6790;&#x6210;&#x4E00;&#x4E2A;Document&#x5BF9;&#x8C61;&#x3002;</p>
+<p>a)&#x4F18;&#x70B9;:&#x5143;&#x7D20;&#x4E0E;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#x4FDD;&#x7559;&#x7ED3;&#x6784;&#x5173;&#x7CFB;,&#x6545;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>b)&#x7F3A;&#x70B9;:  XML&#x6587;&#x6863;&#x8FC7;&#x5927;,&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x663E;&#x73B0;&#x3002;</p>
+</li>
+<li><p>SAX:&#x662F;&#x4E00;&#x79CD;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;,&#x66F4;&#x6709;&#x6548;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5B83;&#x9010;&#x884C;&#x626B;&#x63CF;&#x6587;&#x6863;,&#x4E00;&#x8FB9;&#x626B;&#x63CF;&#x4E00;&#x8FB9;&#x89E3;&#x6790;&#x3002;&#x5E76;&#x4EE5;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x5177;&#x4F53;&#x89E3;&#x6790;,&#x6BCF;&#x6267;&#x884C;&#x4E00;&#x884C;,&#x90FD;&#x5C06;&#x89E6;&#x53D1;&#x5BF9;&#x5E94;&#x7684;&#x4E8B;&#x4EF6;&#x3002;(&#x4E86;&#x89E3;)</p>
+<p>a)&#x4F18;&#x70B9;:&#x5904;&#x7406;&#x901F;&#x5EA6;&#x5FEB;,&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x5927;&#x6587;&#x4EF6;</p>
+<p>b)&#x7F3A;&#x70B9;:&#x53EA;&#x80FD;&#x8BFB;,&#x9010;&#x884C;&#x540E;&#x5C06;&#x91CA;&#x653E;&#x8D44;&#x6E90;&#x3002;</p>
+</li>
+<li><p>PULL: Android&#x5185;&#x7F6E;&#x7684;XML&#x89E3;&#x6790;&#x65B9;&#x5F0F;,&#x7C7B;&#x4F3C;SAX  (&#x4E86;&#x89E3;)</p>
+</li>
+</ul>
+<h2 id="&#x89E3;&#x6790;&#x5668;"><a href="#&#x89E3;&#x6790;&#x5668;" class="headerlink" title="&#x89E3;&#x6790;&#x5668;"></a>&#x89E3;&#x6790;&#x5668;</h2><p>&#x5C31;&#x662F;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x89E3;&#x6790;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x3002;&#x6709;&#x7684;&#x89E3;&#x6790;&#x5668;&#x64CD;&#x4F5C;&#x8FC7;&#x4E8E;&#x7E41;&#x7410;&#xFF0C;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#xFF0C;&#x6709;&#x63D0;&#x4F9B;&#x6613;&#x4E8E;&#x64CD;&#x4F5C;&#x7684;&#x89E3;&#x6790;&#x5F00;&#x53D1;&#x5305;&#x3002;</p>
+<p><img src="http://p5zjpoxly.bkt.clouddn.com/201804051011_903.png" alt=""></p>
+<h3 id="&#x5E38;&#x89C1;&#x7684;&#x89E3;&#x6790;&#x5F00;&#x53D1;&#x5305;&#xFF1A;"><a href="#&#x5E38;&#x89C1;&#x7684;&#x89E3;&#x6790;&#x5F00;&#x53D1;&#x5305;&#xFF1A;" class="headerlink" title="&#x5E38;&#x89C1;&#x7684;&#x89E3;&#x6790;&#x5F00;&#x53D1;&#x5305;&#xFF1A;"></a>&#x5E38;&#x89C1;&#x7684;&#x89E3;&#x6790;&#x5F00;&#x53D1;&#x5305;&#xFF1A;</h3><ul>
+<li>JAXP&#xFF1A;sun&#x516C;&#x53F8;&#x63D0;&#x4F9B;&#x652F;&#x6301;DOM&#x548C;SAX&#x5F00;&#x53D1;&#x5305;</li>
+<li>JDom&#xFF1A;dom4j&#x5144;&#x5F1F;</li>
+<li>jsoup&#xFF1A;&#x4E00;&#x79CD;&#x5904;&#x7406;HTML&#x7279;&#x5B9A;&#x89E3;&#x6790;&#x5F00;&#x53D1;&#x5305;</li>
+<li>Dom4j&#xFF1A;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x89E3;&#x6790;&#x5F00;&#x53D1;&#x5305;&#xFF0C;hibernate&#x5E95;&#x5C42;&#x91C7;&#x7528;&#x3002;</li>
+</ul>
+<h2 id="SAX&#x89E3;&#x6790;&#x65B9;&#x5F0F;"><a href="#SAX&#x89E3;&#x6790;&#x65B9;&#x5F0F;" class="headerlink" title="SAX&#x89E3;&#x6790;&#x65B9;&#x5F0F;"></a>SAX&#x89E3;&#x6790;&#x65B9;&#x5F0F;</h2><h3 id="&#x5165;&#x95E8;&#x6848;&#x4F8B;"><a href="#&#x5165;&#x95E8;&#x6848;&#x4F8B;" class="headerlink" title="&#x5165;&#x95E8;&#x6848;&#x4F8B;"></a>&#x5165;&#x95E8;&#x6848;&#x4F8B;</h3><p><code>contact.xml</code></p>
+<div><div class="fold_hider"><div class="close hider_title">&#x70B9;&#x51FB;&#x663E;/&#x9690;&#x5185;&#x5BB9;</div></div><div class="fold">
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">contaList</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">contact</span> <span class="attr">id</span>=<span class="string">&quot;001&quot;</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>&#x5F20;&#x4E09;<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>20<span class="tag">&lt;/<span class="name">age</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">phone</span>&gt;</span>13222434<span class="tag">&lt;/<span class="name">phone</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">email</span>&gt;</span>zhangsan@qq.com<span class="tag">&lt;/<span class="name">email</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">qq</span>&gt;</span>2333333<span class="tag">&lt;/<span class="name">qq</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">contact</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">contact</span> <span class="attr">id</span>=<span class="string">&quot;002&quot;</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>lisi<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>23<span class="tag">&lt;/<span class="name">age</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">phone</span>&gt;</span>155222434<span class="tag">&lt;/<span class="name">phone</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">email</span>&gt;</span>lisi@qq.com<span class="tag">&lt;/<span class="name">email</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">qq</span>&gt;</span>2444444<span class="tag">&lt;/<span class="name">qq</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">contact</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">contaList</span>&gt;</span></div></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+</div></div>
+<p><code>Contact.java</code></p>
+<div><div class="fold_hider"><div class="close hider_title">&#x70B9;&#x51FB;&#x663E;/&#x9690;&#x5185;&#x5BB9;</div></div><div class="fold">
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.f_sax;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Contact</span> </span>{</div><div class="line">	<span class="keyword">private</span> String id;</div><div class="line">	<span class="keyword">private</span> String name;</div><div class="line">	<span class="keyword">private</span> String age;</div><div class="line">	<span class="keyword">private</span> String phone;</div><div class="line">	<span class="keyword">private</span> String email;</div><div class="line">	<span class="keyword">private</span> String qq;</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getId</span><span class="params">()</span> </span>{</div><div class="line">		<span class="keyword">return</span> id;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(String id)</span> </span>{</div><div class="line">		<span class="keyword">this</span>.id = id;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>{</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>{</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getAge</span><span class="params">()</span> </span>{</div><div class="line">		<span class="keyword">return</span> age;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(String age)</span> </span>{</div><div class="line">		<span class="keyword">this</span>.age = age;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getPhone</span><span class="params">()</span> </span>{</div><div class="line">		<span class="keyword">return</span> phone;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPhone</span><span class="params">(String phone)</span> </span>{</div><div class="line">		<span class="keyword">this</span>.phone = phone;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getEmail</span><span class="params">()</span> </span>{</div><div class="line">		<span class="keyword">return</span> email;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmail</span><span class="params">(String email)</span> </span>{</div><div class="line">		<span class="keyword">this</span>.email = email;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getQq</span><span class="params">()</span> </span>{</div><div class="line">		<span class="keyword">return</span> qq;</div><div class="line">	}</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setQq</span><span class="params">(String qq)</span> </span>{</div><div class="line">		<span class="keyword">this</span>.qq = qq;</div><div class="line">	}</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>{</div><div class="line">		<span class="keyword">return</span> <span class="string">&quot;Contact [age=&quot;</span> + age + <span class="string">&quot;, email=&quot;</span> + email + <span class="string">&quot;, id=&quot;</span> + id+ <span class="string">&quot;, name=&quot;</span> + name + <span class="string">&quot;,phone=&quot;</span> + phone + <span class="string">&quot;, qq=&quot;</span> + qq + <span class="string">&quot;]&quot;</span>; </div><div class="line">	}</div><div class="line">	</div><div class="line">}</div></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+</div></div>
+<p><code>Demo5.java</code></p>
+<div><div class="fold_hider"><div class="close hider_title">&#x70B9;&#x51FB;&#x663E;/&#x9690;&#x5185;&#x5BB9;</div></div><div class="fold">
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.f_sax;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.File;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.xml.parsers.SAXParser;</div><div class="line"><span class="keyword">import</span> javax.xml.parsers.SAXParserFactory;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * &#x7B2C;&#x4E00;&#x4E2A;SAX&#x8BFB;&#x53D6;xml&#x6587;&#x4EF6;&#x7A0B;&#x5E8F;</div><div class="line"> * <span class="doctag">@author</span> Yuanzhengjie</div><div class="line"> *</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo5</span> </span>{</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>{</div><div class="line">		<span class="comment">//1.&#x521B;&#x5EFA;SAXParser&#x5BF9;&#x8C61;</span></div><div class="line">		SAXParser parser = SAXParserFactory.newInstance().newSAXParser();</div><div class="line">		</div><div class="line">		<span class="comment">//2.&#x8C03;&#x7528;parse&#x65B9;&#x6CD5;</span></div><div class="line">		<span class="comment">/**</span></div><div class="line">		 * &#x53C2;&#x6570;&#x4E00;&#xFF1A; xml&#x6587;&#x6863;</div><div class="line">		 * &#x53C2;&#x6570;&#x4E8C;&#xFF1A; DefaultHandler&#x7684;&#x5B50;&#x7C7B;</div><div class="line">		 */</div><div class="line">		parser.parse(<span class="keyword">new</span> File(<span class="string">&quot;./src/contact.xml&quot;</span>), <span class="keyword">new</span> MyDefaultHandler());</div><div class="line">	}</div><div class="line"></div><div class="line">}</div></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+</div></div>
+<p><code>MyDefaultHandler.java</code></p>
+<div><div class="fold_hider"><div class="close hider_title">&#x70B9;&#x51FB;&#x663E;/&#x9690;&#x5185;&#x5BB9;</div></div><div class="fold">
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.f_sax;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.xml.sax.Attributes;</div><div class="line"><span class="keyword">import</span> org.xml.sax.SAXException;</div><div class="line"><span class="keyword">import</span> org.xml.sax.helpers.DefaultHandler;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * SAX&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF08;&#x5982;&#x4F55;&#x89E3;&#x6790;xml&#x6587;&#x6863;&#xFF09;</div><div class="line"> * <span class="doctag">@author</span> Yuanzhengjie</div><div class="line"> *</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDefaultHandler</span> <span class="keyword">extends</span> <span class="title">DefaultHandler</span> </span>{</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x5F00;&#x59CB;&#x6587;&#x6863;&#x65F6;&#x8C03;&#x7528;</div><div class="line">	 */</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startDocument</span><span class="params">()</span> <span class="keyword">throws</span> SAXException </span>{</div><div class="line">		System.out.println(<span class="string">&quot;MyDefaultHandler.startDocument()&quot;</span>);</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x5F00;&#x59CB;&#x6807;&#x7B7E;&#x65F6;&#x8C03;&#x7528;</div><div class="line">	 * <span class="doctag">@param</span> qName: &#x8868;&#x793A;&#x5F00;&#x59CB;&#x6807;&#x7B7E;&#x7684;&#x6807;&#x7B7E;&#x540D;</div><div class="line">	 * <span class="doctag">@param</span> attributes: &#x8868;&#x793A;&#x5F00;&#x59CB;&#x6807;&#x7B7E;&#x5185;&#x5305;&#x542B;&#x7684;&#x5C5E;&#x6027;&#x5217;&#x8868;</div><div class="line">	 */</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startElement</span><span class="params">(String uri, String localName, String qName,</span></span></div><div class="line">			Attributes attributes) <span class="keyword">throws</span> SAXException {</div><div class="line">		System.out.println(<span class="string">&quot;MyDefaultHandler.startElement()--&gt;&quot;</span>+qName);</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x7ED3;&#x675F;&#x6807;&#x7B7E;&#x65F6;&#x8C03;&#x7528;</div><div class="line">	 * <span class="doctag">@param</span> qName: &#x7ED3;&#x675F;&#x6807;&#x7B7E;&#x7684;&#x6807;&#x7B7E;&#x540D;&#x79F0;</div><div class="line">	 */</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endElement</span><span class="params">(String uri, String localName, String qName)</span></span></div><div class="line">			<span class="keyword">throws</span> SAXException {</div><div class="line">		System.out.println(<span class="string">&quot;MyDefaultHandler.endElement()--&gt;&quot;</span>+qName);</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x8BFB;&#x5230;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x7684;&#x65F6;&#x8C03;&#x7528;</div><div class="line">	 * <span class="doctag">@param</span> ch: &#x8868;&#x793A;&#x5F53;&#x524D;&#x8BFB;&#x5B8C;&#x7684;&#x6240;&#x6709;&#x6587;&#x672C;&#x5185;&#x5BB9;</div><div class="line">	 * <span class="doctag">@param</span> start&#xFF1A; &#x8868;&#x793A;&#x5F53;&#x524D;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;</div><div class="line">	 * <span class="doctag">@param</span> length: &#x8868;&#x793A;&#x5F53;&#x524D;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x7684;&#x957F;&#x5EA6;</div><div class="line">	 * char[]&#xFF08;                                       &#x5F20;&#x4E09;              20&#xFF09;   100</div><div class="line">	 *                              98 2   </div><div class="line">	 */ </div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">characters</span><span class="params">(<span class="keyword">char</span>[] ch, <span class="keyword">int</span> start, <span class="keyword">int</span> length)</span></span></div><div class="line">			<span class="keyword">throws</span> SAXException {</div><div class="line">		<span class="comment">//&#x5F97;&#x5230;&#x5F53;&#x524D;&#x6587;&#x672C;&#x5185;&#x5BB9;</span></div><div class="line">		String content = <span class="keyword">new</span> String(ch,start,length);</div><div class="line">		System.out.println(<span class="string">&quot;MyDefaultHandler.characters()--&gt;&quot;</span>+content);</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x7ED3;&#x675F;&#x6587;&#x6863;&#x65F6;&#x8C03;&#x7528;</div><div class="line">	 */</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endDocument</span><span class="params">()</span> <span class="keyword">throws</span> SAXException </span>{</div><div class="line">		System.out.println(<span class="string">&quot;MyDefaultHandler.endDocument()&quot;</span>);</div><div class="line">	}</div><div class="line">	</div><div class="line">	</div><div class="line">}</div></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+</div></div>
+<p><strong>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
+<p><img src="http://p5zjpoxly.bkt.clouddn.com/201804051041_757.png" alt=""></p>
+<h3 id="SAX&#x89E3;&#x6790;&#x4F7F;&#x7528;&#x6848;&#x4F8B;"><a href="#SAX&#x89E3;&#x6790;&#x4F7F;&#x7528;&#x6848;&#x4F8B;" class="headerlink" title="SAX&#x89E3;&#x6790;&#x4F7F;&#x7528;&#x6848;&#x4F8B;"></a>SAX&#x89E3;&#x6790;&#x4F7F;&#x7528;&#x6848;&#x4F8B;</h3><h4 id="&#x6848;&#x4F8B;&#x4E00;&#xFF1A;&#x8BFB;&#x53D6;contact-xml&#x6587;&#x4EF6;&#xFF0C;&#x5B8C;&#x6574;&#x8F93;&#x51FA;&#x6587;&#x6863;&#x5185;&#x5BB9;"><a href="#&#x6848;&#x4F8B;&#x4E00;&#xFF1A;&#x8BFB;&#x53D6;contact-xml&#x6587;&#x4EF6;&#xFF0C;&#x5B8C;&#x6574;&#x8F93;&#x51FA;&#x6587;&#x6863;&#x5185;&#x5BB9;" class="headerlink" title="&#x6848;&#x4F8B;&#x4E00;&#xFF1A;&#x8BFB;&#x53D6;contact.xml&#x6587;&#x4EF6;&#xFF0C;&#x5B8C;&#x6574;&#x8F93;&#x51FA;&#x6587;&#x6863;&#x5185;&#x5BB9;"></a>&#x6848;&#x4F8B;&#x4E00;&#xFF1A;&#x8BFB;&#x53D6;contact.xml&#x6587;&#x4EF6;&#xFF0C;&#x5B8C;&#x6574;&#x8F93;&#x51FA;&#x6587;&#x6863;&#x5185;&#x5BB9;</h4><p><code>Demo6/test1</code></p>
+<div><div class="fold_hider"><div class="close hider_title">&#x70B9;&#x51FB;&#x663E;/&#x9690;&#x5185;&#x5BB9;</div></div><div class="fold">
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.f_sax;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.File;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.xml.parsers.ParserConfigurationException;</div><div class="line"><span class="keyword">import</span> javax.xml.parsers.SAXParser;</div><div class="line"><span class="keyword">import</span> javax.xml.parsers.SAXParserFactory;</div><div class="line"><span class="keyword">import</span> org.junit.Test;</div><div class="line"><span class="keyword">import</span> org.xml.sax.SAXException;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> Yuanzhengjie</div><div class="line"> * </div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo6</span> </span>{</div><div class="line"></div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> <span class="keyword">throws</span> Exception, SAXException </span>{</div><div class="line"></div><div class="line">		<span class="comment">// 1.&#x521B;&#x5EFA;SAXParser</span></div><div class="line">		SAXParser parser = SAXParserFactory.newInstance().newSAXParser();</div><div class="line">		<span class="comment">// 2.&#x8BFB;&#x53D6;xml&#x6587;&#x4EF6;</span></div><div class="line">		MyDefaultHandler2 handler = <span class="keyword">new</span> MyDefaultHandler2();</div><div class="line">		parser.parse(<span class="keyword">new</span> File(<span class="string">&quot;./src/contact.xml&quot;</span>), handler);</div><div class="line">		String content = handler.getContent();</div><div class="line">		System.out.println(content);</div><div class="line"></div><div class="line">	}</div><div class="line"></div><div class="line"></div><div class="line">}</div></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+</div></div>
+<p><code>MyDefaultHandler2.java</code></p>
+<div><div class="fold_hider"><div class="close hider_title">&#x70B9;&#x51FB;&#x663E;/&#x9690;&#x5185;&#x5BB9;</div></div><div class="fold">
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.f_sax;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.xml.sax.Attributes;</div><div class="line"><span class="keyword">import</span> org.xml.sax.SAXException;</div><div class="line"><span class="keyword">import</span> org.xml.sax.helpers.DefaultHandler;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * SAX&#x5904;&#x7406;&#x5668;&#x7A0B;&#x5E8F;</div><div class="line"> * <span class="doctag">@author</span> APPle</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDefaultHandler2</span> <span class="keyword">extends</span> <span class="title">DefaultHandler</span> </span>{</div><div class="line">	</div><div class="line">	<span class="comment">//&#x5B58;&#x50A8;xml&#x6587;&#x6863;&#x4FE1;&#x606F;</span></div><div class="line">	<span class="keyword">private</span> StringBuffer sb = <span class="keyword">new</span> StringBuffer();</div><div class="line">	</div><div class="line">	<span class="comment">//&#x83B7;&#x53D6;xml&#x4FE1;&#x606F;</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span></span>{</div><div class="line">		<span class="keyword">return</span> sb.toString();</div><div class="line">	}</div><div class="line">	</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x5F00;&#x59CB;&#x6807;&#x7B7E;</div><div class="line">	 */</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startElement</span><span class="params">(String uri, String localName, String qName,Attributes attributes)</span> <span class="keyword">throws</span> SAXException </span>{</div><div class="line">		</div><div class="line">		sb.append(<span class="string">&quot;&lt;&quot;</span>+qName);</div><div class="line">		<span class="comment">//&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x5C5E;&#x6027;</span></div><div class="line">		<span class="keyword">if</span>(attributes!=<span class="keyword">null</span>){</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;attributes.getLength();i++){</div><div class="line">				<span class="comment">//&#x5F97;&#x5230;&#x5C5E;&#x6027;&#x540D;&#x79F0;</span></div><div class="line">				String attrName = attributes.getQName(i);</div><div class="line">				<span class="comment">//&#x5F97;&#x5230;&#x5C5E;&#x6027;&#x503C;</span></div><div class="line">				String attrValue = attributes.getValue(i);</div><div class="line">				sb.append(<span class="string">&quot; &quot;</span>+attrName+<span class="string">&quot;=\&quot;&quot;</span>+attrValue+<span class="string">&quot;\&quot;&quot;</span>);</div><div class="line">			}</div><div class="line">		}</div><div class="line">		sb.append(<span class="string">&quot;&gt;&quot;</span>);</div><div class="line">	}</div><div class="line">	</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x6587;&#x672C;&#x5185;&#x5BB9;</div><div class="line">	 */</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">characters</span><span class="params">(<span class="keyword">char</span>[] ch, <span class="keyword">int</span> start, <span class="keyword">int</span> length)</span></span></div><div class="line">			<span class="keyword">throws</span> SAXException {</div><div class="line">		<span class="comment">//&#x5F97;&#x5230;&#x5F53;&#x524D;&#x8BFB;&#x53D6;&#x7684;&#x6587;&#x672C;</span></div><div class="line">		String content = <span class="keyword">new</span> String(ch,start,length);</div><div class="line">		sb.append(content);</div><div class="line">	}</div><div class="line">	</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x7ED3;&#x675F;&#x6807;&#x7B7E;</div><div class="line">	 */</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endElement</span><span class="params">(String uri, String localName, String qName)</span></span></div><div class="line">			<span class="keyword">throws</span> SAXException {</div><div class="line">		sb.append(<span class="string">&quot;&lt;/&quot;</span>+qName+<span class="string">&quot;&gt;&quot;</span>);</div><div class="line">	}</div><div class="line">	</div><div class="line">	</div><div class="line">}</div></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+</div></div>
+<p><strong>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
+<p><img src="http://p5zjpoxly.bkt.clouddn.com/201804041801_814.png" alt=""></p>
+<h4 id="&#x6848;&#x4F8B;&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;sax&#x89E3;&#x6790;&#x628A;-xml&#x6587;&#x6863;&#x5C01;&#x88C5;&#x6210;&#x5BF9;&#x8C61;"><a href="#&#x6848;&#x4F8B;&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;sax&#x89E3;&#x6790;&#x628A;-xml&#x6587;&#x6863;&#x5C01;&#x88C5;&#x6210;&#x5BF9;&#x8C61;" class="headerlink" title="&#x6848;&#x4F8B;&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;sax&#x89E3;&#x6790;&#x628A; xml&#x6587;&#x6863;&#x5C01;&#x88C5;&#x6210;&#x5BF9;&#x8C61;"></a>&#x6848;&#x4F8B;&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;sax&#x89E3;&#x6790;&#x628A; xml&#x6587;&#x6863;&#x5C01;&#x88C5;&#x6210;&#x5BF9;&#x8C61;</h4><p><code>Dem6/test2</code></p>
+<div><div class="fold_hider"><div class="close hider_title">&#x70B9;&#x51FB;&#x663E;/&#x9690;&#x5185;&#x5BB9;</div></div><div class="fold">
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.f_sax;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.File;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.xml.parsers.ParserConfigurationException;</div><div class="line"><span class="keyword">import</span> javax.xml.parsers.SAXParser;</div><div class="line"><span class="keyword">import</span> javax.xml.parsers.SAXParserFactory;</div><div class="line"><span class="keyword">import</span> org.junit.Test;</div><div class="line"><span class="keyword">import</span> org.xml.sax.SAXException;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * SAX&#x89E3;&#x6790;&#x6848;&#x4F8B;</div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> Yuanzhengjie</div><div class="line"> * </div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo6</span> </span>{</div><div class="line"></div><div class="line"></div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span> <span class="keyword">throws</span> Exception, SAXException </span>{</div><div class="line"></div><div class="line">		SAXParser parser = SAXParserFactory.newInstance().newSAXParser();</div><div class="line">		MyDefaultHandler3 handler = <span class="keyword">new</span> MyDefaultHandler3();</div><div class="line">		parser.parse(<span class="keyword">new</span> File(<span class="string">&quot;./src/contact.xml&quot;</span>), handler);</div><div class="line">		List&lt;Contact&gt; list = handler.getList();</div><div class="line">		<span class="keyword">for</span> (Contact contact : list) {</div><div class="line">			System.out.println(contact);</div><div class="line">		}</div><div class="line"></div><div class="line">	}</div><div class="line"></div><div class="line">}</div></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+</div></div>
+<p><code>MyDefaultHandler3.java</code></p>
+<div><div class="fold_hider"><div class="close hider_title">&#x70B9;&#x51FB;&#x663E;/&#x9690;&#x5185;&#x5BB9;</div></div><div class="fold">
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.f_sax;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.xml.sax.Attributes;</div><div class="line"><span class="keyword">import</span> org.xml.sax.SAXException;</div><div class="line"><span class="keyword">import</span> org.xml.sax.helpers.DefaultHandler;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * SAX&#x5904;&#x7406;&#x7A0B;&#x5E8F;</div><div class="line"> * <span class="doctag">@author</span> APPle</div><div class="line"> *</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyDefaultHandler3</span> <span class="keyword">extends</span> <span class="title">DefaultHandler</span> </span>{</div><div class="line">	</div><div class="line">	<span class="comment">//&#x5B58;&#x50A8;&#x6240;&#x6709;&#x8054;&#x7CFB;&#x4EBA;&#x5BF9;&#x8C61;</span></div><div class="line">	<span class="keyword">private</span> List&lt;Contact&gt; list = <span class="keyword">new</span> ArrayList&lt;Contact&gt;();</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> List&lt;Contact&gt; <span class="title">getList</span><span class="params">()</span></span>{</div><div class="line">		<span class="keyword">return</span> list;</div><div class="line">	}</div><div class="line">	<span class="comment">//&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x8054;&#x7CFB;&#x4EBA;&#x4FE1;&#x606F;</span></div><div class="line">	<span class="keyword">private</span> Contact contact;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x601D;&#x8DEF;&#xFF1A; </div><div class="line">	 * 	1&#xFF09;&#x521B;&#x5EFA;Contact&#x5BF9;&#x8C61;</div><div class="line">	 *  2&#xFF09;&#x628A;&#x6BCF;&#x4E2A;contact&#x6807;&#x7B7E;&#x5185;&#x5BB9;&#x5B58;&#x5165;&#x5230;Contact&#x5BF9;&#x8C61;</div><div class="line">	 *  3&#xFF09;&#x628A;Contact&#x5BF9;&#x8C61;&#x653E;&#x5165;List&#x4E2D;</div><div class="line">	 */</div><div class="line">	<span class="comment">//&#x7528;&#x4E8E;&#x4E34;&#x65F6;&#x5B58;&#x50A8;&#x5F53;&#x524D;&#x8BFB;&#x5230;&#x7684;&#x6807;&#x7B7E;&#x540D;</span></div><div class="line">	<span class="keyword">private</span> String curTag;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startElement</span><span class="params">(String uri, String localName, String qName,Attributes attributes)</span> <span class="keyword">throws</span> SAXException </span>{</div><div class="line">		</div><div class="line">		curTag = qName;</div><div class="line">		<span class="comment">//&#x8BFB;&#x53D6;&#x5230;contact&#x7684;&#x5F00;&#x59CB;&#x6807;&#x7B7E;&#x521B;&#x5EFA;Contact&#x5BF9;&#x8C61;</span></div><div class="line">		<span class="keyword">if</span>(<span class="string">&quot;contact&quot;</span>.equals(qName)){</div><div class="line">			contact = <span class="keyword">new</span> Contact();</div><div class="line">			</div><div class="line">			<span class="comment">//&#x8BBE;&#x7F6E;id&#x503C;</span></div><div class="line">			contact.setId(attributes.getValue(<span class="string">&quot;id&quot;</span>));</div><div class="line">		}</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">characters</span><span class="params">(<span class="keyword">char</span>[] ch, <span class="keyword">int</span> start, <span class="keyword">int</span> length)</span> <span class="keyword">throws</span> SAXException </span>{</div><div class="line">		</div><div class="line">		<span class="comment">//&#x5F53;&#x524D;&#x6587;&#x672C;&#x5185;&#x5BB9;</span></div><div class="line">		String content = <span class="keyword">new</span> String(ch,start,length);</div><div class="line">		</div><div class="line">		<span class="keyword">if</span>(<span class="string">&quot;name&quot;</span>.equals(curTag)){</div><div class="line">			contact.setName(content);</div><div class="line">		}</div><div class="line">		</div><div class="line">		<span class="keyword">if</span>(<span class="string">&quot;age&quot;</span>.equals(curTag)){</div><div class="line">			contact.setAge(content);</div><div class="line">		}</div><div class="line">		</div><div class="line">		<span class="keyword">if</span>(<span class="string">&quot;phone&quot;</span>.equals(curTag)){</div><div class="line">			contact.setPhone(content);</div><div class="line">		}</div><div class="line">		</div><div class="line">		<span class="keyword">if</span>(<span class="string">&quot;email&quot;</span>.equals(curTag)){</div><div class="line">			contact.setEmail(content);</div><div class="line">		}</div><div class="line">		</div><div class="line">		<span class="keyword">if</span>(<span class="string">&quot;qq&quot;</span>.equals(curTag)){</div><div class="line">			contact.setQq(content);</div><div class="line">		}</div><div class="line">	}</div><div class="line">	</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endElement</span><span class="params">(String uri, String localName, String qName)</span> <span class="keyword">throws</span> SAXException </span>{</div><div class="line">		</div><div class="line">		<span class="comment">//&#x8BBE;&#x7F6E;&#x7A7A;&#x65F6;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x7A7A;&#x683C;&#x6362;&#x884C;&#x8BBE;&#x7F6E;&#x5230;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x4E2D;</span></div><div class="line">		curTag = <span class="keyword">null</span>;</div><div class="line">		<span class="comment">//&#x8BFB;&#x5230;contact&#x7684;&#x7ED3;&#x675F;&#x6807;&#x7B7E;&#x653E;&#x5165;List&#x4E2D;</span></div><div class="line">		<span class="keyword">if</span>(<span class="string">&quot;contact&quot;</span>.equals(qName)){</div><div class="line">			list.add(contact);</div><div class="line">		}</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+</div></div>
+<p><strong>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
+<p><img src="http://p5zjpoxly.bkt.clouddn.com/201804041807_554.png" alt=""></p>
+<h2 id="Jaxp&#x89E3;&#x6790;&#x5668;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;"><a href="#Jaxp&#x89E3;&#x6790;&#x5668;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;" class="headerlink" title="Jaxp&#x89E3;&#x6790;&#x5668;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;"></a>Jaxp&#x89E3;&#x6790;&#x5668;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;</h2><p><code>TestJaxpDom.java</code></p>
+<div><div class="fold_hider"><div class="close hider_title">&#x70B9;&#x51FB;&#x663E;/&#x9690;&#x5185;&#x5BB9;</div></div><div class="fold">
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.a_Jaxp;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.security.KeyStore.Builder;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.xml.parsers.DocumentBuilder;</div><div class="line"><span class="keyword">import</span> javax.xml.parsers.DocumentBuilderFactory;</div><div class="line"><span class="keyword">import</span> javax.xml.parsers.ParserConfigurationException;</div><div class="line"><span class="keyword">import</span> javax.xml.transform.Transformer;</div><div class="line"><span class="keyword">import</span> javax.xml.transform.TransformerFactory;</div><div class="line"><span class="keyword">import</span> javax.xml.transform.dom.DOMSource;</div><div class="line"><span class="keyword">import</span> javax.xml.transform.stream.StreamResult;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.junit.Test;</div><div class="line"><span class="keyword">import</span> org.w3c.dom.Document;</div><div class="line"><span class="keyword">import</span> org.w3c.dom.Element;</div><div class="line"><span class="keyword">import</span> org.w3c.dom.Node;</div><div class="line"><span class="keyword">import</span> org.w3c.dom.NodeList;</div><div class="line"><span class="keyword">import</span> org.w3c.dom.Text;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestJaxpDom</span> </span>{</div><div class="line"></div><div class="line">	DocumentBuilderFactory builderFactory = <span class="keyword">null</span>;</div><div class="line">	DocumentBuilder builder = <span class="keyword">null</span>;</div><div class="line">	Document document = <span class="keyword">null</span>;</div><div class="line">	</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x9700;&#x6C42;&#xFF1A;&#x5F97;&#x5230;document</div><div class="line">	 * </div><div class="line">	 * &#x6B65;&#x9AA4;&#xFF1A;</div><div class="line">	 * 1&#x3001;&#x521B;&#x5EFA;&#x89E3;&#x6790;&#x5668;&#x5DE5;&#x5382; </div><div class="line">	 * 2&#x3001;&#x6839;&#x636E;&#x89E3;&#x6790;&#x5668;&#x5DE5;&#x5382;&#x521B;&#x5EFA;&#x89E3;&#x6790;&#x5668; </div><div class="line">	 * 3&#x3001;&#x89E3;&#x6790;xml&#x8FD4;&#x56DE;document</div><div class="line">	 * </div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> Document <span class="title">getDocument</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>{</div><div class="line"></div><div class="line">		<span class="comment">// &#x521B;&#x5EFA;&#x89E3;&#x6790;&#x5668;&#x5DE5;&#x5382;</span></div><div class="line">		builderFactory = DocumentBuilderFactory.newInstance();</div><div class="line">		<span class="comment">// &#x521B;&#x5EFA;&#x89E3;&#x6790;&#x5668;</span></div><div class="line">		builder = builderFactory.newDocumentBuilder();</div><div class="line">		<span class="comment">// &#x5F97;&#x5230;document</span></div><div class="line">		document = builder.parse(<span class="string">&quot;src/person.xml&quot;</span>);</div><div class="line"></div><div class="line">		<span class="keyword">return</span> document;</div><div class="line"></div><div class="line">	}</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x9700;&#x6C42;&#xFF1A;&#x67E5;&#x8BE2;&#x6240;&#x6709;name&#x5143;&#x7D20;&#x7684;&#x503C;</div><div class="line">	 * </div><div class="line">	 * &#x6B65;&#x9AA4;&#xFF1A; </div><div class="line">	 * 4&#x3001;&#x5F97;&#x5230;&#x6240;&#x6709;&#x7684;name&#x5143;&#x7D20; </div><div class="line">	 * 5&#x3001;&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#xFF0C;&#x904D;&#x5386;&#x96C6;&#x5408;&#xFF0C;&#x5F97;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;name&#x5143;&#x7D20;</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>{</div><div class="line"></div><div class="line">		document = <span class="keyword">this</span>.getDocument();</div><div class="line">		<span class="comment">// &#x5F97;&#x5230;name&#x5143;&#x7D20;</span></div><div class="line">		NodeList list = document.getElementsByTagName(<span class="string">&quot;name&quot;</span>);</div><div class="line">		<span class="comment">// &#x904D;&#x5386;&#x96C6;&#x5408;</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.getLength(); i++) {</div><div class="line">			Node name1 = list.item(i);<span class="comment">// &#x5F97;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;name&#x5143;&#x7D20;</span></div><div class="line">			String s = name1.getTextContent();<span class="comment">// &#x5F97;&#x5230;name&#x5143;&#x7D20;&#x91CC;&#x9762;&#x7684;&#x503C;</span></div><div class="line">			System.out.println(s);</div><div class="line">		}</div><div class="line">	}</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x9700;&#x6C42;&#xFF1A;&#x67E5;&#x8BE2;xml&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;name&#x5143;&#x7D20;&#x7684;&#x503C;</div><div class="line">	 * </div><div class="line">	 * &#x6B65;&#x9AA4;&#xFF1A; </div><div class="line">	 * 4&#x3001;&#x5F97;&#x5230;&#x6240;&#x6709;name&#x5143;&#x7D20; </div><div class="line">	 * 5&#x3001;&#x4F7F;&#x7528;&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#xFF0C;&#x91CC;&#x9762;&#x65B9;&#x6CD5; item&#xFF0C;&#x4E0B;&#x6807;&#x83B7;&#x53D6;&#x5177;&#x4F53;&#x7684;&#x5143;&#x7D20; </div><div class="line">	 * 6&#x3001;&#x5F97;&#x5230;&#x5177;&#x4F53;&#x7684;&#x503C;&#xFF0C;&#x4F7F;&#x7528;getTextContent&#x65B9;&#x6CD5;</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun2</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>{</div><div class="line"></div><div class="line">		document = <span class="keyword">this</span>.getDocument();</div><div class="line"></div><div class="line">		<span class="comment">// &#x5F97;&#x5230;&#x6240;&#x6709;&#x7684;name&#x5143;&#x7D20;</span></div><div class="line">		NodeList list = document.getElementsByTagName(<span class="string">&quot;name&quot;</span>);</div><div class="line">		<span class="comment">// &#x4F7F;&#x7528;&#x4E0B;&#x6807;&#x5F97;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</span></div><div class="line">		Node name1 = list.item(<span class="number">0</span>);</div><div class="line"></div><div class="line">		<span class="comment">// &#x5F97;&#x5230;name&#x91CC;&#x9762;&#x7684;&#x5177;&#x4F53;&#x7684;&#x503C;</span></div><div class="line">		String s1 = name1.getTextContent();</div><div class="line">		System.out.println(s1);</div><div class="line">	}</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x9700;&#x6C42;&#xFF1A;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;p1&#x4E0B;&#x9762;&#xFF08;&#x672B;&#x5C3E;&#xFF09;&#x6DFB;&#x52A0; &lt;sex&gt;nv&lt;/sex&gt;</div><div class="line">	 * </div><div class="line">	 * &#x6B65;&#x9AA4;&#xFF1A; </div><div class="line">	 * 4&#x3001;&#x5F97;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;p1 </div><div class="line">	 * 		- &#x5F97;&#x5230;&#x6240;&#x6709;p1&#xFF0C;&#x4F7F;&#x7528;item&#x65B9;&#x6CD5;&#x4E0B;&#x6807;&#x5F97;&#x5230; </div><div class="line">	 * 5&#x3001;&#x521B;&#x5EFA;sex&#x6807;&#x7B7E; createElement </div><div class="line">	 * 6&#x3001;&#x521B;&#x5EFA;&#x6587;&#x672C;createTextNode </div><div class="line">	 * 7&#x3001;&#x628A;&#x6587;&#x672C;&#x6DFB;&#x52A0;&#x5230;sex&#x4E0B;&#x9762; appendChild </div><div class="line">	 * 8&#x3001;&#x628A;sex&#x6DFB;&#x52A0;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;p1&#x4E0B;&#x9762;</div><div class="line">	 * </div><div class="line">	 * 9&#x3001;&#x56DE;&#x5199;xml</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun3</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>{</div><div class="line"></div><div class="line">		document = <span class="keyword">this</span>.getDocument();</div><div class="line"></div><div class="line">		<span class="comment">// &#x5F97;&#x5230;&#x6240;&#x6709;&#x7684;p1</span></div><div class="line">		NodeList list = document.getElementsByTagName(<span class="string">&quot;p1&quot;</span>);</div><div class="line">		<span class="comment">// &#x5F97;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;p1</span></div><div class="line">		Node p1 = list.item(<span class="number">0</span>);</div><div class="line">		<span class="comment">// &#x521B;&#x5EFA;&#x6807;&#x7B7E;</span></div><div class="line">		Element sex1 = document.createElement(<span class="string">&quot;sex&quot;</span>);</div><div class="line">		<span class="comment">// &#x521B;&#x5EFA;&#x6587;&#x672C;</span></div><div class="line">		Text text1 = document.createTextNode(<span class="string">&quot;nv&quot;</span>);</div><div class="line">		<span class="comment">// &#x628A;&#x6587;&#x672C;&#x6DFB;&#x52A0;&#x5230;sex1&#x4E0B;&#x9762;</span></div><div class="line">		sex1.appendChild(text1);</div><div class="line">		<span class="comment">// &#x628A;sex1&#x6DFB;&#x52A0;&#x5230;p1&#x4E0B;&#x9762;</span></div><div class="line">		p1.appendChild(sex1);</div><div class="line">		<span class="comment">// &#x56DE;&#x5199;xml</span></div><div class="line">		TransformerFactory transformerFactory = TransformerFactory</div><div class="line">				.newInstance();</div><div class="line">		Transformer transformer = transformerFactory.newTransformer();</div><div class="line">		transformer.transform(<span class="keyword">new</span> DOMSource(document), <span class="keyword">new</span> StreamResult(<span class="string">&quot;src/person.xml&quot;</span>));</div><div class="line">	}</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x9700;&#x6C42;&#xFF1A;&#x4FEE;&#x6539;&#x7B2C;&#x4E00;&#x4E2A;p1&#x4E0B;&#x9762;&#x7684;sex&#x5185;&#x5BB9;&#x662F;nan</div><div class="line">	 * </div><div class="line">	 * &#x6B65;&#x9AA4;&#xFF1A; </div><div class="line">	 * 4&#x3001;&#x5F97;&#x5230;sex item&#x65B9;&#x6CD5;</div><div class="line">	 * 5&#x3001;&#x4FEE;&#x6539;sex&#x91CC;&#x9762;&#x7684;&#x503C; setTextContent&#x65B9;&#x6CD5;</div><div class="line">	 * </div><div class="line">	 * 6&#x3001;&#x56DE;&#x5199;xml</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun4</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>{</div><div class="line"></div><div class="line">		document = <span class="keyword">this</span>.getDocument();</div><div class="line"></div><div class="line">		<span class="comment">// &#x5F97;&#x5230;sex</span></div><div class="line">		Node sex1 = document.getElementsByTagName(<span class="string">&quot;sex&quot;</span>).item(<span class="number">0</span>);</div><div class="line">		<span class="comment">// &#x4FEE;&#x6539;sex&#x503C;</span></div><div class="line">		sex1.setTextContent(<span class="string">&quot;nan&quot;</span>);</div><div class="line">		<span class="comment">// &#x56DE;&#x5199;xml</span></div><div class="line">		TransformerFactory transformerFactory = TransformerFactory</div><div class="line">				.newInstance();</div><div class="line">		Transformer transformer = transformerFactory.newTransformer();</div><div class="line">		transformer.transform(<span class="keyword">new</span> DOMSource(document), <span class="keyword">new</span> StreamResult(<span class="string">&quot;src/person.xml&quot;</span>));</div><div class="line">	}</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x9700;&#x6C42;&#xFF1A;&#x5220;&#x9664;&lt;sex&gt;nan&lt;/sex&gt;&#x8282;&#x70B9;</div><div class="line">	 * </div><div class="line">	 * &#x6B65;&#x9AA4;&#xFF1A; </div><div class="line">	 * 4&#x3001;&#x83B7;&#x53D6;sex&#x5143;&#x7D20; </div><div class="line">	 * 5&#x3001;&#x83B7;&#x53D6;sex&#x7684;&#x7236;&#x8282;&#x70B9; </div><div class="line">	 * 6&#x3001;&#x5220;&#x9664;&#x4F7F;&#x7528;&#x7236;&#x8282;&#x70B9;&#x5220;&#x9664; removeChild&#x65B9;&#x6CD5;</div><div class="line">	 * </div><div class="line">	 * 7&#x3001;&#x56DE;&#x5199;xml</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun5</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>{</div><div class="line"></div><div class="line">		document = <span class="keyword">this</span>.getDocument();</div><div class="line"></div><div class="line">		<span class="comment">// &#x5F97;&#x5230;sex&#x5143;&#x7D20;</span></div><div class="line">		Node sex1 = document.getElementsByTagName(<span class="string">&quot;sex&quot;</span>).item(<span class="number">0</span>);</div><div class="line">		<span class="comment">// &#x5F97;&#x5230;sex1&#x7236;&#x8282;&#x70B9;</span></div><div class="line">		Node p1 = sex1.getParentNode();</div><div class="line">		<span class="comment">// &#x5220;&#x9664;&#x64CD;&#x4F5C;</span></div><div class="line">		p1.removeChild(sex1);</div><div class="line">		<span class="comment">// &#x56DE;&#x5199;xml</span></div><div class="line">		TransformerFactory transformerFactory = TransformerFactory</div><div class="line">				.newInstance();</div><div class="line">		Transformer transformer = transformerFactory.newTransformer();</div><div class="line">		transformer.transform(<span class="keyword">new</span> DOMSource(document), <span class="keyword">new</span> StreamResult(<span class="string">&quot;src/person.xml&quot;</span>));</div><div class="line">	}</div><div class="line"></div><div class="line"></div><div class="line">	</div><div class="line">	<span class="comment">// &#x9012;&#x5F52;&#x904D;&#x5386;&#x7684;&#x65B9;&#x6CD5;</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">list1</span><span class="params">(Node node)</span> </span>{</div><div class="line">		<span class="comment">// &#x5224;&#x65AD;&#x662F;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x65F6;&#x5019;&#x624D;&#x6253;&#x5370;</span></div><div class="line">		<span class="keyword">if</span> (node.getNodeType() == Node.ELEMENT_NODE) {</div><div class="line">			System.out.println(node.getNodeName());</div><div class="line">		}</div><div class="line"></div><div class="line">		<span class="comment">// &#x5F97;&#x5230;&#x4E00;&#x5C42;&#x5B50;&#x8282;&#x70B9;</span></div><div class="line">		NodeList list = node.getChildNodes();</div><div class="line">		<span class="comment">// &#x904D;&#x5386;list</span></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.getLength(); i++) {</div><div class="line">			<span class="comment">// &#x5F97;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</span></div><div class="line">			Node node1 = list.item(i);</div><div class="line">			<span class="comment">// &#x7EE7;&#x7EED;&#x5F97;&#x5230;node1&#x7684;&#x5B50;&#x8282;&#x70B9;</span></div><div class="line">			<span class="comment">// node1.getChildNodes()</span></div><div class="line">			list1(node1);</div><div class="line">		}</div><div class="line">	}</div><div class="line">	</div><div class="line">	</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * &#x9700;&#x6C42;&#xFF1A;&#x904D;&#x5386;&#x8282;&#x70B9;&#xFF0C;&#x628A;&#x6240;&#x6709;&#x5143;&#x7D20;&#x540D;&#x79F0;&#x6253;&#x5370;&#x51FA;&#x6765;</div><div class="line">	 * </div><div class="line">	 * &#x6B65;&#x9AA4;&#xFF1A; </div><div class="line">	 * ====&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x5B9E;&#x73B0;===== </div><div class="line">	 * 4&#x3001;&#x5F97;&#x5230;&#x6839;&#x8282;&#x70B9; </div><div class="line">	 * 5&#x3001;&#x5F97;&#x5230;&#x6839;&#x8282;&#x70B9;&#x5B50;&#x8282;&#x70B9; </div><div class="line">	 * 6&#x3001;&#x5F97;&#x5230;&#x6839;&#x8282;&#x70B9;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x5B50;&#x8282;&#x70B9;</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun6</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>{</div><div class="line"></div><div class="line">		document = <span class="keyword">this</span>.getDocument();</div><div class="line">		<span class="keyword">this</span>.list1(document);</div><div class="line">	}</div><div class="line">	</div><div class="line">}</div></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+</div></div>
+<p><code>TestJaxpSax.java</code></p>
+<div><div class="fold_hider"><div class="close hider_title">&#x70B9;&#x51FB;&#x663E;/&#x9690;&#x5185;&#x5BB9;</div></div><div class="fold">
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.itcast.a_Jaxp;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.xml.parsers.SAXParser;</div><div class="line"><span class="keyword">import</span> javax.xml.parsers.SAXParserFactory;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.xml.sax.Attributes;</div><div class="line"><span class="keyword">import</span> org.xml.sax.SAXException;</div><div class="line"><span class="keyword">import</span> org.xml.sax.helpers.DefaultHandler;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestJaxpSax</span> </span>{</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>{</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 1&#x3001;&#x521B;&#x5EFA;&#x89E3;&#x6790;&#x5668;&#x5DE5;&#x5382; </div><div class="line">		 * 2&#x3001;&#x521B;&#x5EFA;&#x89E3;&#x6790;&#x5668; </div><div class="line">		 * 3&#x3001;&#x6267;&#x884C;parse&#x65B9;&#x6CD5;</div><div class="line">		 * </div><div class="line">		 * 4&#x3001;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x7EE7;&#x627F;DefaultHandler </div><div class="line">		 * 5&#x3001;&#x91CD;&#x5199;&#x7C7B;&#x91CC;&#x9762;&#x7684;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;</div><div class="line">		 */</div><div class="line">		</div><div class="line">		<span class="comment">// &#x521B;&#x5EFA;&#x89E3;&#x6790;&#x5668;&#x5DE5;&#x5382;</span></div><div class="line">		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();</div><div class="line">		<span class="comment">// &#x521B;&#x5EFA;&#x89E3;&#x6790;&#x5668;</span></div><div class="line">		SAXParser saxParser = saxParserFactory.newSAXParser();</div><div class="line">		<span class="comment">// &#x6267;&#x884C;parse&#x65B9;&#x6CD5;</span></div><div class="line">		saxParser.parse(<span class="string">&quot;src/person.xml&quot;</span>, <span class="keyword">new</span> MyDefault1());</div><div class="line">	}</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * &#x9700;&#x6C42;&#xFF1A;&#x539F;&#x6837;&#x6253;&#x5370;&#x51FA;person.xml&#x6587;&#x6863;&#x5185;&#x5BB9;</div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> Yuanzhengjie</div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyDefault1</span> <span class="keyword">extends</span> <span class="title">DefaultHandler</span> </span>{</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startElement</span><span class="params">(String uri, String localName, String qName,</span></span></div><div class="line">			Attributes attributes) <span class="keyword">throws</span> SAXException {</div><div class="line">		System.out.print(<span class="string">&quot;&lt;&quot;</span> + qName + <span class="string">&quot;&gt;&quot;</span>);</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">characters</span><span class="params">(<span class="keyword">char</span>[] ch, <span class="keyword">int</span> start, <span class="keyword">int</span> length)</span></span></div><div class="line">			<span class="keyword">throws</span> SAXException {</div><div class="line">		System.out.print(<span class="keyword">new</span> String(ch, start, length));</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endElement</span><span class="params">(String uri, String localName, String qName)</span></span></div><div class="line">			<span class="keyword">throws</span> SAXException {</div><div class="line">		System.out.print(<span class="string">&quot;&lt;/&quot;</span> + qName + <span class="string">&quot;&gt;&quot;</span>);</div><div class="line">	}</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * &#x9700;&#x6C42;1&#xFF1A;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;name&#x5143;&#x7D20;&#x7684;&#x503C; </div><div class="line"> * &#x9700;&#x6C42;2&#xFF1A;&#x83B7;&#x53D6;&#x5230;&#x6240;&#x6709;name&#x5143;&#x7D20;&#x7684;&#x503C;</div><div class="line"> * &#x6CE8;&#x660E;&#xFF1A;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E86;&#x9700;&#x6C42;1&#xFF1B;&#x82E5;&#x60F3;&#x8981;&#x5B9E;&#x73B0;&#x9700;&#x6C42;2&#xFF0C;&#x53EA;&#x9700;&#x5C06;&#x4E0E;&#x7D22;&#x5F15;&#xFF08;&#x5373;index&#xFF09;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x5220;&#x9664;&#x5373;&#x53EF;&#x5B9E;&#x73B0;</div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> Yuanzhengjie</div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyDefault2</span> <span class="keyword">extends</span> <span class="title">DefaultHandler</span> </span>{</div><div class="line"></div><div class="line">	<span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</div><div class="line">	<span class="keyword">int</span> index = <span class="number">1</span>;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startElement</span><span class="params">(String uri, String localName, String qName,</span></span></div><div class="line">			Attributes attributes) <span class="keyword">throws</span> SAXException {</div><div class="line">		<span class="comment">// &#x5224;&#x65AD;qName&#x662F;&#x5426;&#x662F;name&#x5143;&#x7D20;</span></div><div class="line">		<span class="keyword">if</span> (<span class="string">&quot;name&quot;</span>.equals(qName)) {</div><div class="line">			flag = <span class="keyword">true</span>;</div><div class="line">		}</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">characters</span><span class="params">(<span class="keyword">char</span>[] ch, <span class="keyword">int</span> start, <span class="keyword">int</span> length)</span></span></div><div class="line">			<span class="keyword">throws</span> SAXException {</div><div class="line">		<span class="comment">// &#x5F53;flag&#x503C;&#x662F;true&#x65F6;&#x5019;&#xFF0C;&#x8868;&#x793A;&#x89E3;&#x6790;&#x5230;name&#x5143;&#x7D20;</span></div><div class="line">		<span class="comment">// &#x7D22;&#x5F15;&#x662F;1</span></div><div class="line">		<span class="keyword">if</span> (flag == <span class="keyword">true</span> &amp;&amp; index == <span class="number">1</span>) {<span class="comment">// &#x6B64;&#x5904;&#x82E5;&#x5224;&#x65AD;index==n&#xFF0C;&#x5219;&#x4F1A;&#x8F93;&#x51FA;&#x7B2C;n&#x4E2A;name&#x5143;&#x7D20;</span></div><div class="line">			System.out.println(<span class="keyword">new</span> String(ch, start, length));</div><div class="line">		}</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">endElement</span><span class="params">(String uri, String localName, String qName)</span></span></div><div class="line">			<span class="keyword">throws</span> SAXException {</div><div class="line">		<span class="comment">// &#x628A;flag&#x8BBE;&#x7F6E;&#x6210;false&#xFF0C;&#x8868;&#x793A;name&#x5143;&#x7D20;&#x7ED3;&#x675F;</span></div><div class="line">		<span class="keyword">if</span> (<span class="string">&quot;name&quot;</span>.equals(qName)) {</div><div class="line">			flag = <span class="keyword">false</span>;</div><div class="line">			index++;</div><div class="line">		}</div><div class="line">	}</div><div class="line"></div><div class="line">}</div></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+</div></div><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+      
+    </div>
+    
+    
+    
+
+    
+
+	
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------&#x672C;&#x6587;&#x7ED3;&#x675F;<i class="fa fa-paw"></i>&#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------</div>
+    
+</div>
+
+
+  
+    </div>
+	
+	
+	
+	
+	
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/xml/" rel="tag"><i class="fa fa-tag"></i> xml</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/04/xmlfirst/" rel="next" title="xml_dom4j">
+                <i class="fa fa-chevron-left"></i> xml_dom4j
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/08/http/" rel="prev" title="http">
+                http <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            &#x6587;&#x7AE0;&#x76EE;&#x5F55;
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            &#x7AD9;&#x70B9;&#x6982;&#x89C8;
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/myphoto.jpg" alt="&#x8D75;&#x5BA2;">
+            
+              <p class="site-author-name" itemprop="name">&#x8D75;&#x5BA2;</p>
+              <p class="site-description motion-element" itemprop="description">&#x6211;&#x4E0D;&#x662F;&#x8D24;&#x4EBA;&#x8C6A;&#x58EB;&#xFF0C;&#x6211;&#x53EA;&#x6709;&#x4E00;&#x8154;&#x70ED;&#x8840;&#x3002;</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">&#x65E5;&#x5FD7;</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">&#x5206;&#x7C7B;</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">&#x6807;&#x7B7E;</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xdady" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x89E3;&#x6790;&#x65B9;&#x5F0F;"><span class="nav-number">1.</span> <span class="nav-text">&#x89E3;&#x6790;&#x65B9;&#x5F0F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x89E3;&#x6790;&#x5668;"><span class="nav-number">2.</span> <span class="nav-text">&#x89E3;&#x6790;&#x5668;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x5E38;&#x89C1;&#x7684;&#x89E3;&#x6790;&#x5F00;&#x53D1;&#x5305;&#xFF1A;"><span class="nav-number">2.1.</span> <span class="nav-text">&#x5E38;&#x89C1;&#x7684;&#x89E3;&#x6790;&#x5F00;&#x53D1;&#x5305;&#xFF1A;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAX&#x89E3;&#x6790;&#x65B9;&#x5F0F;"><span class="nav-number">3.</span> <span class="nav-text">SAX&#x89E3;&#x6790;&#x65B9;&#x5F0F;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#&#x5165;&#x95E8;&#x6848;&#x4F8B;"><span class="nav-number">3.1.</span> <span class="nav-text">&#x5165;&#x95E8;&#x6848;&#x4F8B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SAX&#x89E3;&#x6790;&#x4F7F;&#x7528;&#x6848;&#x4F8B;"><span class="nav-number">3.2.</span> <span class="nav-text">SAX&#x89E3;&#x6790;&#x4F7F;&#x7528;&#x6848;&#x4F8B;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#&#x6848;&#x4F8B;&#x4E00;&#xFF1A;&#x8BFB;&#x53D6;contact-xml&#x6587;&#x4EF6;&#xFF0C;&#x5B8C;&#x6574;&#x8F93;&#x51FA;&#x6587;&#x6863;&#x5185;&#x5BB9;"><span class="nav-number">3.2.1.</span> <span class="nav-text">&#x6848;&#x4F8B;&#x4E00;&#xFF1A;&#x8BFB;&#x53D6;contact.xml&#x6587;&#x4EF6;&#xFF0C;&#x5B8C;&#x6574;&#x8F93;&#x51FA;&#x6587;&#x6863;&#x5185;&#x5BB9;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#&#x6848;&#x4F8B;&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;sax&#x89E3;&#x6790;&#x628A;-xml&#x6587;&#x6863;&#x5C01;&#x88C5;&#x6210;&#x5BF9;&#x8C61;"><span class="nav-number">3.2.2.</span> <span class="nav-text">&#x6848;&#x4F8B;&#x4E8C;&#xFF1A;&#x4F7F;&#x7528;sax&#x89E3;&#x6790;&#x628A; xml&#x6587;&#x6863;&#x5C01;&#x88C5;&#x6210;&#x5BF9;&#x8C61;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jaxp&#x89E3;&#x6790;&#x5668;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;"><span class="nav-number">4.</span> <span class="nav-text">Jaxp&#x89E3;&#x6790;&#x5668;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&#xA9; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">&#x8D75;&#x5BA2;</span>
+
+  
+</div>
+
+
+  <div class="powered-by">&#x7531; <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> &#x5F3A;&#x529B;&#x9A71;&#x52A8;</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">&#x4E3B;&#x9898; &#x2014; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">&#x535A;&#x5BA2;&#x5168;&#x7AD9;&#x5171;53.9k&#x5B57;</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+  
+  <!--崩溃欺骗-->
+  <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script></body></html>

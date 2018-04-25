@@ -1,0 +1,878 @@
+<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-Hans"><head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Http,request,response,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;#x672C;&amp;#x7BC7;&amp;#x6587;&amp;#x7AE0;&amp;#x4E3B;&amp;#x8981;&amp;#x8BB2;&amp;#x89E3; Http&amp;#x534F;&amp;#x8BAE;&amp;#x3001;request&amp;#x3001;response">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http">
+<meta property="og:url" content="xdady.github.io/2018/04/08/http/index.html">
+<meta property="og:site_name" content="&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;">
+<meta property="og:description" content="&amp;#x672C;&amp;#x7BC7;&amp;#x6587;&amp;#x7AE0;&amp;#x4E3B;&amp;#x8981;&amp;#x8BB2;&amp;#x89E3; Http&amp;#x534F;&amp;#x8BAE;&amp;#x3001;request&amp;#x3001;response">
+<meta property="og:updated_time" content="2018-04-15T15:47:43.323Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="http">
+<meta name="twitter:description" content="&amp;#x672C;&amp;#x7BC7;&amp;#x6587;&amp;#x7AE0;&amp;#x4E3B;&amp;#x8981;&amp;#x8BB2;&amp;#x89E3; Http&amp;#x534F;&amp;#x8BAE;&amp;#x3001;request&amp;#x3001;response">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="xdady.github.io/2018/04/08/http/">
+
+
+
+
+
+  <title>http | &#x6D6E;&#x4E16;&#x5E7B;&#x60F3;</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/xdady" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            &#x9996;&#x9875;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            &#x5173;&#x4E8E;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            &#x6807;&#x7B7E;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            &#x5206;&#x7C7B;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            &#x5F52;&#x6863;
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="xdady.github.io/2018/04/08/http/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="&#x8D75;&#x5BA2;">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/myphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">http</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x53D1;&#x8868;&#x4E8E;</span>
+              
+              <time title="&#x521B;&#x5EFA;&#x4E8E;" itemprop="dateCreated datePublished" datetime="2018-04-08T22:00:30+08:00">
+                2018-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x5206;&#x7C7B;&#x4E8E;</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb&#x57FA;&#x7840;/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb&#x57FA;&#x7840;</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">&#x5B57;&#x6570;&#x7EDF;&#x8BA1;:</span>
+                
+                <span title="&#x5B57;&#x6570;&#x7EDF;&#x8BA1;">
+                  2,029
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">&#x9605;&#x8BFB;&#x65F6;&#x957F; &#x2248;</span>
+                
+                <span title="&#x9605;&#x8BFB;&#x65F6;&#x957F;">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x4E3B;&#x8981;&#x8BB2;&#x89E3; Http&#x534F;&#x8BAE;&#x3001;request&#x3001;response</p>
+<a id="more"></a>
+<p>response&#x53D1;&#x9001;&#x72B6;&#x6001;&#x7801;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line">			<span class="keyword">throws</span> ServletException, IOException {</div><div class="line">		</div><div class="line">		response.sendError(<span class="number">404</span>, <span class="string">&quot;&#x60A8;&#x8BBF;&#x95EE;&#x7684;&#x8D44;&#x6E90;&#x5B58;&#x5728;&#xFF0C;&#x5C31;&#x4E0D;&#x7ED9;&#x4F60;&#x770B;&#xFF01;&quot;</span>);</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x91CD;&#x5B9A;&#x5411;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line">			<span class="keyword">throws</span> ServletException, IOException {</div><div class="line">		System.out.println(<span class="string">&quot;BServlet&quot;</span>);</div><div class="line">		</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * &#x65B9;&#x5F0F;&#x4E00;&#xFF1A;</div><div class="line">		 * 1. &#x8BBE;&#x7F6E;Location</div><div class="line">		 * 2. &#x53D1;&#x9001;302&#x72B6;&#x6001;&#x7801;</div><div class="line">		 */</div><div class="line">		response.setHeader(<span class="string">&quot;Location&quot;</span>, <span class="string">&quot;/day10_1/CServlet&quot;</span>);</div><div class="line">		response.setStatus(<span class="number">302</span>);</div><div class="line">		</div><div class="line">		<span class="comment">//&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;</span></div><div class="line">		<span class="comment">//&#x5FEB;&#x6377;&#x7684;&#x91CD;&#x5B9A;&#x5411;&#x65B9;&#x6CD5;</span></div><div class="line">		response.sendRedirect(<span class="string">&quot;/day10_1/CServlet&quot;</span>);</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x5B9A;&#x65F6;&#x5237;&#x65B0;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line">			<span class="keyword">throws</span> ServletException, IOException {</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * &#x4E0B;&#x9762;&#x662F;&#x7528;&#x6765;&#x53D1;&#x9001;&#x54CD;&#x5E94;&#x4F53;&#xFF01;</div><div class="line">		 */</div><div class="line">		PrintWriter writer = response.getWriter();</div><div class="line">		writer.print(<span class="string">&quot;&#x6B22;&#x8FCE;XXX&#x767B;&#x5F55;&#xFF01;5&#x79D2;&#x949F;&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x8DF3;&#x8F6C;&#x5230;&#x4E3B;&#x9875;&#xFF01;&#x60A8;&#x770B;&#x5230;&#x7684;&#x4E00;&#x5B9A;&#x662F;&#x4E71;&#x7801;&#xFF01;&quot;</span>);</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * &#x8BBE;&#x7F6E;&#x540D;&#x4E3A;Refresh&#x7684;&#x54CD;&#x5E94;&#x5934;</div><div class="line">		 */</div><div class="line">		response.setHeader(<span class="string">&quot;Refresh&quot;</span>, <span class="string">&quot;5;URL=/day10_1/EServlet&quot;</span>);</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x7981;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line">			<span class="keyword">throws</span> ServletException, IOException {</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * Cache-Control&#x3001;pragma&#x3001;expires</div><div class="line">		 */</div><div class="line">		response.setHeader(<span class="string">&quot;Cache-Control&quot;</span>, <span class="string">&quot;no-cache&quot;</span>);</div><div class="line">		response.setHeader(<span class="string">&quot;pragma&quot;</span>, <span class="string">&quot;no-cache&quot;</span>);</div><div class="line">		response.setDateHeader(<span class="string">&quot;expires&quot;</span>, -<span class="number">1</span>);	<span class="comment">//&#x8FC7;&#x671F;&#x65F6;&#x95F4;</span></div><div class="line">		response.getWriter().print(<span class="string">&quot;hello world!&quot;</span>);</div><div class="line">		</div><div class="line">		</div><div class="line">		<span class="comment">/*	Html&#x4E2D;&#x7981;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#x7684;&#x65B9;&#x6CD5;</span></div><div class="line">		 *</div><div class="line">		 *	&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;</div><div class="line">		 *	&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;</div><div class="line">		 *	&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;    </div><div class="line">		 */</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x54CD;&#x5E94;&#x5B57;&#x8282;&#x6570;&#x636E;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line">			<span class="keyword">throws</span> ServletException, IOException {</div><div class="line"><span class="comment">/*</span></div><div class="line">		String s = &quot;Hello outputStream&quot;;</div><div class="line">		byte[] bytes = s.getBytes();</div><div class="line">		response.getOutputStream().write(bytes);</div><div class="line">*/</div><div class="line">		<span class="comment">/**</span></div><div class="line">		 * &#x6F14;&#x793A;&#x54CD;&#x5E94;&#x5B57;&#x8282;&#x6570;&#x636E;</div><div class="line">		 */</div><div class="line">		<span class="comment">// &#x628A;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x8BFB;&#x53D6;&#x5230;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x4E2D;</span></div><div class="line">		String path = <span class="string">&quot;F:/F/&#x767D;&#x51B0;.jpg&quot;</span>;</div><div class="line">		FileInputStream in = <span class="keyword">new</span> FileInputStream(path);</div><div class="line"><span class="comment">//		byte[] bytes = IOUtils.toByteArray(in);//&#x8BFB;&#x53D6;&#x8F93;&#x5165;&#x6D41;&#x5185;&#x5BB9;&#x7684;&#x5B57;&#x8282;&#x5230;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x4E2D;&#x3002;</span></div><div class="line"><span class="comment">//		response.getOutputStream().write(bytes);</span></div><div class="line">		IOUtils.copy(in, response.getOutputStream());</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x7684;IP&#x5730;&#x5740;&#x3001;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x3001;&#x83B7;&#x53D6;User-Agent&#xFF0C;&#x5F97;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4FE1;&#x606F;(&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF; &#x6D4F;&#x89C8;&#x5668;)</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{</div><div class="line">		</div><div class="line">		String addr = request.getRemoteAddr();<span class="comment">//&#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x7684;IP&#x5730;&#x5740;</span></div><div class="line">		</div><div class="line">		</div><div class="line">		System.out.println(<span class="string">&quot;IP: &quot;</span> + addr);</div><div class="line">		System.out.println(<span class="string">&quot;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#xFF1A;&quot;</span> + request.getMethod());<span class="comment">//&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;</span></div><div class="line">		String userAgent = request.getHeader(<span class="string">&quot;User-Agent&quot;</span>);<span class="comment">//&#x83B7;&#x53D6;&#x540D;&#x4E3A;User-Agent&#x7684;&#x8BF7;&#x6C42;&#x5934;&#xFF01;</span></div><div class="line">		</div><div class="line">		<span class="comment">/* &#x540D;&#x4E3A;User-Agent&#x7684;&#x8BF7;&#x6C42;&#x5934;&#xFF1A;</span></div><div class="line">		 * Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.72 Safari/537.36</div><div class="line">		 */</div><div class="line">		 </div><div class="line">		<span class="comment">// &#x662F;&#x5426;&#x5305;&#x542B;Chrome&#xFF0C;&#x5982;&#x679C;&#x5305;&#x542B;&#xFF0C;&#x8BF4;&#x660E;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x7684;&#x662F;google&#x6D4F;&#x89C8;&#x5668;</span></div><div class="line">		<span class="keyword">if</span>(userAgent.toLowerCase().contains(<span class="string">&quot;chrome&quot;</span>)) {</div><div class="line">			System.out.println(<span class="string">&quot;&#x60A8;&#x597D;&#xFF1A;&quot;</span> + addr + <span class="string">&quot;, &#x4F60;&#x7528;&#x7684;&#x662F;&#x8C37;&#x6B4C;&quot;</span>);</div><div class="line">		} <span class="keyword">else</span> <span class="keyword">if</span>(userAgent.toLowerCase().contains(<span class="string">&quot;firefox&quot;</span>)) {</div><div class="line">			System.out.println(<span class="string">&quot;&#x60A8;&#x597D;&#xFF1A;&quot;</span> + addr + <span class="string">&quot;, &#x4F60;&#x7528;&#x7684;&#x662F;&#x706B;&#x72D0;&quot;</span>);</div><div class="line">		} <span class="keyword">else</span> <span class="keyword">if</span>(userAgent.toLowerCase().contains(<span class="string">&quot;msie&quot;</span>)) {</div><div class="line">			System.out.println(<span class="string">&quot;&#x60A8;&#x597D;&#xFF1A;&quot;</span> + addr + <span class="string">&quot;, &#x4F60;&#x7528;&#x7684;&#x662F;IE&quot;</span>);</div><div class="line">		}</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x83B7;&#x53D6;&#x8BF7;&#x6C42;URL</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServletDemo1</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{</div><div class="line"></div><div class="line">        <span class="comment">/*</span></div><div class="line">        &#x793A;&#x4F8B;:&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;http://localhost:8080/day09/servlet/demo1?username=xxx&amp;password=yyy</div><div class="line">        */</div><div class="line">		System.out.println(request.getMethod());<span class="comment">//      GET				&#x83B7;&#x5F97;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;		</span></div><div class="line">		System.out.println(request.getScheme());<span class="comment">//      http			&#x83B7;&#x53D6;&#x534F;&#x8BAE;</span></div><div class="line">		System.out.println(request.getServerName());<span class="comment">//  localhost		&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x540D;</span></div><div class="line">		System.out.println(request.getServerPort());<span class="comment">//  8080			&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;</span></div><div class="line">		</div><div class="line">		System.out.println(request.getRequestURL()); <span class="comment">//   http://localhost:8080/day09/servlet/demo1			&#x8FD4;&#x56DE;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#x65F6;&#x7684;&#x5B8C;&#x6574;URL(&#x7B49;&#x4E8E;&#x4E0D;&#x5305;&#x542B;&#x53C2;&#x6570;&#x7684;&#x6574;&#x4E2A;&#x8BF7;&#x6C42;&#x8DEF;&#x5F84;)</span></div><div class="line">		System.out.println(request.getRequestURI()); <span class="comment">//   /day09/servlet/demo1								&#x8FD4;&#x56DE;&#x8BF7;&#x6C42;&#x884C;&#x4E2D;&#x7684;&#x8D44;&#x6E90;&#x540D;&#x90E8;&#x5206;(&#x7B49;&#x4E8E;&#x9879;&#x76EE;&#x540D;+Servlet&#x8DEF;&#x5F84;)</span></div><div class="line">		System.out.println(request.getContextPath()); <span class="comment">//  /day09											&#x5F53;&#x524D;&#x5E94;&#x7528;&#x7684;&#x865A;&#x62DF;&#x76EE;&#x5F55;(&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x540D;)</span></div><div class="line">		System.out.println(request.getServletPath()); <span class="comment">//  /servlet/demo1									&#x83B7;&#x53D6;Servlet&#x8DEF;&#x5F84;</span></div><div class="line">		System.out.println(request.getQueryString()); <span class="comment">//  username=xxx&amp;password=yyy 						&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x90E8;&#x5206;&#xFF0C;&#x5373;&#x95EE;&#x53F7;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;&#x3002;</span></div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line">			<span class="keyword">throws</span> ServletException, IOException {</div><div class="line">		doGet(request, response);</div><div class="line">	}</div><div class="line"></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">/* http://localhost:8080/day10/AServlet?username=xxx&amp;password=yyy</span></div><div class="line"> * </div><div class="line"> * getScheme()&#xFF1A;&#x83B7;&#x53D6;&#x534F;&#x8BAE;&#xFF0C;http</div><div class="line"> * getServerName()&#xFF1A;&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x540D;&#xFF0C;localhost</div><div class="line"> * getServerPort()&#xFF1A;&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;&#xFF0C;8080</div><div class="line"> * getContextPath()&#xFF1A;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x540D;&#xFF0C;/day10               </div><div class="line"> * getServletPath()&#xFF1A;&#x83B7;&#x53D6;Servlet&#x8DEF;&#x5F84;&#xFF0C;/AServlet</div><div class="line"> * getQueryString()&#xFF1A;&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x90E8;&#x5206;&#xFF0C;&#x5373;&#x95EE;&#x53F7;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;&#x3002;username=xxx&amp;password=yyy             </div><div class="line"> * getRequestURI()&#xFF1A;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;URI&#xFF0C;&#x7B49;&#x4E8E;&#x9879;&#x76EE;&#x540D;+Servlet&#x8DEF;&#x5F84;&#x3002;/day10/AServlet            </div><div class="line"> * getRequestURL()&#xFF1A;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;URL&#xFF0C;&#x7B49;&#x4E8E;&#x4E0D;&#x5305;&#x542B;&#x53C2;&#x6570;&#x7684;&#x6574;&#x4E2A;&#x8BF7;&#x6C42;&#x8DEF;&#x5F84;&#x3002;http://localhost:8080/day10/AServlet           </div><div class="line"> *</div><div class="line"> */</div></pre></td></tr></tbody></table></figure>
+<p>&#x9632;&#x76D7;&#x94FE;</p>
+<p><code>a.html</code></p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot;&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>a.html<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/day10_2/BServlet&quot;</span>&gt;</span>xxx<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<p><code>BServlet.java</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></div><div class="line">			<span class="keyword">throws</span> ServletException, IOException {</div><div class="line">		<span class="comment">/**</span></div><div class="line">		 * &#x4F7F;&#x7528;Referer&#x8BF7;&#x6C42;&#x5934;&#xFF0C;&#x6765;&#x9632;&#x76D7;&#x94FE;</div><div class="line">		 */</div><div class="line">		String referer = request.getHeader(<span class="string">&quot;Referer&quot;</span>);</div><div class="line">		System.out.println(referer);</div><div class="line">		<span class="keyword">if</span>(referer == <span class="keyword">null</span> || !referer.contains(<span class="string">&quot;localhost&quot;</span>)) {</div><div class="line">			response.sendRedirect(<span class="string">&quot;http://www.baidu.com&quot;</span>);</div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			System.out.println(<span class="string">&quot;hello!&quot;</span>);</div><div class="line">		}</div><div class="line">	}</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">/* &#x5982;&#x679C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;&#xFF1A;http://localhost:8080/day10_2/BServlet &#x8BBF;&#x95EE; BServlet&#xFF0C;&#x9875;&#x9762;&#x4F1A;&#x81EA;&#x52A8;&#x8DF3;&#x8F6C;&#x5230;&#x767E;&#x5EA6;</span></div><div class="line"> * &#x5982;&#x679C;&#x662F;&#x901A;&#x8FC7; a.html &#x4E2D;&#x7684;&#x8D85;&#x94FE;&#x63A5;&#x70B9;&#x51FB;&#x8BBF;&#x95EE; BServlet &#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x4F1A;&#x8F93;&#x51FA; hello</div><div class="line"> */</div></pre></td></tr></tbody></table></figure>
+<p>&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF1A;</p>
+<p>&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x662F;&#x7531;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x7684;&#xFF01;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x5728;&#x8BF7;&#x6C42;&#x4F53;&#x4E2D;&#xFF08;POST&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x5728;URL&#x4E4B;&#x540E;&#xFF08;GET&#xFF09;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function">String <span class="title">getParameter</span><span class="params">(String name)</span> <span class="comment">//&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x5355;&#x503C;&#x8BF7;&#x6C42;&#x53C2;&#x6570;</span></span></div><div class="line">String[] <span class="title">getParameterValues</span><span class="params">(String name)</span> <span class="comment">//&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x591A;&#x503C;&#x8BF7;&#x6C42;&#x53C2;&#x6570;</span></div><div class="line">Enumeration&lt;String&gt; <span class="title">getParameterNames</span><span class="params">()</span> <span class="comment">//&#x83B7;&#x53D6;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x540D;&#x79F0;</span></div><div class="line">Map&lt;String,String[]&gt; <span class="title">getParameterMap</span><span class="params">()</span> <span class="comment">//&#x83B7;&#x53D6;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x4E2D;key&#x4E3A;&#x53C2;&#x6570;&#x540D;&#xFF0C;value&#x4E3A;&#x53C2;&#x6570;&#x503C;&#x3002;</span></div></pre></td></tr></tbody></table></figure>
+<p><code>a.html</code></p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot;&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>a.html<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">	</div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;keyword1,keyword2,keyword3&quot;</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;this is my page&quot;</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;content-type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=UTF-8&quot;</span>&gt;</span></div><div class="line">    </div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#x6D4B;&#x8BD5;&#x8BF7;&#x6C42;&#x53C2;&#x6570;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/day10_3/AServlet?xxx=XXX&amp;yyy=YYY&quot;</span>&gt;</span>&#x70B9;&#x51FB;&#x8FD9;&#x91CC;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">hr</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/day10_3/AServlet&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></div><div class="line">  &#x7528;&#x6237;&#x540D;&#xFF1A;<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line">  &#x5BC6;&#x3000;&#x7801;&#xFF1A;<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line">  &#x7231;&#x3000;&#x597D;&#xFF1A;<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span> <span class="attr">value</span>=<span class="string">&quot;eat&quot;</span>/&gt;</span>&#x5403;&#x996D;</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span> <span class="attr">value</span>=<span class="string">&quot;sleep&quot;</span>/&gt;</span>&#x7761;&#x89C9;</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span> <span class="attr">value</span>=<span class="string">&quot;coding&quot;</span>/&gt;</span>&#x6253;&#x4EE3;&#x7801;</div><div class="line">  <span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&#x63D0;&#x4EA4;&quot;</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></tbody></table></figure>
+<p><code>AServlet.java</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{</div><div class="line">		System.out.println(<span class="string">&quot;GET: &quot;</span> + request.getParameter(<span class="string">&quot;xxx&quot;</span>)); <span class="comment">//&#x8FD0;&#x884C;&#x7ED3;&#x679C;  GET&#xFF1A;XXX</span></div><div class="line">		System.out.println(<span class="string">&quot;GET: &quot;</span> + request.getParameter(<span class="string">&quot;yyy&quot;</span>)); <span class="comment">//&#x8FD0;&#x884C;&#x7ED3;&#x679C;  GET&#xFF1A;YYY</span></div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{</div><div class="line">		</div><div class="line">		String username = request.getParameter(<span class="string">&quot;username&quot;</span>); <span class="comment">//tom</span></div><div class="line">		String password = request.getParameter(<span class="string">&quot;password&quot;</span>); <span class="comment">//123</span></div><div class="line">		String[] hobby = request.getParameterValues(<span class="string">&quot;hobby&quot;</span>); <span class="comment">//[eat,sleep]</span></div><div class="line">		System.out.println(username + <span class="string">&quot;, &quot;</span> + password + <span class="string">&quot;, &quot;</span> + Arrays.toString(hobby));</div><div class="line">		</div><div class="line">		</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * &#x6D4B;&#x8BD5;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x7684;&#x540D;&#x79F0;</div><div class="line">		 */</div><div class="line">		Enumeration names = request.getParameterNames();</div><div class="line">		<span class="keyword">while</span>(names.hasMoreElements()) {</div><div class="line">			System.out.println(names.nextElement());</div><div class="line">		}</div><div class="line">		</div><div class="line">		<span class="comment">/* &#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</span></div><div class="line">		 * username</div><div class="line">		 * hobby</div><div class="line">		 * password</div><div class="line">		 */		</div><div class="line">		</div><div class="line">		</div><div class="line">		</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * &#x83B7;&#x53D6;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF0C;&#x5C01;&#x88C5;&#x5230;Map&#x4E2D;</div><div class="line">		 */</div><div class="line">		Map&lt;String,String[]&gt; map = request.getParameterMap();</div><div class="line">		<span class="keyword">for</span>(String name : map.keySet()) {</div><div class="line">			String[] values = map.get(name);</div><div class="line">			System.out.println(name + <span class="string">&quot;=&quot;</span> + Arrays.toString(values));</div><div class="line">		}</div><div class="line">		</div><div class="line">		<span class="comment">/* &#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</span></div><div class="line">		 * username=[tom]</div><div class="line">		 * hobby=[eat,sleep,coding]</div><div class="line">		 * password=[123]</div><div class="line">		 */</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x548C;&#x8BF7;&#x6C42;&#x5305;&#x542B;</p>
+<ul>
+<li>&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#xFF1A;&#x7531;&#x4E0B;&#x4E00;&#x4E2A;Servlet&#x5B8C;&#x6210;&#x54CD;&#x5E94;&#x4F53;&#xFF01;&#x5F53;&#x524D;Servlet&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x5934;&#xFF01;&#xFF08;&#x7559;&#x5934;&#x4E0D;&#x7559;&#x4F53;&#xFF09; </li>
+<li>&#x8BF7;&#x6C42;&#x5305;&#x542B;&#xFF1A;&#x7531;&#x4E24;&#x4E2A;Servlet&#x5171;&#x540C;&#x672A;&#x5B8C;&#x6210;&#x54CD;&#x5E94;&#x4F53;&#xFF01;&#xFF08;&#x7559;&#x5934;&#x53C8;&#x7559;&#x4F53;&#xFF09;</li>
+<li>&#x65E0;&#x8BBA;&#x662F;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x8FD8;&#x662F;&#x8BF7;&#x6C42;&#x5305;&#x542B;&#xFF0C;&#x90FD;&#x5728;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x8303;&#x56F4;&#x5185;&#xFF01;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;request&#x548C;response&#xFF01;</li>
+</ul>
+<p>&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;</p>
+<p><code>OneServlet.java</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OneServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{</div><div class="line">		</div><div class="line">		System.out.println(<span class="string">&quot;OneServlet...&quot;</span>);</div><div class="line">		</div><div class="line">		response.setHeader(<span class="string">&quot;aaa&quot;</span>, <span class="string">&quot;AAA&quot;</span>);<span class="comment">//&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x5934;</span></div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * &#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#x4E0D;&#x5E94;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;Servlet&#x4E2D;&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x4F53;</div><div class="line">		 */</div><div class="line">		<span class="comment">//&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x4F53; &#x60C5;&#x51B5;&#x4E00;&#xFF1A;&#x7F51;&#x9875;&#x4E0D;&#x8F93;&#x51FA;&#xFF0C;&#x65E0;&#x5F02;&#x5E38;&#x629B;&#x51FA;</span></div><div class="line">		response.getWriter().print(<span class="string">&quot;hello OneServlet!&quot;</span>);</div><div class="line">		</div><div class="line">		<span class="comment">//&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x4F53; &#x60C5;&#x51B5;&#x4E8C;&#xFF1A;&#x7F51;&#x9875;&#x8F93;&#x51FA;&#xFF0C;&#x4F46;&#x63A7;&#x5236;&#x53F0;&#x629B;&#x5F02;&#x5E38;</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1024</span> * <span class="number">24</span> + <span class="number">1</span>; i++) {</div><div class="line">			response.getWriter().print(<span class="string">&quot;a&quot;</span>);</div><div class="line">		}</div><div class="line">        </div><div class="line">		request.getRequestDispatcher(<span class="string">&quot;/TwoServlet&quot;</span>).forward(request, response);<span class="comment">//&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;</span></div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p><code>TwoServlet.java</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TwoServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{</div><div class="line">        </div><div class="line">		System.out.println(<span class="string">&quot;TwoServlet...&quot;</span>);</div><div class="line">		response.getWriter().print(<span class="string">&quot;hello TwoServlet!&quot;</span>);<span class="comment">//&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x4F53;</span></div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#xFF1A;OneServlet...		TwoServlet...</div><div class="line">&#x7F51;&#x9875;&#x663E;&#x793A;&#xFF1A;hello TwoServlet!</div></pre></td></tr></tbody></table></figure>
+<p>&#x8BF7;&#x6C42;&#x5305;&#x542B;</p>
+<p><code>OneServlet.java</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OneServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{</div><div class="line">		</div><div class="line">		System.out.println(<span class="string">&quot;OneServlet...&quot;</span>);</div><div class="line">		response.setHeader(<span class="string">&quot;aaa&quot;</span>, <span class="string">&quot;AAA&quot;</span>);<span class="comment">//&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x5934;</span></div><div class="line">		</div><div class="line">		response.getWriter().print(<span class="string">&quot;hello OneServlet!&quot;</span>);<span class="comment">//&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x4F53;</span></div><div class="line">		request.getRequestDispatcher(<span class="string">&quot;/TwoServlet&quot;</span>).include(request, response);<span class="comment">//&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;</span></div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p><code>TwoServlet.java</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TwoServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>{</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{</div><div class="line">		</div><div class="line">		System.out.println(<span class="string">&quot;TwoServlet...&quot;</span>);</div><div class="line">		response.getWriter().print(<span class="string">&quot;hello TwoServlet!&quot;</span>);<span class="comment">//&#x8BBE;&#x7F6E;&#x54CD;&#x5E94;&#x4F53;</span></div><div class="line">	}</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#x7F51;&#x9875;&#x663E;&#x793A;&#xFF1A;aaaahello TwoServlet</div></pre></td></tr></tbody></table></figure>
+<p>&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x548C;&#x91CD;&#x5B9A;&#x5411;&#x7684;&#x533A;&#x522B;</p>
+<ul>
+<li>&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x662F;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x4E00;&#x6B21;&#x54CD;&#x5E94;&#xFF0C;&#x800C;&#x91CD;&#x5B9A;&#x5411;&#x662F;&#x4E24;&#x6B21;&#x8BF7;&#x6C42;&#x4E24;&#x6B21;&#x54CD;&#x5E94;</li>
+<li>&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x5730;&#x5740;&#x680F;&#x4E0D;&#x53D8;&#x5316;&#xFF0C;&#x800C;&#x91CD;&#x5B9A;&#x5411;&#x4F1A;&#x663E;&#x793A;&#x540E;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x7684;&#x5730;&#x5740;</li>
+<li>&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x53EA;&#x80FD;&#x8F6C;&#x53D1;&#x5230;&#x672C;&#x9879;&#x76EE;&#x5176;&#x4ED6;Servlet&#xFF0C;&#x800C;&#x91CD;&#x5B9A;&#x5411;&#x4E0D;&#x53EA;&#x80FD;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x672C;&#x9879;&#x76EE;&#x7684;&#x5176;&#x4ED6;Servlet&#xFF0C;&#x8FD8;&#x80FD;&#x5B9A;&#x5411;&#x5230;&#x5176;&#x4ED6;&#x9879;&#x76EE;</li>
+<li>&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x662F;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x884C;&#x4E3A;&#xFF0C;&#x53EA;&#x9700;&#x7ED9;&#x51FA;&#x8F6C;&#x53D1;&#x7684;Servlet&#x8DEF;&#x5F84;&#xFF0C;&#x800C;&#x91CD;&#x5B9A;&#x5411;&#x9700;&#x8981;&#x7ED9;&#x51FA;requestURI&#xFF0C;&#x5373;&#x5305;&#x542B;&#x9879;&#x76EE;&#x540D;&#xFF01;</li>
+<li>&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x548C;&#x91CD;&#x5B9A;&#x5411;&#x76F8;&#x6BD4;&#xFF0C;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x6548;&#x7387;&#x9AD8;&#xFF01;&#x56E0;&#x4E3A;&#x662F;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#xFF01;<ul>
+<li>&#x9700;&#x8981;&#x5730;&#x5740;&#x680F;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x90A3;&#x4E48;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#xFF01;</li>
+<li>&#x9700;&#x8981;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;Servlet&#x4E2D;&#x83B7;&#x53D6;request&#x57DF;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x4F7F;&#x7528;&#x8F6C;&#x53D1;&#xFF01;</li>
+</ul>
+</li>
+</ul>
+<p>&#x7F16;&#x7801;&#x95EE;&#x9898;&#xFF1A;</p>
+<p>&#x4F20;&#x9001;&#x95E8;</p>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+      
+    </div>
+    
+    
+    
+
+    
+
+	
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------&#x672C;&#x6587;&#x7ED3;&#x675F;<i class="fa fa-paw"></i>&#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------</div>
+    
+</div>
+
+
+  
+    </div>
+	
+	
+	
+	
+	
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Http/" rel="tag"><i class="fa fa-tag"></i> Http</a>
+          
+            <a href="/tags/request/" rel="tag"><i class="fa fa-tag"></i> request</a>
+          
+            <a href="/tags/response/" rel="tag"><i class="fa fa-tag"></i> response</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/04/xmlsecond/" rel="next" title="xml&#x89E3;&#x6790;&#x65B9;&#x5F0F;">
+                <i class="fa fa-chevron-left"></i> xml&#x89E3;&#x6790;&#x65B9;&#x5F0F;
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/09/coded/" rel="prev" title="&#x7F16;&#x7801;">
+                &#x7F16;&#x7801; <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/myphoto.jpg" alt="&#x8D75;&#x5BA2;">
+            
+              <p class="site-author-name" itemprop="name">&#x8D75;&#x5BA2;</p>
+              <p class="site-description motion-element" itemprop="description">&#x6211;&#x4E0D;&#x662F;&#x8D24;&#x4EBA;&#x8C6A;&#x58EB;&#xFF0C;&#x6211;&#x53EA;&#x6709;&#x4E00;&#x8154;&#x70ED;&#x8840;&#x3002;</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">&#x65E5;&#x5FD7;</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">&#x5206;&#x7C7B;</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">&#x6807;&#x7B7E;</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xdady" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&#xA9; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">&#x8D75;&#x5BA2;</span>
+
+  
+</div>
+
+
+  <div class="powered-by">&#x7531; <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> &#x5F3A;&#x529B;&#x9A71;&#x52A8;</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">&#x4E3B;&#x9898; &#x2014; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">&#x535A;&#x5BA2;&#x5168;&#x7AD9;&#x5171;53.9k&#x5B57;</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+  
+  <!--崩溃欺骗-->
+  <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script></body></html>

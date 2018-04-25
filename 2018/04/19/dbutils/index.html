@@ -1,0 +1,910 @@
+<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-Hans"><head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jdbc,dbutils,&#x7ED3;&#x679C;&#x96C6;&#x5904;&#x7406;&#x5668;,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1&amp;#x3000;DBUtils&amp;#x7B80;&amp;#x4ECB;DBUtils&amp;#x662F;Apache Commons&amp;#x7EC4;&amp;#x4EF6;&amp;#x4E2D;&amp;#x7684;&amp;#x4E00;&amp;#x5458;&amp;#xFF0C;&amp;#x5F00;&amp;#x6E90;&amp;#x514D;&amp;#x8D39;&amp;#xFF01;
+DBUtils&amp;#x662F;&amp;#x5BF9;JDBC&amp;#x7684;&amp;#x7B80">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dbutils">
+<meta property="og:url" content="xdady.github.io/2018/04/19/dbutils/index.html">
+<meta property="og:site_name" content="&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;">
+<meta property="og:description" content="1&amp;#x3000;DBUtils&amp;#x7B80;&amp;#x4ECB;DBUtils&amp;#x662F;Apache Commons&amp;#x7EC4;&amp;#x4EF6;&amp;#x4E2D;&amp;#x7684;&amp;#x4E00;&amp;#x5458;&amp;#xFF0C;&amp;#x5F00;&amp;#x6E90;&amp;#x514D;&amp;#x8D39;&amp;#xFF01;
+DBUtils&amp;#x662F;&amp;#x5BF9;JDBC&amp;#x7684;&amp;#x7B80">
+<meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804192132_984.png">
+<meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804191917_41.png">
+<meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804191920_177.png">
+<meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804191924_973.png">
+<meta property="og:updated_time" content="2018-04-25T11:06:11.363Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="dbutils">
+<meta name="twitter:description" content="1&amp;#x3000;DBUtils&amp;#x7B80;&amp;#x4ECB;DBUtils&amp;#x662F;Apache Commons&amp;#x7EC4;&amp;#x4EF6;&amp;#x4E2D;&amp;#x7684;&amp;#x4E00;&amp;#x5458;&amp;#xFF0C;&amp;#x5F00;&amp;#x6E90;&amp;#x514D;&amp;#x8D39;&amp;#xFF01;
+DBUtils&amp;#x662F;&amp;#x5BF9;JDBC&amp;#x7684;&amp;#x7B80">
+<meta name="twitter:image" content="http://p5zjpoxly.bkt.clouddn.com/201804192132_984.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="xdady.github.io/2018/04/19/dbutils/">
+
+
+
+
+
+  <title>dbutils | &#x6D6E;&#x4E16;&#x5E7B;&#x60F3;</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/xdady" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            &#x9996;&#x9875;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            &#x5173;&#x4E8E;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            &#x6807;&#x7B7E;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            &#x5206;&#x7C7B;
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            &#x5F52;&#x6863;
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="xdady.github.io/2018/04/19/dbutils/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="&#x8D75;&#x5BA2;">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/myphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="&#x6D6E;&#x4E16;&#x5E7B;&#x60F3;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">dbutils</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x53D1;&#x8868;&#x4E8E;</span>
+              
+              <time title="&#x521B;&#x5EFA;&#x4E8E;" itemprop="dateCreated datePublished" datetime="2018-04-19T18:59:56+08:00">
+                2018-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x5206;&#x7C7B;&#x4E8E;</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb&#x57FA;&#x7840;/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb&#x57FA;&#x7840;</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">&#x5B57;&#x6570;&#x7EDF;&#x8BA1;:</span>
+                
+                <span title="&#x5B57;&#x6570;&#x7EDF;&#x8BA1;">
+                  972
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">&#x9605;&#x8BFB;&#x65F6;&#x957F; &#x2248;</span>
+                
+                <span title="&#x9605;&#x8BFB;&#x65F6;&#x957F;">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-DBUtils&#x7B80;&#x4ECB;"><a href="#1-DBUtils&#x7B80;&#x4ECB;" class="headerlink" title="1&#x3000;DBUtils&#x7B80;&#x4ECB;"></a>1&#x3000;DBUtils&#x7B80;&#x4ECB;</h2><p>DBUtils&#x662F;Apache Commons&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x4E00;&#x5458;&#xFF0C;&#x5F00;&#x6E90;&#x514D;&#x8D39;&#xFF01;</p>
+<p>DBUtils&#x662F;&#x5BF9;JDBC&#x7684;&#x7B80;&#x5355;&#x5C01;&#x88C5;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x8FD8;&#x662F;&#x88AB;&#x5F88;&#x591A;&#x516C;&#x53F8;&#x4F7F;&#x7528;&#xFF01;</p>
+<p>DBUtils&#x7684;Jar&#x5305;&#xFF1A;dbutils.jar</p>
+<a id="more"></a>
+<h2 id="2-DBUtils&#x4E3B;&#x8981;&#x7C7B;"><a href="#2-DBUtils&#x4E3B;&#x8981;&#x7C7B;" class="headerlink" title="2&#x3000;DBUtils&#x4E3B;&#x8981;&#x7C7B;"></a>2&#x3000;DBUtils&#x4E3B;&#x8981;&#x7C7B;</h2><ul>
+<li>DbUtils&#xFF1A;&#x90FD;&#x662F;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x4E00;&#x7CFB;&#x5217;&#x7684;close()&#x65B9;&#x6CD5;&#xFF1B;</li>
+<li>QueryRunner&#xFF1A;<ul>
+<li>update()&#xFF1A;&#x6267;&#x884C;insert&#x3001;update&#x3001;delete&#xFF1B;</li>
+<li>query()&#xFF1A;&#x6267;&#x884C;select&#x8BED;&#x53E5;&#xFF1B;</li>
+<li>batch()&#xFF1A;&#x6267;&#x884C;&#x6279;&#x5904;&#x7406;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-QueryRunner"><a href="#3-QueryRunner" class="headerlink" title="3&#x3000;QueryRunner"></a>3&#x3000;QueryRunner</h2><h3 id="update&#x65B9;&#x6CD5;&#xFF1A;"><a href="#update&#x65B9;&#x6CD5;&#xFF1A;" class="headerlink" title="update&#x65B9;&#x6CD5;&#xFF1A;"></a>update&#x65B9;&#x6CD5;&#xFF1A;</h3><ul>
+<li>int update(String sql, Object&#x2026; params)<ul>
+<li>&#x53EF;&#x6267;&#x884C;&#x589E;&#x3001;&#x5220;&#x3001;&#x6539;&#x8BED;&#x53E5;</li>
+</ul>
+</li>
+<li>int update(Connection con, String sql, Object&#x2026; parmas)<ul>
+<li>&#x9700;&#x8981;&#x8C03;&#x7528;&#x8005;&#x63D0;&#x4F9B;Connection&#xFF0C;&#x8FD9;&#x8BF4;&#x660E;&#x672C;&#x65B9;&#x6CD5;&#x4E0D;&#x518D;&#x7BA1;&#x7406;Connection&#x4E86;&#x3002;&#x652F;&#x6301;&#x4E8B;&#x52A1;!</li>
+</ul>
+</li>
+</ul>
+<p><code>fun1</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>{</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>{</div><div class="line">		QueryRunner qr = <span class="keyword">new</span> QueryRunner(JdbcUtils.getDataSource());</div><div class="line">		String sql = <span class="string">&quot;insert into t_stu values(?,?,?,?)&quot;</span>;</div><div class="line">		Object[] params = {<span class="number">1002</span>, <span class="string">&quot;liSi&quot;</span>, <span class="number">88</span>, <span class="string">&quot;female&quot;</span>};</div><div class="line">		</div><div class="line">		qr.update(sql, params);</div><div class="line">	}</div><div class="line">    </div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<h3 id="query&#x65B9;&#x6CD5;&#xFF1A;"><a href="#query&#x65B9;&#x6CD5;&#xFF1A;" class="headerlink" title="query&#x65B9;&#x6CD5;&#xFF1A;"></a>query&#x65B9;&#x6CD5;&#xFF1A;</h3><ul>
+<li>T query(String sql, ResultSetHandler rsh, Object&#x2026; params)<ul>
+<li>&#x53EF;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#x5B83;&#x4F1A;&#x5148;&#x5F97;&#x5230;ResultSet&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;rsh&#x7684;handle()&#x628A;rs&#x8F6C;&#x6362;&#x6210;&#x9700;&#x8981;&#x7684;&#x7C7B;&#x578B;&#xFF01;</li>
+</ul>
+</li>
+<li>T query(Connection con, String sql, ResultSetHadler rsh, Object&#x2026; params)<ul>
+<li>&#x652F;&#x6301;&#x4E8B;&#x52A1;</li>
+</ul>
+</li>
+</ul>
+<p><code>fun2</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>{</div><div class="line">	</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun2</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>{</div><div class="line">		<span class="comment">// &#x521B;&#x5EFA;QueryRunner&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6C60;&#x5BF9;&#x8C61;</span></div><div class="line">		QueryRunner qr = <span class="keyword">new</span> QueryRunner(JdbcUtils.getDataSource());</div><div class="line">		<span class="comment">// &#x7ED9;&#x51FA;sql&#x6A21;&#x677F;</span></div><div class="line">		String sql = <span class="string">&quot;select * from t_stu where sid=?&quot;</span>;</div><div class="line">		<span class="comment">// &#x7ED9;&#x51FA;&#x53C2;&#x6570;</span></div><div class="line">		Object[] params = {<span class="number">1001</span>};</div><div class="line">		</div><div class="line">		<span class="comment">// &#x6267;&#x884C;query()&#x65B9;&#x6CD5;&#xFF0C;&#x9700;&#x8981;&#x7ED9;&#x51FA;&#x7ED3;&#x679C;&#x96C6;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x5373;ResultSetHandler&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x5BF9;&#x8C61;</span></div><div class="line">		<span class="comment">// &#x6211;&#x4EEC;&#x7ED9;&#x7684;&#x662F;BeanHandler&#xFF0C;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;ResultSetHandler</span></div><div class="line">		<span class="comment">// &#x5B83;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#xFF0C;&#x7136;&#x540E;&#x5B83;&#x4F1A;&#x628A;rs&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5C01;&#x88C5;&#x5230;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;javabean&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;javabean</span></div><div class="line">		Stu stu = qr.query(sql, <span class="keyword">new</span> BeanHandler&lt;Stu&gt;(Stu.class), params);</div><div class="line">		System.out.println(stu);</div><div class="line">	}</div><div class="line"></div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<h3 id="ResultSetHandler&#x63A5;&#x53E3;&#xFF1A;"><a href="#ResultSetHandler&#x63A5;&#x53E3;&#xFF1A;" class="headerlink" title="ResultSetHandler&#x63A5;&#x53E3;&#xFF1A;"></a>ResultSetHandler&#x63A5;&#x53E3;&#xFF1A;</h3><h4 id="BeanHandler-&#x5355;&#x884C;"><a href="#BeanHandler-&#x5355;&#x884C;" class="headerlink" title="BeanHandler(&#x5355;&#x884C;)"></a>BeanHandler(&#x5355;&#x884C;)</h4><p>&#x6784;&#x9020;&#x5668;&#x9700;&#x8981;&#x4E00;&#x4E2A;Class&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x628A;&#x4E00;&#x884C;&#x7ED3;&#x679C;&#x8F6C;&#x6362;&#x6210;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;javaBean&#x5BF9;&#x8C61;</p>
+<p><code>fun2</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>{</div><div class="line">	</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun2</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>{</div><div class="line">		<span class="comment">// &#x521B;&#x5EFA;QueryRunner&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6C60;&#x5BF9;&#x8C61;</span></div><div class="line">		QueryRunner qr = <span class="keyword">new</span> QueryRunner(JdbcUtils.getDataSource());</div><div class="line">		<span class="comment">// &#x7ED9;&#x51FA;sql&#x6A21;&#x677F;</span></div><div class="line">		String sql = <span class="string">&quot;select * from t_stu where sid=?&quot;</span>;</div><div class="line">		<span class="comment">// &#x7ED9;&#x51FA;&#x53C2;&#x6570;</span></div><div class="line">		Object[] params = {<span class="number">1001</span>};</div><div class="line">		</div><div class="line">		<span class="comment">// &#x6267;&#x884C;query()&#x65B9;&#x6CD5;&#xFF0C;&#x9700;&#x8981;&#x7ED9;&#x51FA;&#x7ED3;&#x679C;&#x96C6;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x5373;ResultSetHandler&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x5BF9;&#x8C61;</span></div><div class="line">		<span class="comment">// &#x6211;&#x4EEC;&#x7ED9;&#x7684;&#x662F;BeanHandler&#xFF0C;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;ResultSetHandler</span></div><div class="line">		<span class="comment">// &#x5B83;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#xFF0C;&#x7136;&#x540E;&#x5B83;&#x4F1A;&#x628A;rs&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5C01;&#x88C5;&#x5230;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;javabean&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;javabean</span></div><div class="line">		Stu stu = qr.query(sql, <span class="keyword">new</span> BeanHandler&lt;Stu&gt;(Stu.class), params);</div><div class="line">		System.out.println(stu);</div><div class="line">	}</div><div class="line"></div><div class="line"></div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="http://p5zjpoxly.bkt.clouddn.com/201804192132_984.png" alt=""></p>
+<h4 id="BeanListHandler-&#x591A;&#x884C;"><a href="#BeanListHandler-&#x591A;&#x884C;" class="headerlink" title="BeanListHandler(&#x591A;&#x884C;)"></a>BeanListHandler(&#x591A;&#x884C;)</h4><p>&#x6784;&#x9020;&#x5668;&#x4E5F;&#x662F;&#x9700;&#x8981;&#x4E00;&#x4E2A;Class&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x628A;&#x4E00;&#x884C;&#x7ED3;&#x679C;&#x96C6;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x4E2A;javabean&#xFF0C;&#x90A3;&#x4E48;&#x591A;&#x884C;&#x5C31;&#x662F;&#x8F6C;&#x6362;&#x6210;List&#x5BF9;&#x8C61;&#xFF0C;&#x4E00;&#x5806;javabean</p>
+<p><code>fun3</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>{</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * BeanListHandler&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5B83;&#x662F;&#x591A;&#x884C;&#x5904;&#x7406;&#x5668;</div><div class="line">	 * &#x6BCF;&#x884C;&#x5BF9;&#x8C61;&#x4E00;&#x4E2A;Stu&#x5BF9;&#x8C61;&#xFF01;</div><div class="line">	 * <span class="doctag">@throws</span> Exception</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun3</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>{</div><div class="line">		QueryRunner qr = <span class="keyword">new</span> QueryRunner(JdbcUtils.getDataSource());</div><div class="line">		String sql = <span class="string">&quot;select * from t_stu&quot;</span>;</div><div class="line">		List&lt;Stu&gt; stuList = qr.query(sql, <span class="keyword">new</span> BeanListHandler&lt;Stu&gt;(Stu.class));</div><div class="line">        </div><div class="line">		System.out.println(stuList);</div><div class="line">	}</div><div class="line">		</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="http://p5zjpoxly.bkt.clouddn.com/201804191917_41.png" alt=""></p>
+<h4 id="MapHandler-&#x5355;&#x884C;"><a href="#MapHandler-&#x5355;&#x884C;" class="headerlink" title="MapHandler(&#x5355;&#x884C;)"></a>MapHandler(&#x5355;&#x884C;)</h4><p>&#x628A;&#x4E00;&#x884C;&#x7ED3;&#x679C;&#x96C6;&#x8F6C;&#x6362;Map&#x5BF9;&#x8C61;<br>  &#x4E00;&#x884C;&#x8BB0;&#x5F55;&#xFF1A;<br>    sid  sname  age  gender<br>    1001 zs     99   male<br>  &#x4E00;&#x4E2A;Map&#xFF1A;<br>    {sid:1001, sname:zs, age:99, gender:male}</p>
+<p><code>fun4</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>{</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * MapHandler&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x5B83;&#x662F;&#x5355;&#x884C;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x628A;&#x4E00;&#x884C;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x4E2A;Map&#x5BF9;&#x8C61;</div><div class="line">	 * <span class="doctag">@throws</span> SQLException </div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun4</span><span class="params">()</span> <span class="keyword">throws</span> SQLException  </span>{</div><div class="line">		QueryRunner qr = <span class="keyword">new</span> QueryRunner(JdbcUtils.getDataSource());</div><div class="line">		String sql = <span class="string">&quot;select * from t_stu where sid=?&quot;</span>;</div><div class="line">		Object[] params = {<span class="number">1001</span>};</div><div class="line">		Map map = qr.query(sql, <span class="keyword">new</span> MapHandler(), params);</div><div class="line">		</div><div class="line">		System.out.println(map);</div><div class="line">	}</div><div class="line">		</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="http://p5zjpoxly.bkt.clouddn.com/201804191920_177.png" alt=""></p>
+<h4 id="MapListHandler-&#x591A;&#x884C;"><a href="#MapListHandler-&#x591A;&#x884C;" class="headerlink" title="MapListHandler(&#x591A;&#x884C;)"></a>MapListHandler(&#x591A;&#x884C;)</h4><p>&#x628A;&#x4E00;&#x884C;&#x8BB0;&#x5F55;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x4E2A;Map&#xFF0C;&#x591A;&#x884C;&#x5C31;&#x662F;&#x591A;&#x4E2A;Map&#xFF0C;&#x5373;List&lt;Map&gt;&#xFF01;</p>
+<p><code>fun5</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>{</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * MapListHandler&#xFF0C;&#x5B83;&#x662F;&#x591A;&#x884C;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x628A;&#x6BCF;&#x884C;&#x90FD;&#x8F6C;&#x6362;&#x6210;&#x4E00;&#x4E2A;Map&#xFF0C;&#x5373;List&lt;Map&gt;</div><div class="line">	 * <span class="doctag">@throws</span> SQLException</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun5</span><span class="params">()</span> <span class="keyword">throws</span> SQLException  </span>{</div><div class="line">		QueryRunner qr = <span class="keyword">new</span> QueryRunner(JdbcUtils.getDataSource());</div><div class="line">		String sql = <span class="string">&quot;select * from t_stu&quot;</span>;</div><div class="line">		List&lt;Map&lt;String,Object&gt;&gt; mapList = qr.query(sql, <span class="keyword">new</span> MapListHandler());</div><div class="line">		</div><div class="line">		System.out.println(mapList);</div><div class="line">	}</div><div class="line">	</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="http://p5zjpoxly.bkt.clouddn.com/201804191924_973.png" alt=""></p>
+<h4 id="ScalarHandler-&#x5355;&#x884C;&#x5355;&#x5217;"><a href="#ScalarHandler-&#x5355;&#x884C;&#x5355;&#x5217;" class="headerlink" title="ScalarHandler(&#x5355;&#x884C;&#x5355;&#x5217;)"></a>ScalarHandler(&#x5355;&#x884C;&#x5355;&#x5217;)</h4><p>&#x901A;&#x5E38;&#x7528;&#x4E0E;select count(*) from t_stu&#x8BED;&#x53E5;&#xFF01;&#x7ED3;&#x679C;&#x96C6;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;&#x7684;&#xFF01;&#x5B83;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Object</p>
+<p>Integer&#x3001;Long&#x3001;BigInt  &#x7684;&#x5171;&#x540C;&#x7236;&#x7C7B;&#x662F; Number</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>{</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * ScalarHandler&#xFF0C;&#x5B83;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x6700;&#x4E3A;&#x5408;&#x9002;&#xFF01;</div><div class="line">	 * <span class="doctag">@throws</span> SQLException</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun6</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>{</div><div class="line">		QueryRunner qr = <span class="keyword">new</span> QueryRunner(JdbcUtils.getDataSource());</div><div class="line">		String sql = <span class="string">&quot;select count(*) from t_stu&quot;</span>;</div><div class="line">        </div><div class="line">		<span class="comment">/* &#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x77E5;&#x9053;&#xFF0C;&#x6267;&#x884C; select count(*) from t_stu &#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;</span></div><div class="line">		 * Integer&#x3001;Long&#x3001;BigInteger &#x7684;&#x7684;&#x5171;&#x540C;&#x7236;&#x7C7B;&#x662F; Number</div><div class="line">		 * &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x63A5;&#x6536;&#x5176;&#x7ED3;&#x679C;</div><div class="line">		 */</div><div class="line">		Number cnt = (Number)qr.query(sql, <span class="keyword">new</span> ScalarHandler());</div><div class="line">		</div><div class="line">		<span class="keyword">long</span> c = cnt.longValue();</div><div class="line">		System.out.println(c);</div><div class="line">	}</div><div class="line">    </div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF1A;2</p>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
+      
+    </div>
+    
+    
+    
+
+    
+
+	
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------&#x672C;&#x6587;&#x7ED3;&#x675F;<i class="fa fa-paw"></i>&#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------</div>
+    
+</div>
+
+
+  
+    </div>
+	
+	
+	
+	
+	
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jdbc/" rel="tag"><i class="fa fa-tag"></i> jdbc</a>
+          
+            <a href="/tags/dbutils/" rel="tag"><i class="fa fa-tag"></i> dbutils</a>
+          
+            <a href="/tags/&#x7ED3;&#x679C;&#x96C6;&#x5904;&#x7406;&#x5668;/" rel="tag"><i class="fa fa-tag"></i> &#x7ED3;&#x679C;&#x96C6;&#x5904;&#x7406;&#x5668;</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/19/ThreadLocal/" rel="next" title="ThreadLocal">
+                <i class="fa fa-chevron-left"></i> ThreadLocal
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/19/BaseServlet/" rel="prev" title="BaseServlet">
+                BaseServlet <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            &#x6587;&#x7AE0;&#x76EE;&#x5F55;
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            &#x7AD9;&#x70B9;&#x6982;&#x89C8;
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/myphoto.jpg" alt="&#x8D75;&#x5BA2;">
+            
+              <p class="site-author-name" itemprop="name">&#x8D75;&#x5BA2;</p>
+              <p class="site-description motion-element" itemprop="description">&#x6211;&#x4E0D;&#x662F;&#x8D24;&#x4EBA;&#x8C6A;&#x58EB;&#xFF0C;&#x6211;&#x53EA;&#x6709;&#x4E00;&#x8154;&#x70ED;&#x8840;&#x3002;</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">&#x65E5;&#x5FD7;</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">&#x5206;&#x7C7B;</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">&#x6807;&#x7B7E;</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xdady" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-DBUtils&#x7B80;&#x4ECB;"><span class="nav-number">1.</span> <span class="nav-text">1&#x3000;DBUtils&#x7B80;&#x4ECB;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-DBUtils&#x4E3B;&#x8981;&#x7C7B;"><span class="nav-number">2.</span> <span class="nav-text">2&#x3000;DBUtils&#x4E3B;&#x8981;&#x7C7B;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-QueryRunner"><span class="nav-number">3.</span> <span class="nav-text">3&#x3000;QueryRunner</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#update&#x65B9;&#x6CD5;&#xFF1A;"><span class="nav-number">3.1.</span> <span class="nav-text">update&#x65B9;&#x6CD5;&#xFF1A;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#query&#x65B9;&#x6CD5;&#xFF1A;"><span class="nav-number">3.2.</span> <span class="nav-text">query&#x65B9;&#x6CD5;&#xFF1A;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResultSetHandler&#x63A5;&#x53E3;&#xFF1A;"><span class="nav-number">3.3.</span> <span class="nav-text">ResultSetHandler&#x63A5;&#x53E3;&#xFF1A;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BeanHandler-&#x5355;&#x884C;"><span class="nav-number">3.3.1.</span> <span class="nav-text">BeanHandler(&#x5355;&#x884C;)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BeanListHandler-&#x591A;&#x884C;"><span class="nav-number">3.3.2.</span> <span class="nav-text">BeanListHandler(&#x591A;&#x884C;)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MapHandler-&#x5355;&#x884C;"><span class="nav-number">3.3.3.</span> <span class="nav-text">MapHandler(&#x5355;&#x884C;)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MapListHandler-&#x591A;&#x884C;"><span class="nav-number">3.3.4.</span> <span class="nav-text">MapListHandler(&#x591A;&#x884C;)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ScalarHandler-&#x5355;&#x884C;&#x5355;&#x5217;"><span class="nav-number">3.3.5.</span> <span class="nav-text">ScalarHandler(&#x5355;&#x884C;&#x5355;&#x5217;)</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&#xA9; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">&#x8D75;&#x5BA2;</span>
+
+  
+</div>
+
+
+  <div class="powered-by">&#x7531; <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> &#x5F3A;&#x529B;&#x9A71;&#x52A8;</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">&#x4E3B;&#x9898; &#x2014; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">&#x535A;&#x5BA2;&#x5168;&#x7AD9;&#x5171;53.9k&#x5B57;</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+  
+  <!--崩溃欺骗-->
+  <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script></body></html>
