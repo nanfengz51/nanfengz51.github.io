@@ -90,7 +90,7 @@ DBUtils&amp;#x662F;&amp;#x5BF9;JDBC&amp;#x7684;&amp;#x7B80">
 <meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804191917_41.png">
 <meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804191920_177.png">
 <meta property="og:image" content="http://p5zjpoxly.bkt.clouddn.com/201804191924_973.png">
-<meta property="og:updated_time" content="2018-04-25T11:06:11.363Z">
+<meta property="og:updated_time" content="2018-05-13T03:35:38.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dbutils">
 <meta name="twitter:description" content="1&amp;#x3000;DBUtils&amp;#x7B80;&amp;#x4ECB;DBUtils&amp;#x662F;Apache Commons&amp;#x7EC4;&amp;#x4EF6;&amp;#x4E2D;&amp;#x7684;&amp;#x4E00;&amp;#x5458;&amp;#xFF0C;&amp;#x5F00;&amp;#x6E90;&amp;#x514D;&amp;#x8D39;&amp;#xFF01;
@@ -354,7 +354,7 @@ DBUtils&amp;#x662F;&amp;#x5BF9;JDBC&amp;#x7684;&amp;#x7B80">
                   <span class="post-meta-item-text">&#x5B57;&#x6570;&#x7EDF;&#x8BA1;:</span>
                 
                 <span title="&#x5B57;&#x6570;&#x7EDF;&#x8BA1;">
-                  972
+                  988
                 </span>
               
 
@@ -370,7 +370,7 @@ DBUtils&amp;#x662F;&amp;#x5BF9;JDBC&amp;#x7684;&amp;#x7B80">
                   <span class="post-meta-item-text">&#x9605;&#x8BFB;&#x65F6;&#x957F; &#x2248;</span>
                 
                 <span title="&#x9605;&#x8BFB;&#x65F6;&#x957F;">
-                  4
+                  5
                 </span>
               
             </div>
@@ -449,8 +449,8 @@ DBUtils&amp;#x662F;&amp;#x5BF9;JDBC&amp;#x7684;&amp;#x7B80">
 <p>&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
 <p><img src="http://p5zjpoxly.bkt.clouddn.com/201804191924_973.png" alt=""></p>
 <h4 id="ScalarHandler-&#x5355;&#x884C;&#x5355;&#x5217;"><a href="#ScalarHandler-&#x5355;&#x884C;&#x5355;&#x5217;" class="headerlink" title="ScalarHandler(&#x5355;&#x884C;&#x5355;&#x5217;)"></a>ScalarHandler(&#x5355;&#x884C;&#x5355;&#x5217;)</h4><p>&#x901A;&#x5E38;&#x7528;&#x4E0E;select count(*) from t_stu&#x8BED;&#x53E5;&#xFF01;&#x7ED3;&#x679C;&#x96C6;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;&#x7684;&#xFF01;&#x5B83;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Object</p>
-<p>Integer&#x3001;Long&#x3001;BigInt  &#x7684;&#x5171;&#x540C;&#x7236;&#x7C7B;&#x662F; Number</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>{</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * ScalarHandler&#xFF0C;&#x5B83;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x6700;&#x4E3A;&#x5408;&#x9002;&#xFF01;</div><div class="line">	 * <span class="doctag">@throws</span> SQLException</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun6</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>{</div><div class="line">		QueryRunner qr = <span class="keyword">new</span> QueryRunner(JdbcUtils.getDataSource());</div><div class="line">		String sql = <span class="string">&quot;select count(*) from t_stu&quot;</span>;</div><div class="line">        </div><div class="line">		<span class="comment">/* &#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x77E5;&#x9053;&#xFF0C;&#x6267;&#x884C; select count(*) from t_stu &#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;</span></div><div class="line">		 * Integer&#x3001;Long&#x3001;BigInteger &#x7684;&#x7684;&#x5171;&#x540C;&#x7236;&#x7C7B;&#x662F; Number</div><div class="line">		 * &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x63A5;&#x6536;&#x5176;&#x7ED3;&#x679C;</div><div class="line">		 */</div><div class="line">		Number cnt = (Number)qr.query(sql, <span class="keyword">new</span> ScalarHandler());</div><div class="line">		</div><div class="line">		<span class="keyword">long</span> c = cnt.longValue();</div><div class="line">		System.out.println(c);</div><div class="line">	}</div><div class="line">    </div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>Integer&#x3001;Long&#x3001;BigInteger  &#x7684;&#x5171;&#x540C;&#x7236;&#x7C7B;&#x662F; Number</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo3</span> </span>{</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * ScalarHandler&#xFF0C;&#x5B83;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x6700;&#x4E3A;&#x5408;&#x9002;&#xFF01;</div><div class="line">	 * <span class="doctag">@throws</span> SQLException</div><div class="line">	 */</div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun6</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>{</div><div class="line">		QueryRunner qr = <span class="keyword">new</span> QueryRunner(JdbcUtils.getDataSource());</div><div class="line">		String sql = <span class="string">&quot;select count(*) from t_stu&quot;</span>;</div><div class="line">        </div><div class="line">		<span class="comment">/* &#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x77E5;&#x9053;&#xFF0C;&#x6267;&#x884C; select count(*) from t_stu &#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;</span></div><div class="line">		 * Integer&#x3001;Long&#x3001;BigInteger &#x7684;&#x7684;&#x5171;&#x540C;&#x7236;&#x7C7B;&#x662F; Number</div><div class="line">		 * &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x63A5;&#x6536;&#x5176;&#x7ED3;&#x679C;</div><div class="line">		 */</div><div class="line">		Number cnt = (Number)qr.query(sql, <span class="keyword">new</span> ScalarHandler());</div><div class="line">		<span class="comment">//int c = cnt.intValue();&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x6210;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x7C7B;&#x578B;</span></div><div class="line">		<span class="keyword">long</span> c = cnt.longValue();</div><div class="line">		System.out.println(c);</div><div class="line">	}</div><div class="line">    </div><div class="line">}</div></pre></td></tr></tbody></table></figure>
 <p>&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF1A;2</p>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":100,"height":200,"hOffset":-15,"vOffset":-40},"mobile":{"show":false}});</script>
       
@@ -595,7 +595,7 @@ DBUtils&amp;#x662F;&amp;#x5BF9;JDBC&amp;#x7684;&amp;#x7B80">
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">&#x65E5;&#x5FD7;</span>
                 </a>
               </div>
@@ -617,7 +617,7 @@ DBUtils&amp;#x662F;&amp;#x5BF9;JDBC&amp;#x7684;&amp;#x7B80">
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">&#x6807;&#x7B7E;</span>
                 </a>
               </div>
@@ -705,7 +705,7 @@ DBUtils&amp;#x662F;&amp;#x5BF9;JDBC&amp;#x7684;&amp;#x7B80">
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">&#x535A;&#x5BA2;&#x5168;&#x7AD9;&#x5171;54.2k&#x5B57;</span>
+  <span class="post-count">&#x535A;&#x5BA2;&#x5168;&#x7AD9;&#x5171;64.3k&#x5B57;</span>
 </div>
 
         
